@@ -1,0 +1,935 @@
+<!-- START All-in-One Event Calendar Plugin - Version 1.11.4-pro -->
+<div id="ai1ec-container" class="ai1ec-container">
+	<!-- AI1EC_PAGE_CONTENT_PLACEHOLDER -->
+	<div id="ai1ec-calendar" class="timely">
+			<div class="timely">
+		<div class="ai1ec-calendar-toolbar clearfix">
+							<div class="pull-right">
+						<div class="btn-group">
+										<a href="#ai1ec-create-event-modal" class="btn btn-primary btn-mini"
+				data-toggle="ai1ec_modal">
+							<i class="icon-plus"></i>
+				Post Your Event			</a>
+			</div>
+
+<div class="ai1ec-modal hide fade" id="ai1ec-create-event-modal">
+	<div class="ai1ec-loading show"></div>
+	<div class="ai1ec-ajax-placeholder">
+		<!-- Form content is loaded here via AJAX. -->
+	</div>
+</div>
+				</div>
+						<ul class="nav nav-pills pull-left"><li class="ai1ec-views-dropdown dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown">
+		<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
+		Stream		<span class="caret"></span>
+	</a>
+	<div class="dropdown-menu">
+					<div class="" data-action="posterboard">
+				<a id="ai1ec-view-posterboard" data-type="json"					class="ai1ec-load-view posterboard"
+					href="http://www.ridermagazine.com/calendar/action~posterboard/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/posterboard-view.png" alt="Posterboard" />
+					Posterboard				</a>
+			</div>
+					<div class="active" data-action="stream">
+				<a id="ai1ec-view-stream" data-type="json"					class="ai1ec-load-view stream"
+					href="http://www.ridermagazine.com/calendar/action~stream/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
+					Stream				</a>
+			</div>
+					<div class="" data-action="month">
+				<a id="ai1ec-view-month" data-type="json"					class="ai1ec-load-view month"
+					href="http://www.ridermagazine.com/calendar/action~month/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+					Month				</a>
+			</div>
+					<div class="" data-action="week">
+				<a id="ai1ec-view-week" data-type="json"					class="ai1ec-load-view week"
+					href="http://www.ridermagazine.com/calendar/action~week/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/week-view.png" alt="Week" />
+					Week				</a>
+			</div>
+					<div class="" data-action="oneday">
+				<a id="ai1ec-view-oneday" data-type="json"					class="ai1ec-load-view oneday"
+					href="http://www.ridermagazine.com/calendar/action~oneday/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
+					Day				</a>
+			</div>
+					<div class="" data-action="agenda">
+				<a id="ai1ec-view-agenda" data-type="json"					class="ai1ec-load-view agenda"
+					href="http://www.ridermagazine.com/calendar/action~agenda/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/agenda-view.png" alt="Agenda" />
+					Agenda				</a>
+			</div>
+			</div>
+</li>
+</ul>
+							<div class='pull-left'>
+					<div class='btn-group'  ><a class='btn btn-mini ai1ec-tooltip-trigger' id='save_filtered_views' title='Save this filter as default'><icon class='icon-pushpin'  ></icon></a></div>				</div>
+					</div><!-- /.ai1ec-calendar-toolbar -->
+	</div>
+		<div id="ai1ec-calendar-view-container">
+			<div id="ai1ec-calendar-view-loading" class="ai1ec-loading"></div>
+			<div id="ai1ec-calendar-view">
+				<div class="clearfix">
+	<h2 class="ai1ec-calendar-title">April – June 2014</h2>
+	<div class="ai1ec-title-buttons btn-toolbar pull-right">
+		<div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-page ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~stream/page_offset~-1/time_limit~1397257199/"
+				>
+				<i class="icon-chevron-left"></i>			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='4/11/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~stream/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-page ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~stream/page_offset~1/time_limit~1402722001/"
+				>
+				<i class="icon-chevron-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+	</div>
+</div>
+<div class="ai1ec-stream-view">
+						<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-11-2014/" data-type="json">
+													April 11 (Friday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																									<div class="clearfix ai1ec-event
+							ai1ec-event-id-35469							ai1ec-event-instance-id-212							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/the-handbuilt-motorcycle-show/?instance_id=212"
+											 											 											 title="The Handbuilt Motorcycle Show" >
+											The Handbuilt Motorcycle Show										</a>
+																					<span class="ai1ec-event-location">@ Revival Cycles</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/the-handbuilt-motorcycle-show/?instance_id=212"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/03/Handbuilt-Poster-300x300.jpg" alt="The Handbuilt Motorcycle Show @ Revival Cycles | Austin | Texas | United States" width="300" height="300" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 11 @ 6:00 pm – Apr 11 @ 12:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Revival Cycles, an Austin, Texas-based custom motorcycle shop, will present a FREE custom motorcycle display and entertainment showcase at its downtown location, 1100 East 5th [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-12-2014/" data-type="json">
+													April 12 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34461							ai1ec-event-instance-id-112							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/southern-california-ride-for-kids/?instance_id=112"
+											 											 											 title="Southern California Ride for Kids" >
+											Southern California Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Glen Helen Raceway Park</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/southern-california-ride-for-kids/?instance_id=112"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Southern California Ride for Kids @ Glen Helen Raceway Park | San Bernardino | California | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 12 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Southern California Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 7-8:30 a.m. See website for details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-13-2014/" data-type="json">
+													April 13 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34462							ai1ec-event-instance-id-113							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/south-florida-ride-for-kids/?instance_id=113"
+											 											 											 title="South Florida Ride for Kids" >
+											South Florida Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Quiet Waters Park</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/south-florida-ride-for-kids/?instance_id=113"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="South Florida Ride for Kids @ Quiet Waters Park | Deerfield Beach | Florida | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 13 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										South Florida Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-19-2014/" data-type="json">
+													April 19 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																									<div class="clearfix ai1ec-event
+							ai1ec-event-id-35025							ai1ec-event-instance-id-182							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/cove-waterfall-association-motorcycle-ride/?instance_id=182"
+											 											 											 title="Cove Waterfall Association Motorcycle Ride" >
+											Cove Waterfall Association Motorcycle Ride										</a>
+																					<span class="ai1ec-event-location">@ Lee Newton Park</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/cove-waterfall-association-motorcycle-ride/?instance_id=182"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/02/Motorcycle-flyer-206x300.jpg" alt="Cove Waterfall Association Motorcycle Ride @ Lee Newton Park | Jasper | Georgia | United States" width="206" height="300" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 19 @ 8:30 am – 12:30 pm										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										The Cove Waterfall Association (an association of 10 Masonic Lodges in Pickens, Cherokee and Gilmer Counties in Georgia) will hold a benefit motorcycle ride on [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-35059							ai1ec-event-instance-id-202							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/survive-the-ride/?instance_id=202"
+											 											 											 title="Ride to Survive" >
+											Ride to Survive										</a>
+																					<span class="ai1ec-event-location">@ Hail Mary Sports Pub</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/survive-the-ride/?instance_id=202"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Ride to Survive @ Hail Mary Sports Pub | Grayson | Georgia | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 19 @ 9:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Ride to Survive April 19, 2014 at Hail Mary Sports Pub in Grayson, Georgia Price: 25.00 Ride to Survive is an inaugural fundraising event benefiting [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-23-2014/" data-type="json">
+													April 23 (Wednesday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34374							ai1ec-event-instance-id-96							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/laughlin-river-run/?instance_id=96"
+											 											 											 title="Laughlin River Run" >
+											Laughlin River Run										</a>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/laughlin-river-run/?instance_id=96"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Laughlin River Run @ Laughlin | Nevada | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 23 – Apr 26 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										The 32th annual version of the West Coast’s largest motorcycle event will include a custom bike show, poker runs, rides, vendors, concerts, casino action and the Ms. Laughlin River Run contest.									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-26-2014/" data-type="json">
+													April 26 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																									<div class="clearfix ai1ec-event
+							ai1ec-event-id-35467							ai1ec-event-instance-id-208							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/1822-charity-ride/?instance_id=208"
+											 											 											 title="1822 Charity Ride" >
+											1822 Charity Ride										</a>
+																					<span class="ai1ec-event-location">@ New Jerusalem Cathedral</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/1822-charity-ride/?instance_id=208"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="1822 Charity Ride @ New Jerusalem Cathedral | Burlington | North Carolina | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 26 @ 10:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Starting in Burlington, North Carolina Join us on Saturday, April 26, 2014, at 10 a.m. as we take a scenic route in the North Carolina [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~4-27-2014/" data-type="json">
+													April 27 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34463							ai1ec-event-instance-id-114							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/albuquerque-ride-for-kids/?instance_id=114"
+											 											 											 title="Albuquerque Ride for Kids" >
+											Albuquerque Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Hard Rock Café Pavilion</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/albuquerque-ride-for-kids/?instance_id=114"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Albuquerque Ride for Kids @ Hard Rock Café Pavilion | Albuquerque | New Mexico | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 27 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Albuquerque Ride for Kids Benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for further details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34464							ai1ec-event-instance-id-115							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/houston-ride-for-kids/?instance_id=115"
+											 											 											 title="Houston Ride for Kids" >
+											Houston Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Humble Civic Center,</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/houston-ride-for-kids/?instance_id=115"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Houston Ride for Kids @ Humble Civic Center, | Humble | Texas | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Apr 27 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Houston Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-4-2014/" data-type="json">
+													May 4 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34466							ai1ec-event-instance-id-123							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/los-angeles-ride-for-kids/?instance_id=123"
+											 											 											 title="Los Angeles Ride for Kids" >
+											Los Angeles Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ American Honda Motor Co., Inc.</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/los-angeles-ride-for-kids/?instance_id=123"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Los Angeles Ride for Kids @ American Honda Motor Co., Inc. | Torrance | California | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 4 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Los Angeles Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34465							ai1ec-event-instance-id-119							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/n-c-triangle-ride-for-kids/?instance_id=119"
+											 											 											 title="N.C. Triangle Ride for Kids" >
+											N.C. Triangle Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Jordan Lake State Park, White Oak Recreation Area</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/n-c-triangle-ride-for-kids/?instance_id=119"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="N.C. Triangle Ride for Kids @ Jordan Lake State Park, White Oak Recreation Area | North Carolina | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 4 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										N.C. Triangle Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Jordan Lake State Park, White Oak Recreation Area, White Oak Beach Rd., off U.S. [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-9-2014/" data-type="json">
+													May 9 (Friday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34373							ai1ec-event-instance-id-95							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/myrtle-beach-bike-week/?instance_id=95"
+											 											 											 title="Myrtle Beach Bike Week" >
+											Myrtle Beach Bike Week										</a>
+																					<span class="ai1ec-event-location">@ Myrtle Beach Area</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/myrtle-beach-bike-week/?instance_id=95"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Myrtle Beach Bike Week @ Myrtle Beach Area | Myrtle Beach | South Carolina | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 9 – May 17 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Myrtle Beach area, South Carolina
+This rally is essentially a condensed version of Daytona and features vendors, custom bike shows, poker runs, bands and a major street scene, all happening in the general area of Myrtle Beach.
+									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-17-2014/" data-type="json">
+													May 17 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																									<div class="clearfix ai1ec-event
+							ai1ec-event-id-35503							ai1ec-event-instance-id-215							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/3095-freedom-ride/?instance_id=215"
+											 											 											 title="3095 + Freedom Ride" >
+											3095 + Freedom Ride										</a>
+																					<span class="ai1ec-event-location">@ Whitey&#039;s </span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/3095-freedom-ride/?instance_id=215"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/03/3095+Freedom_Ride-8-5x11_MainFlyer_revised-copy-231x300.jpg" alt="3095 + Freedom Ride @ Whitey&#039;s  | Richfield | Ohio | United States" width="231" height="300" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 17 @ 9:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										The 3095 + Freedom Ride in Richfield, Ohio, will celebrate Ohio Veterans&#8217; Memorial Park&#8217;s 5th Anniversary with a ride to the park and the unveiling [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-35849							ai1ec-event-instance-id-227							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/ribs-ridin-rockin-for-relay/?instance_id=227"
+											 											 											 title="Ribs, Ridin&#8217; &amp; Rockin&#8217; For Relay" >
+											Ribs, Ridin&#8217; &amp; Rockin&#8217; For Relay										</a>
+																					<span class="ai1ec-event-location">@ Carroll County Civic Center, Huntingdon, TN. (Hwy 70) </span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-landscape"><a href="http://www.ridermagazine.com/calendar/ribs-ridin-rockin-for-relay/?instance_id=227"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/04/Ribs-Ridin-Rockin-2014-300x100.png" alt="Ribs, Ridin&#039; &amp; Rockin&#039; For Relay @ Carroll County Civic Center, Huntingdon, TN. (Hwy 70)  | Huntingdon | Tennessee | United States" width="300" height="100" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 17 @ 9:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Storm Angels and Lawnmasters Lawn Landscape will host the 4th year of the Ribs, Ridin&#8217; &amp; Rockin&#8217; For Relay at the Carroll County Civic Center [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-35020							ai1ec-event-instance-id-180							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/the-new-sweden-450/?instance_id=180"
+											 											 											 title="The New Sweden 450" >
+											The New Sweden 450										</a>
+																					<span class="ai1ec-event-location">@ Pic a Lilli Inn</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/the-new-sweden-450/?instance_id=180"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/02/New450_05-204x300.png" alt="The New Sweden 450 @ Pic a Lilli Inn | Shamong | New Jersey | United States" width="204" height="300" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 17 @ 9:00 am – May 18 @ 6:00 pm										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										The premise is simple. We provide you with 450 miles of amazing roads, throw in a night of camping, provide a hearty dinner and a [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34433							ai1ec-event-instance-id-100							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/horsepower-for-horsepower-benefit-ride/?instance_id=100"
+											 											 											 title="Horsepower for Horsepower Benefit Ride" >
+											Horsepower for Horsepower Benefit Ride										</a>
+																					<span class="ai1ec-event-location">@ Lone Jack Baptist Church</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/horsepower-for-horsepower-benefit-ride/?instance_id=100"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Horsepower for Horsepower Benefit Ride @ Lone Jack Baptist Church | Lone Jack | Missouri | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 17 @ 9:30 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										May 17, 2014 Lone Jack, Missouri This 100-mile ride will raise funds for HorsePower Experiential Learning, which has been serving youth-at-risk for over 11 years. [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34297							ai1ec-event-instance-id-4							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/the-quail-motorcycle-gathering/?instance_id=4"
+											 											 											 title="The Quail Motorcycle Gathering" >
+											The Quail Motorcycle Gathering										</a>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/the-quail-motorcycle-gathering/?instance_id=4"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="The Quail Motorcycle Gathering" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 17 @ 10:00 am – 3:30 pm										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Carmel, California
+&lt;br&gt;
+A celebration of vintage and modern motorcycles, great company and new adventures, The Quail Motorcycle Gathering has something for everyone—including live music and a signature beverage pavilion all set on the immaculate green grasses of Quail Lodge &amp; Golf Club. Entry includes a mouthwatering barbecue lunch, parking and a gear valet service for those riding a motorcycle to the event.									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-18-2014/" data-type="json">
+													May 18 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34467							ai1ec-event-instance-id-124							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/middle-tennessee-ride-for-kids/?instance_id=124"
+											 											 											 title="Middle Tennessee Ride for Kids" >
+											Middle Tennessee Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Jim Warren Park</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/middle-tennessee-ride-for-kids/?instance_id=124"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Middle Tennessee Ride for Kids @ Jim Warren Park | Franklin | Tennessee | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 18 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Middle Tennessee Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-22-2014/" data-type="json">
+													May 22 (Thursday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34955							ai1ec-event-instance-id-168							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/42nd-annual-49er-rally/?instance_id=168"
+											 											 											 title="42nd Annual 49er Rally" >
+											42nd Annual 49er Rally										</a>
+																					<span class="ai1ec-event-location">@ Mariposa Fairgrounds, Mariposa, CA (Gateway to Yosemite)</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/42nd-annual-49er-rally/?instance_id=168"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="42nd Annual 49er Rally @ Mariposa Fairgrounds, Mariposa, CA (Gateway to Yosemite)" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 22 – May 26 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Join the BMW Club of Northern California at the Mariposa Fairgrounds, just south of Mariposa, California, the gateway to Yosemite, in the Sierra Nevada Foothills. [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-23-2014/" data-type="json">
+													May 23 (Friday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-35211							ai1ec-event-instance-id-193							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/mid-america-freedom-rally-26/?instance_id=193"
+											 											 											 title="Mid America Freedom Rally #26" >
+											Mid America Freedom Rally #26										</a>
+																					<span class="ai1ec-event-location">@ Mid America Freedom Rally #26</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/mid-america-freedom-rally-26/?instance_id=193"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Mid America Freedom Rally #26 @ Mid America Freedom Rally #26 | Buckhorn | Missouri | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 23 – May 26 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Mid America Freedom Rally is a four-day Memorial Day Weekend Motorcycle Rally held in Buckhorn Missouri, exit 153 off I-44 at the Pulaski County Fort [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-30-2014/" data-type="json">
+													May 30 (Friday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																									<div class="clearfix ai1ec-event
+							ai1ec-event-id-34959							ai1ec-event-instance-id-172							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/warrensbrg-bike-rally/?instance_id=172"
+											 											 											 title="Warrensbrg Bike Rally" >
+											Warrensbrg Bike Rally										</a>
+																					<span class="ai1ec-event-location">@ Warrensburg Bike Rally 2014</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/warrensbrg-bike-rally/?instance_id=172"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Warrensbrg Bike Rally @ Warrensburg Bike Rally 2014 | Warrensburg | New York | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 30 @ 10:00 am – Jun 8 @ 10:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										This is the Warrensburg Bike Rallys 12th year, and the third at the Warren County Fairgrounds, Schroon River Road (State Route 50 ). The Rally [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-31-2014/" data-type="json">
+													May 31 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34370							ai1ec-event-instance-id-77							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/americade/?instance_id=77"
+											 											 											 title="Americade" >
+											Americade										</a>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/americade/?instance_id=77"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Americade" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											May 31 – Jun 6 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Billed as the world’s largest touring rally, Americade has been around for more than 30 years. Enjoy parties on the lawn, ghost tours of old Fort William Henry, mini tours, fireworks, boat cruises, seminars, stunt shows, demo rides from many manufacturers, the TourExpo trade show (in two locations) and huge parade. Guest speakers include members of the Rider editorial staff.									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-1-2014/" data-type="json">
+													June 1 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34468							ai1ec-event-instance-id-125							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/atlanta-ride-for-kids/?instance_id=125"
+											 											 											 title="Atlanta Ride for Kids" >
+											Atlanta Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Cumming Fairgrounds</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/atlanta-ride-for-kids/?instance_id=125"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Atlanta Ride for Kids @ Cumming Fairgrounds | Cumming | Georgia | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 1 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Atlanta Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34469							ai1ec-event-instance-id-126							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/virginia-ride-for-kids/?instance_id=126"
+											 											 											 title="Virginia Ride for Kids" >
+											Virginia Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Richmond Times-Dispatch</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/virginia-ride-for-kids/?instance_id=126"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Virginia Ride for Kids @ Richmond Times-Dispatch | Mechanicsville | Virginia | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 1 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Virginia Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																				<div class="clearfix ai1ec-event
+							ai1ec-event-id-35814							ai1ec-event-instance-id-223							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/blue-knights-ncii-10th-annual-officer-down-memorial-ride/?instance_id=223"
+											 											 											 title="Blue Knights NCII 10th Annual Officer Down Memorial Ride" >
+											Blue Knights NCII 10th Annual Officer Down Memorial Ride										</a>
+																					<span class="ai1ec-event-location">@ Ray Price Harley-Davidson</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/blue-knights-ncii-10th-annual-officer-down-memorial-ride/?instance_id=223"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Blue Knights NCII 10th Annual Officer Down Memorial Ride @ Ray Price Harley-Davidson | Raleigh | North Carolina | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 1 @ 10:00 am										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										The 10th Annual Officer Down Memorial Ride will take place on Sunday, June 1, 2014 at Ray Price Harley-Davidson in Raleigh, North Carolina.  Registration will begin at 10 [...]									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-6-2014/" data-type="json">
+													June 6 (Friday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34295							ai1ec-event-instance-id-86							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/7th-annual-friends-of-steve-mcqueen-car-and-motorcycle-show/?instance_id=86"
+											 											 											 title="7th Annual Friends of Steve McQueen Car and Motorcycle Show" >
+											7th Annual Friends of Steve McQueen Car and Motorcycle Show										</a>
+																					<span class="ai1ec-event-location">@ The Boys Republic of Chino HIlls</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/7th-annual-friends-of-steve-mcqueen-car-and-motorcycle-show/?instance_id=86"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="7th Annual Friends of Steve McQueen Car and Motorcycle Show @ The Boys Republic of Chino HIlls | Chino Hills | California | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 6 – Jun 7 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Chino Hills, California
+&lt;br&gt;
+The 7th Annual Friends of Steve McQueen Car and Motorcycle Show celebrates “The Thomas Crown Affair.” Click for more details.									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-8-2014/" data-type="json">
+													June 8 (Sunday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34470							ai1ec-event-instance-id-127							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/cleveland-ride-for-kids/?instance_id=127"
+											 											 											 title="Cleveland Ride for Kids" >
+											Cleveland Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Independence Fieldhouse Soccer Fields</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/cleveland-ride-for-kids/?instance_id=127"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Cleveland Ride for Kids @ Independence Fieldhouse Soccer Fields | Independence | Ohio | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 8 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Cleveland Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																				<div class="clearfix ai1ec-event
+							ai1ec-event-id-34471							ai1ec-event-instance-id-129							">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/colorado-ride-for-kids/?instance_id=129"
+											 											 											 title="Colorado Ride for Kids" >
+											Colorado Ride for Kids										</a>
+																					<span class="ai1ec-event-location">@ Jefferson Co. Human Services Bldg.</span>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/colorado-ride-for-kids/?instance_id=129"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Colorado Ride for Kids @ Jefferson Co. Human Services Bldg. | Golden | Colorado | United States" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 8 @ 1:15 pm										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Colorado Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+													</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+					<div class="ai1ec-date ">
+				<div class="ai1ec-date-title">
+					<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-14-2014/" data-type="json">
+													June 14 (Saturday)											</a><!--/.ai1ec-load-view-->
+				</div><!--/.ai1ec-date-title-->
+				<div class="ai1ec-date-events">
+																<div class="clearfix ai1ec-event
+							ai1ec-event-id-34369							ai1ec-event-instance-id-76							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/laconia-motorcycle-week/?instance_id=76"
+											 											 											 title="Laconia Motorcycle Week" >
+											Laconia Motorcycle Week										</a>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/laconia-motorcycle-week/?instance_id=76"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Laconia Motorcycle Week" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 14 – Jun 21 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Come celebrate the 91st anniversary of the longest running motorcycle event in North America. It’s huge and includes vendors, demo rides, guided tours, boat cruises, bike shows, a bike build-off, swap meet and a major street scene with live bands. Also enjoy vintage roadracing including GP, flat-track and the Loudon Classic roadrace.									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+											<div class="clearfix ai1ec-event
+							ai1ec-event-id-34294							ai1ec-event-instance-id-1							ai1ec-allday">
+								<div class="ai1ec-event-inner clearfix">
+																		<div class="ai1ec-event-title">
+										<a class="ai1ec-load-event"
+												href="http://www.ridermagazine.com/calendar/mother-road-ride-rally-20th-anniversary-ride-of-route-66/?instance_id=1"
+											 											 											 title="Mother Road Ride Rally: 20th Anniversary Ride of Route 66" >
+											Mother Road Ride Rally: 20th Anniversary Ride of Route 66										</a>
+																			</div><!--/.ai1ec-event-title-->
+
+									<div class="ai1ec-event-avatar-wrap pull-left">
+										<div class="ai1ec-event-avatar timely  ai1ec-default_avatar ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/mother-road-ride-rally-20th-anniversary-ride-of-route-66/?instance_id=1"><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/default-event-avatar.png" alt="Mother Road Ride Rally: 20th Anniversary Ride of Route 66" width="256" height="256" /></a></div>									</div>
+									<div class="ai1ec-event-meta">
+										<span class="ai1ec-event-time">
+											<i class="icon-calendar"></i>
+											Jun 14 – Jun 21 <span class="ai1ec-allday-badge">all-day</span>										</span><!--/.ai1ec-event-time-->
+																													</div>
+									<div class="ai1ec-event-description">
+										Willow Brook, Illinois, to Santa Monica, California
+&lt;br&gt;
+This is a nine-day motorcycle ride down old Route 66. The ride starts on the June 14, 2014, at La Quinta Inn in Willow Brook, Illinois. The ride will follow Route 66 to Santa Monica, California and will end on June 22, 2014, with an awards dinner in California. 									</div>
+								</div><!--/.ai1ec-event-inner-->
+							</div><!--/.ai1ec-event-->
+																						</div><!--/.ai1ec-date-events-->
+			</div><!--/.ai1ec-date-->
+			</div><!--/.ai1ec-stream-view-->
+<div class="pull-right"><div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-page ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~stream/page_offset~-1/time_limit~1397257199/"
+				>
+				<i class="icon-chevron-left"></i>			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='4/11/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~stream/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-page ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~stream/page_offset~1/time_limit~1402722001/"
+				>
+				<i class="icon-chevron-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+</div>
+			</div>
+		</div>
+
+		<div class="ai1ec-subscribe-container btn-group pull-left">
+	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=155072423"
+		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
+		<i class="icon-plus"></i>
+					Subscribe			</a>
+	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
+		data-placement="bottom"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D155072423"
+		title="Subscribe to this calendar in your Google Calendar" >
+		<i class="icon-google-plus icon-large"></i>
+		Add to Google	</a>
+</div>
+	</div><!-- /.timely -->
+</div>
+<!-- END All-in-One Event Calendar Plugin -->
