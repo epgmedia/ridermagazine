@@ -350,7 +350,7 @@ function my_admin_bar_menu() {
 	'title' => __( 'Logout'),
 	'href' => wp_logout_url( home_url() ) ) );
 }
-add_action('admin_bar_menu', 'my_admin_bar_menu');
+//add_action('admin_bar_menu', 'my_admin_bar_menu');
 
 function sno_dashboard_widget() {
 	// Display whatever it is you want to show
@@ -383,7 +383,7 @@ function sno_dashboard_widget() {
 		<?php
 } 
 
-add_action('wp_dashboard_setup', 'sno_add_dashboard_widgets' );
+//add_action('wp_dashboard_setup', 'sno_add_dashboard_widgets' );
 
 function sno_add_dashboard_widgets() {
 	wp_add_dashboard_widget('sno_announcements', 'GoPublish News & Announcements', 'sno_dashboard_widget');
