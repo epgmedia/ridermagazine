@@ -19,28 +19,29 @@ Template Name: Archive Page
 		<div class="archive">
 
 			<b>by page:</b>
-				<ul>
-					<?php wp_list_pages('title_li='); ?>
-				</ul>
+            <ul>
+                <?php wp_list_pages('title_li='); ?>
+            </ul>
 		
 			<b>by month:</b>
-				<ul>
-					<?php wp_get_archives('type=monthly'); ?>
-				</ul>
+            <ul>
+                <?php wp_get_archives('type=monthly'); ?>
+            </ul>
 					
 			<b>by category:</b>
-				<ul>
-					<?php wp_list_cats('sort_column=name'); ?>
-				</ul>
+            <ul>
+                <?php wp_list_cats('sort_column=name'); ?>
+            </ul>
 
 		</div>
 		
 		<div class="archive">
 			
 			<b>by post:</b>
-				<ul>
-					<?php get_archives('postbypost', 100); ?>
-				</ul>
+            <ul>
+                <?php get_archives('postbypost', 100); ?>
+            </ul>
+
 		</div>
 						
 		</div>

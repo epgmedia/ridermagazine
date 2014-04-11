@@ -5,52 +5,110 @@
 
    <div id="contentleft">
    
-       <div class="postarea">
+        <div class="postarea">
 
-<div class="breadcrumb">
-<a href="http://www.ridermagazine.com" title="Go to Home.">Home</a> >
-<a href="http://www.ridermagazine.com/manufacturer" title="Go to the MANUFACTURER category archives.">MANUFACTURER</a> > Harley-Davidson Motorcycle Reviews
-</div>
-           		<p><?php 
-                   //echo category_description(); 
-                   echo "
-<img src=\"http://www.ridermagazine.com/wp-content/uploads/2012/LP/logo-harley-davidson.gif\" width=\"205\" height=\"168\" align=\"left\" style=\"margin-right:15px;\">				   
-<h1 style=\"font-weight:bold\">Harley Davidson Motorcycle<br/> Road Tests &amp; Reviews</h1>
-<h2 class=\"top\"><strong>Harley-Davidson Motorcycle Guide </strong></h2>
-<p>Harley-Davidson motorcycles, founded in 1903 in Milwaukee, Wisconsin, by William S. Harley and brothers Arthur and Walter Davidson, is the largest American motorcycle manufacturer and the world's oldest continuously operating motorcycle manufacturer. The company is still headquartered in Milwaukee, in the same location on Juneau Avenue since 1906. In 2008 Harley-Davidson opened a large museum in downtown Milwaukee that coincided with the company's 105th anniversary celebrations. Harley-Davidson motorcycle reviews depict one of the world's most recognizable brands, and the company has a very loyal, brand-centric community, organized in part through the Harley Owners Group (H.O.G.).</p>			
-				"; ?>
+            <div class="breadcrumb">
+
+                <a href="http://www.ridermagazine.com" title="Go to Home.">Home</a> >
+                <a href="http://www.ridermagazine.com/manufacturer" title="Go to the MANUFACTURER category archives.">MANUFACTURER</a> >
+                Harley-Davidson Motorcycle Reviews
+
+            </div>
+
+            <div>
+
+                <?php //echo category_description(); ?>
+
+                <img src="http://www.ridermagazine.com/wp-content/uploads/2012/LP/logo-harley-davidson.gif" width="205" height="168" align="left" style="margin-right:15px;">
+
+                <h1 style="font-weight:bold">Harley Davidson Motorcycle
+                    <br/> Road Tests &amp; Reviews
+                </h1>
+
+                <h2 class="top"><strong>Harley-Davidson Motorcycle Guide </strong></h2>
+
+                <p>
+                    Harley-Davidson motorcycles, founded in 1903 in Milwaukee, Wisconsin,
+                    by William S. Harley and brothers Arthur and Walter Davidson, is
+                    the largest American motorcycle manufacturer and the world's oldest
+                    continuously operating motorcycle manufacturer. The company is still
+                    headquartered in Milwaukee, in the same location on Juneau Avenue since
+                    1906. In 2008 Harley-Davidson opened a large museum in downtown Milwaukee
+                    that coincided with the company's 105th anniversary celebrations.
+                    Harley-Davidson motorcycle reviews depict one of the world's most
+                    recognizable brands, and the company has a very loyal, brand-centric
+                    community, organized in part through the Harley Owners Group (H.O.G.).
                 </p>
-           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-           <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-            <?php 	$audio = get_post_meta($post->ID, audio, true); 
-            		$video = get_post_meta($post->ID, video, true); 
-            		?>
+            </div>
 
-				<?php if (has_post_thumbnail()) 
-					{ the_post_thumbnail( 'archive', array('class' => 'categoryimage')); } ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<?php if ($video) { $pattern = "/height=\"[0-9]*\"/"; $video = preg_replace($pattern, "height='150'", $video); $pattern = "/width=\"[0-9]*\"/"; $video = preg_replace($pattern, "width='200'", $video); ?><div style="float:right;width:200px;margin-bottom:15px;margin-left:10px"><?php echo $video; ?></div><?php } ?>
-                <?php if ($audio) { ?><div style="width:300px;"><?php $audioplayer = "[audio:" . $audio . "]"; if (function_exists('insert_audio_player')) { insert_audio_player($audioplayer); } echo '</div>'; } ?>
+            <h1>
+                <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h1>
 
+        <?php
+            $audio = get_post_meta($post->ID, audio, true);
+            $video = get_post_meta($post->ID, video, true);
 
+            if (has_post_thumbnail()) {
+                the_post_thumbnail( 'archive', array('class' => 'categoryimage'));
+            }
 
-            <p><?php snowriter(); ?><?php the_time('F j, Y'); ?><?php edit_post_link('(Edit)', ' &bull; ', ''); ?></p>
+            if ($video) {
+                $pattern = "/height=\"[0-9]*\"/";
+                $video = preg_replace($pattern, "height='150'", $video);
+                $pattern = "/width=\"[0-9]*\"/";
+                $video = preg_replace($pattern, "width='200'", $video);
+                ?>
+                <div style="float:right;width:200px;margin-bottom:15px;margin-left:10px">
+                    <?php echo $video; ?>
+                </div>
+                <?php
+            }
+            if ($audio) { ?>
+                <div style="width:300px;">
+                    <?php $audioplayer = "[audio:" . $audio . "]";
+                    if (function_exists('insert_audio_player')) {
+                        insert_audio_player($audioplayer);
+                    } ?>
+                </div>
+                <?php
+            }
+        ?>
+            <p>
+                <?php
+                snowriter();
+                the_time('F j, Y');
+                edit_post_link('(Edit)', ' &bull; ', '');
+                ?>
+            </p>
         
-            <?php the_content_limit(300, "Read more &raquo;"); ?><div style="clear:both;"></div>
-            
+            <?php the_content_limit(300, "Read more &raquo;"); ?>
 
+            <div style="clear:both;"></div>
             
             <div class="postmeta2">
-                <?php the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>'); ?> 
+                <?php
+                the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>');
+                ?>
             </div>
             
-            <?php endwhile; else: ?>
+            <?php endwhile;
+        else: ?>
            
-           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-           <p><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></p>
-           
-       </div>
+            <p>
+                <?php _e('Sorry, no posts matched your criteria.'); ?>
+            </p>
+
+    <?php endif; ?>
+
+            <p>
+                <?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?>
+            </p>
+
+        </div>
                
    </div>
    

@@ -2,9 +2,8 @@
 /*
 Template Name: Enews Contest
 */
-?>
-            
-       <?php get_header(); ?>
+
+get_header(); ?>
 
 
 <div id="content">
@@ -13,15 +12,30 @@ Template Name: Enews Contest
 	
 		<div class="postarea" style="width:920px">
 				
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php $title=get_post_meta($post->ID, title, true); if (!$title) { ?><h1><?php the_title(); ?></h1><?php } ?>
-				<?php edit_post_link('(Edit This Page)', '<p>', '</p>'); ?>
-		
-			<?php the_content(__('[Read more]'));?>
-		 			
-			<?php endwhile; else: ?>
+        <?php
+        if (have_posts()) : while (have_posts()) : the_post();
+
+            $title=get_post_meta($post->ID, title, true);
+
+            if (!$title) { ?>
+
+                <h1><?php the_title(); ?></h1>
+
+            <?php }
+
+            edit_post_link('(Edit This Page)', '<p>', '</p>');
+
+            the_content(__('[Read more]'));
+
+            endwhile;
+
+        else: ?>
 			
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+			<p>
+                <?php _e('Sorry, no posts matched your criteria.'); ?>
+            </p>
+
+        <?php endif; ?>
 						
 		</div>
 		

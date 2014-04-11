@@ -2,45 +2,85 @@
 
 <div id="content">
 
-   <div id="contentleft">
+    <div id="contentleft">
    
-       <div class="postarea">
+        <div class="postarea">
 
-		<?php include(TEMPLATEPATH."/breadcrumb.php");  ?>
-           		<p><?php 
-                   //echo category_description(); 
-                   echo "<strong>BMW Motorcycle Reviews</strong><br />
-<b>BMW motorcycle reviews</b>, comparisons and news from <i>Rider</i> magazine. Search for a specific review using our search option or browse our full collection of BMW road tests."; ?>
-                </p>
-           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-           <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            <?php include(TEMPLATEPATH."/breadcrumb.php");  ?>
 
-            <?php 	$audio = get_post_meta($post->ID, audio, true); 
-            		$video = get_post_meta($post->ID, video, true); 
-            		?>
+            <p>
+                <?php //echo category_description(); ?>
+                <strong>BMW Motorcycle Reviews</strong><br />
+                <b>BMW motorcycle reviews</b>, comparisons and news from <i>Rider</i>
+                magazine. Search for a specific review using our search option or browse
+                our full collection of BMW road tests.
+            </p>
 
-				<?php if (has_post_thumbnail()) 
-					{ the_post_thumbnail( 'archive', array('class' => 'categoryimage')); } ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<?php if ($video) { $pattern = "/height=\"[0-9]*\"/"; $video = preg_replace($pattern, "height='150'", $video); $pattern = "/width=\"[0-9]*\"/"; $video = preg_replace($pattern, "width='200'", $video); ?><div style="float:right;width:200px;margin-bottom:15px;margin-left:10px"><?php echo $video; ?></div><?php } ?>
-                <?php if ($audio) { ?><div style="width:300px;"><?php $audioplayer = "[audio:" . $audio . "]"; if (function_exists('insert_audio_player')) { insert_audio_player($audioplayer); } echo '</div>'; } ?>
+            <h1>
+                <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h1>
 
+            <?php
+            $audio = get_post_meta($post->ID, audio, true);
 
+            $video = get_post_meta($post->ID, video, true);
 
-            <p><?php snowriter(); ?><?php the_time('F j, Y'); ?><?php edit_post_link('(Edit)', ' &bull; ', ''); ?></p>
-        
-            <?php the_content_limit(300, "Read more &raquo;"); ?><div style="clear:both;"></div>
-            
+            if (has_post_thumbnail()) {
+                the_post_thumbnail( 'archive', array('class' => 'categoryimage'));
+            }
 
+            if ($video) {
+                $pattern = "/height=\"[0-9]*\"/";
+                $video = preg_replace($pattern, "height='150'", $video);
+                $pattern = "/width=\"[0-9]*\"/";
+                $video = preg_replace($pattern, "width='200'", $video);
+                ?>
+                <div style="float:right;width:200px;margin-bottom:15px;margin-left:10px">
+                    <?php echo $video; ?>
+                </div>
+                <?php
+            }
+            if ($audio) { ?>
+                <div style="width:300px;">
+                    <?php
+                    $audioplayer = "[audio:" . $audio . "]";
+                    if (function_exists('insert_audio_player')) {
+                        insert_audio_player($audioplayer);
+                    } ?>
+                </div>
+                <?php
+            } ?>
+            <p>
+                <?php
+                snowriter();
+                the_time('F j, Y');
+                edit_post_link('(Edit)', ' &bull; ', '');
+                ?>
+            </p>
+
+            <?php the_content_limit(300, "Read more &raquo;"); ?>
+
+            <div style="clear:both;"></div>
             
             <div class="postmeta2">
-                <?php the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>'); ?> 
+                <?php
+                the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>');
+                ?>
             </div>
             
-            <?php endwhile; else: ?>
-           
-           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-           <p><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></p>
+            <?php endwhile;
+        else: ?>
+            <p>
+                <?php _e('Sorry, no posts matched your criteria.'); ?>
+            </p>
+        <?php endif; ?>
+            <p>
+                <?php
+                posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;'));
+                ?>
+            </p>
            
        </div>
                

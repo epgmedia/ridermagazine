@@ -1,6 +1,7 @@
-<!--style choices for customized widget headers and backgrounds-->
+<?php
+//style choices for customized widget headers and backgrounds
 
-<?php if ($instance['widget-style']=="Style 1") { ?>
+if ($instance['widget-style']=="Style 1") { ?>
 
 	<h4 class="widget1" <?php if ($customcolors==on) { ?>style="
 		background-color:<?php echo $instance['header-color']; ?> !important; 
