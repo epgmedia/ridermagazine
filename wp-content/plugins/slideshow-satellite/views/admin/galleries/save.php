@@ -3,13 +3,10 @@ global $post, $post_ID;
 $post_ID = 1;
 wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false);
 wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false);
-
+$single = (isset($single)) ? $single : null;
 $slides = $this -> Slide -> find_all(array('section'=>(int) stripslashes($single)), null, array('slide_order', "ASC"));
 
 $pluginName = "Slideshow Satellite";
-$shortname = "satl";
-$ptypes1 = get_post_types(array('public' => true),'names','and');
-$ptypes = array_push($ptypes1, 'resume');
 $options = $this -> Config -> displayOption('gallery', $this -> Gallery);
         
 ?>        
@@ -62,7 +59,7 @@ $options = $this -> Config -> displayOption('gallery', $this -> Gallery);
                 return false;
             });
         });
-    }
+    });
 
     </script>
 
@@ -78,7 +75,7 @@ $options = $this -> Config -> displayOption('gallery', $this -> Gallery);
 
     <img src="<?php echo(SATL_PLUGIN_URL.'/images/Satellite-Logo-sm.png');?>" style="height:100px" />
     <div class="wrap">
-    <?php if ($this -> Gallery -> data -> id) : ?>
+    <?php if ($this -> Gallery -> data) : ?>
       <h2><?php echo $pluginName; ?> <?php _e('Gallery Editor', SATL_PLUGIN_NAME); ?></h2>
       <div id="gallery-slide-switch">
         Switch Your View: <a class="btn btn-primary" href="<?php echo(admin_url()."admin.php?page=satellite-slides&single=".$this -> Gallery -> data -> id) ?>">Slides View</a>
@@ -88,19 +85,23 @@ $options = $this -> Config -> displayOption('gallery', $this -> Gallery);
     <?php endif; ?>
 
 
-    <form action="<?php echo $this -> url; ?>&amp;method=save" name="post" id="post" method="post">
+    <form action="<?php echo $this -> url; ?>&amp;method=save" name="post" id="post" method="post" class="satl_table">
+    <?php  // If this is a current gallery - we must collect that
+    if ($this -> Gallery -> data) : ?>
     <input type="hidden" name="Gallery[id]" value="<?php echo $this -> Gallery -> data -> id; ?>" />
-        <?php $this -> Form -> display($options, 'Gallery'); ?>
+    <?php endif; ?>
+
+    <?php $this -> Form -> display($options, 'Gallery'); ?>
     
     <p class="submit">
-    <input name="saver" type="submit" value="Save" />
+    <input name="saver" type="submit" value="Save" class="btn btn-primary" />
     <input type="hidden" name="action" value="save-option" />
     </p>
     </form>
 
     <form method="post">
     <p class="submit">
-    <input name="reseter" type="submit" value="Reset" />
+    <input name="reseter" type="submit" value="Reset" class="btn btn-danger" />
     <input type="hidden" name="action" value="reset-option" />
     </p>
     </form>

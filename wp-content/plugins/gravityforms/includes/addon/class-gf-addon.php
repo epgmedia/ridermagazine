@@ -123,6 +123,8 @@ abstract class GFAddOn {
 
         load_plugin_textdomain($this->_slug, FALSE, $this->_slug . '/languages');
 
+        add_filter("gform_logging_supported", array($this, "set_logging_supported"));
+
         if(RG_CURRENT_PAGE == 'admin-ajax.php') {
 
             //If gravity forms is supported, initialize AJAX
@@ -280,7 +282,7 @@ abstract class GFAddOn {
     protected function styles(){
         return array(
             array(  "handle" => "gaddon_form_settings_css",
-                    "src" => GFAddOn::get_gfaddon_base_url() . "/css/gaddon_form_settings.css",
+                    "src" => GFAddOn::get_gfaddon_base_url() . "/css/gaddon_settings.css",
                     "version" => GFCommon::$version,
                     "enqueue" => array(
                         array("admin_page" => array("form_settings", "plugin_settings", "plugin_page") )
@@ -374,6 +376,19 @@ abstract class GFAddOn {
                   "enqueue"  => array(
                       array("admin_page" => array("results")),
                   )
+            ),
+            array(
+                'handle'   => 'gaddon_repeater',
+                'src'      => GFAddOn::get_gfaddon_base_url() . '/js/repeater.js',
+                'version'  => GFCommon::$version,
+                'deps'     => array( 'jquery' ),
+                'enqueue'  => array(
+                    array(
+                        'admin_page'  => array( 'form_settings' )
+//                    ,
+//                        'field_types' => array( 'dynamic_field_map' )
+                    )
+                )
             )
         );
     }
@@ -693,6 +708,13 @@ abstract class GFAddOn {
         $gf_results->init();
     }
 
+    //--------------  Logging integration  --------------------------------------
+
+    function set_logging_supported($plugins){
+        $plugins[$this->_slug] = $this->_title;
+        return $plugins;
+    }
+
 
     //--------------  Members plugin integration  --------------------------------------
 
@@ -810,10 +832,10 @@ abstract class GFAddOn {
             <?php endif; ?>
 
             <?php if( $description ): ?>
-                <p class="gaddon-section-description"><?php echo $description; ?></p>
+                <div class="gaddon-section-description"><?php echo $description; ?></div>
             <?php endif; ?>
 
-            <table class="form-table">
+            <table class="form-table gforms_form_settings">
 
                 <?php
                 foreach($section['fields'] as $field) {
@@ -844,23 +866,13 @@ abstract class GFAddOn {
     */
     protected function single_setting_row( $field ) {
 
-        $display = rgar( $field, 'hidden' ) ? 'style="display:none;"' : '';
+        $display = rgar( $field, 'hidden' ) || rgar( $field, 'type' ) == 'hidden' ? 'style="display:none;"' : '';
 
         ?>
 
         <tr id="gaddon-setting-row-<?php echo $field["name"] ?>" <?php echo $display; ?>>
             <th>
-                <?php
-
-                    echo $field["label"];
-
-                    if( rgar( $field, 'required' ) )
-                        echo ' ' . $this->get_required_indicator( $field );
-
-                    if( isset( $field['tooltip'] ) )
-                        echo ' ' . gform_tooltip( $field['tooltip'], rgar( $field, 'tooltip_class'), true );
-
-                ?>
+                <?php $this->single_setting_label( $field ); ?>
             </th>
             <td>
                 <?php $this->single_setting( $field ); ?>
@@ -868,6 +880,18 @@ abstract class GFAddOn {
         </tr>
 
         <?php
+    }
+
+    protected function single_setting_label( $field ) {
+
+        echo $field['label'];
+
+        if( isset( $field['tooltip'] ) )
+            echo ' ' . gform_tooltip( $field['tooltip'], rgar( $field, 'tooltip_class'), true );
+
+        if( rgar( $field, 'required' ) )
+            echo ' ' . $this->get_required_indicator( $field );
+
     }
 
     protected function single_setting_row_save( $field ) {
@@ -951,7 +975,7 @@ abstract class GFAddOn {
     }
 
     protected static function is_json($value) {
-        if (is_string($value) && substr($value, 0, 1) == '{' && is_array(json_decode($value, ARRAY_A)))
+        if (is_string($value) && in_array( substr($value, 0, 1), array( '{', '[' ) ) && is_array(json_decode($value, ARRAY_A)))
             return true;
 
         return false;
@@ -1004,6 +1028,68 @@ abstract class GFAddOn {
 
         return $setting;
     }
+
+    protected function get_mapped_field_value( $setting_name, $form, $entry, $settings = false ){
+
+        $field_id = $this->get_setting($setting_name, "", $settings);
+
+        $field_type = GFFormsModel::get_input_type(GFFormsModel::get_field($form, $field_id));
+        $is_field_id_integer = ctype_digit($field_id);
+
+        if($is_field_id_integer && $field_type == "name"){
+            //Full Name
+            $value = $this->get_full_name($entry, $field_id);
+        }
+        else if($is_field_id_integer && $field_type == "address"){
+            //Full Address
+            $value = $this->get_full_address($entry, $field_id);
+        }
+        else{
+            $value = rgar($entry, $field_id);
+        }
+
+        return $value;
+    }
+
+    protected function get_full_address($entry, $field_id){
+        $street_value = str_replace("  ", " ", trim($entry[$field_id . ".1"]));
+        $street2_value = str_replace("  ", " ", trim($entry[$field_id . ".2"]));
+        $city_value = str_replace("  ", " ", trim($entry[$field_id . ".3"]));
+        $state_value = str_replace("  ", " ", trim($entry[$field_id . ".4"]));
+        $zip_value = trim($entry[$field_id . ".5"]);
+        $country_value = GFCommon::get_country_code(trim($entry[$field_id . ".6"]));
+
+        $address = $street_value;
+        $address .= !empty($address) && !empty($street2_value) ? "  $street2_value" : $street2_value;
+        $address .= !empty($address) && (!empty($city_value) || !empty($state_value)) ? ", $city_value," : $city_value;
+        $address .= !empty($address) && !empty($city_value) && !empty($state_value) ? "  $state_value" : $state_value;
+        $address .= !empty($address) && !empty($zip_value) ? "  $zip_value," : $zip_value;
+        $address .= !empty($address) && !empty($country_value) ? "  $country_value" : $country_value;
+
+
+        return $address;
+    }
+
+    protected function get_full_name($entry, $field_id){
+
+        //If field is aweber (one input), simply return full content
+        $name = rgar($entry,$field_id);
+        if(!empty($name))
+            return $name;
+
+        //Complex field (multiple inputs). Join all pieces and create name
+        $prefix = trim(rgar($entry,$field_id . ".2"));
+        $first = trim(rgar($entry,$field_id . ".3"));
+        $last = trim(rgar($entry,$field_id . ".6"));
+        $suffix = trim(rgar($entry,$field_id . ".8"));
+
+        $name = $prefix;
+        $name .= !empty($name) && !empty($first) ? " $first" : $first;
+        $name .= !empty($name) && !empty($last) ? " $last" : $last;
+        $name .= !empty($name) && !empty($suffix) ? " $suffix" : $suffix;
+        return $name;
+    }
+
 
     /***
     * Determines if a dependent field has been populated.
@@ -1164,6 +1250,9 @@ abstract class GFAddOn {
                     esc_html($value) .
                 '</textarea>';
 
+        if( $this->field_failed_validation( $field ) )
+            $html .= $this->get_error_icon( $field );
+
         if ($echo)
             echo $html;
 
@@ -1224,26 +1313,70 @@ abstract class GFAddOn {
                 $choice_attributes = $this->get_choice_attributes($choice, $field_attributes);
                 $value        = $this->get_setting($choice['name'], rgar($choice, "default_value"));
                 $tooltip =  isset( $choice['tooltip'] ) ? gform_tooltip( $choice['tooltip'], rgar( $choice, 'tooltip_class'), true ) : "";
-                $hidden_field_value = $value == '1' ? '1' : '0';
-                $html .= '
-                    <div id="gaddon-setting-checkbox-choice-' . $choice['id'] . '" class="gaddon-setting-checkbox' . $horizontal . '">
-                        <input type=hidden name="_gaddon_setting_' . esc_attr($choice["name"]) . '" value="' . $hidden_field_value . '" />
-                        <input
-                            type = "checkbox"' .
-                            implode( ' ', $choice_attributes ) . ' ' .
-                            checked( $value, "1", false ) .
-                        ' />
-                        <label for="' . esc_attr($choice['id']) . '">' . esc_html($choice['label']) . ' ' . $tooltip .'</label>
-                    </div>
-                    ';
+
+
+                $html .= $this->checkbox_item($choice, $horizontal, $choice_attributes, $value, $tooltip);
+
             }
         }
+
+        if( $this->field_failed_validation( $field ) )
+            $html .= $this->get_error_icon( $field );
 
         if ($echo)
             echo $html;
 
         return $html;
     }
+
+
+    /**
+     * Returns the markup for an individual checkbox item give the parameters
+     * @param $choice - Choice array with all configured properties
+     * @param $horizontal_class - CSS class to style checkbox items horizontally
+     * @param $attributes - String containing all the attributes for the input tag.
+     * @param $value - Currently selection (1 if field has been checked. 0 or null otherwise)
+     * @param $tooltip - String containing a tooltip for this checkbox item.
+     * @return string - The markup of an individual checkbox item
+     */
+    protected function checkbox_item($choice, $horizontal_class, $attributes, $value, $tooltip)
+    {
+        $hidden_field_value = $value == '1' ? '1' : '0';
+
+        $checkbox_item = '
+                    <div id="gaddon-setting-checkbox-choice-' . $choice['id'] . '" class="gaddon-setting-checkbox' . $horizontal_class . '">
+                        <input type=hidden name="_gaddon_setting_' . esc_attr($choice["name"]) . '" value="' . $hidden_field_value . '" />';
+
+        if( is_callable( array( $this, "checkbox_input_{$choice["name"]}" ) ) ) {
+            $markup = call_user_func( array( $this, "checkbox_input_{$choice["name"]}" ), $choice, $attributes, $value, $tooltip );
+        }
+        else{
+            $markup = $this->checkbox_input($choice, $attributes, $value, $tooltip);
+        }
+
+        $checkbox_item .= $markup . '</div>';
+
+        return $checkbox_item;
+    }
+
+    /**
+     * Returns the markup for an individual checkbox input and its associated label
+     * @param $choice - Choice array with all configured properties
+     * @param $attributes - String containing all the attributes for the input tag.
+     * @param $value - Currently selection (1 if field has been checked. 0 or null otherwise)
+     * @param $tooltip - String containing a tooltip for this checkbox item.
+     * @return string - The markup of an individual checkbox input and its associated label
+     */
+    protected function checkbox_input($choice, $attributes, $value, $tooltip)
+    {
+        $markup = '<input type = "checkbox"' .
+            implode(' ', $attributes) . ' ' .
+            checked($value, "1", false) .
+            ' />
+            <label for="' . esc_attr($choice['id']) . '">' . esc_html($choice['label']) . ' ' . $tooltip . '</label>';
+        return $markup;
+    }
+
 
     /***
      * Renders and initializes a radio field or a collection of radio fields based on the $field array
@@ -1272,19 +1405,23 @@ abstract class GFAddOn {
                 $checked     = checked($selected_value, $radio_value, false);
                 $html .= '
                         <div id="gaddon-setting-radio-choice-' . $choice['id'] . '" class="gaddon-setting-radio' . $horizontal . '">
-                        <input
-                            id = "' . esc_attr($choice['id']) . '"
-                            type = "radio" ' .
-                            'name="_gaddon_setting_' . esc_attr($field["name"]) . '" ' .
-                            'value="' . $radio_value . '" ' .
-                            implode( ' ', $choice_attributes ) . ' ' .
-                            $checked .
-                            ' />
-                            <label for="' . esc_attr($choice['id']) . '">' . esc_html($choice['label']) . ' ' . $tooltip . '</label>
+                        <label for="' . esc_attr($choice['id']) . '">
+                            <input
+                                id = "' . esc_attr($choice['id']) . '"
+                                type = "radio" ' .
+                                'name="_gaddon_setting_' . esc_attr($field["name"]) . '" ' .
+                                'value="' . $radio_value . '" ' .
+                                implode( ' ', $choice_attributes ) . ' ' .
+                                $checked .
+                                ' /><span>'. esc_html($choice['label']) . ' ' . $tooltip . '</span>
+                        </label>
                         </div>
                     ';
             }
         }
+
+        if( $this->field_failed_validation( $field ) )
+            $html .= $this->get_error_icon( $field );
 
         if ($echo)
             echo $html;
@@ -1302,39 +1439,318 @@ abstract class GFAddOn {
     */
     protected function settings_select( $field, $echo = true ) {
 
-        $field["type"] = "select"; //making sure type is set to select
-        $attributes = $this->get_field_attributes($field);
-        $value = $this->get_setting($field["name"], rgar($field, "default_value"));
-        $name = '' . esc_attr($field["name"]);
+        $field['type'] = 'select'; // making sure type is set to select
+        $attributes    = $this->get_field_attributes($field);
+        $value         = $this->get_setting( $field['name'], rgar( $field, 'default_value' ) );
+        $name          = '' . esc_attr( $field['name'] );
 
-        $options = "";
-        if(is_array($field["choices"])){
-            foreach( $field["choices"] as $choice ) {
-
-                if(!isset($choice["value"]))
-                    $choice["value"] = $choice["label"];
-
-                $options .= '<option value="' . esc_attr($choice['value']) . '" ' . selected( $value, $choice['value'], false ) . '>' .
-                            $choice['label'] .
-                         '</option>';
-            }
-        }
-
-        $html =     '<select
-                            name="_gaddon_setting_' . $name . '"' .
-                            implode( ' ', $attributes ) .
-                            '>' .
-                        $options .
-                    '</select>';
+        $html = sprintf(
+            '<select name="%1$s" %2$s>%3$s</select>',
+            '_gaddon_setting_' . $name, implode( ' ', $attributes ), $this->get_select_options( $field['choices'], $value )
+        );
 
         if( $this->field_failed_validation( $field ) )
             $html .= $this->get_error_icon( $field );
 
-        if ($echo)
+        if( $echo )
             echo $html;
 
         return $html;
     }
+
+    public function get_select_options( $choices, $selected_value ) {
+
+        $options = '';
+
+        foreach( $choices as $choice ) {
+
+            if( isset( $choice['choices'] ) ) {
+
+                $options .= sprintf( '<optgroup label="%1$s">%2$s</optgroup>', $choice['label'], $this->get_select_options( $choice['choices'], $selected_value ) );
+
+            } else {
+
+                if( ! isset( $choice['value'] ) )
+                    $choice['value'] = $choice['label'];
+
+                $options .= $this->get_select_option( $choice, $selected_value );
+
+            }
+
+        }
+
+        return $options;
+    }
+
+    protected function get_select_option( $choice, $selected_value ) {
+        return sprintf( '<option value="%1$s" %2$s>%3$s</option>', esc_attr( $choice['value'] ), selected( $selected_value, $choice['value'], false ), $choice['label'] );
+    }
+
+
+    //------------- Field Map Field Type --------------------------
+
+    public function settings_field_map( $field, $echo = true ) {
+
+        $html = '';
+        $field_map = rgar( $field, 'field_map' );
+
+        if( empty( $field_map ) )
+            return $html;
+
+        $form_id = rgget( 'id' );
+
+        $html .= '
+            <table class="settings-field-map-table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>' . $this->field_map_title() . '</th>
+                        <th>' . __( "Form Field", "gravityforms" ) . '</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+        foreach( $field['field_map'] as $child_field ) {
+
+            if( ! $this->setting_dependency_met( rgar( $child_field, 'dependency' ) ) )
+                continue;
+
+            $child_field['name'] = $this->get_mapped_field_name( $field, $child_field['name'] );
+            $required = rgar( $child_field, 'required' ) ? $this->get_required_indicator( $child_field ) : '';
+
+            $html .= '
+                <tr>
+                    <td>
+                        <label for="' . $child_field['name'] . '">' . $child_field['label'] . ' ' . $required . '<label>
+                    </td>
+                    <td>' .
+                $this->settings_field_map_select( $child_field, $form_id ) .
+                '</td>
+            </tr>';
+        }
+
+        $html .= '
+                </tbody>
+            </table>';
+
+        if( $echo )
+            echo $html;
+
+        return $html;
+    }
+
+    public function settings_field_map_select( $field, $form_id ) {
+        $field['choices'] = $this->get_field_map_choices( $form_id );
+        return $this->settings_select( $field, false );
+    }
+
+    protected function field_map_title(){
+        return __("Field", "gravityforms");
+    }
+
+    public static function get_field_map_choices( $form_id ) {
+
+        $form = RGFormsModel::get_form_meta($form_id);
+
+        $fields = array();
+
+        // Adding default fields
+        $fields[] = array( "value" => "", "label" => "" );
+        $fields[] = array( "value" => "date_created" , "label" => __("Entry Date", "gravityforms") );
+        $fields[] = array( "value" => "ip" , "label" => __("User IP", "gravityforms") );
+        $fields[] = array( "value" => "source_url" , "label" => __("Source Url", "gravityforms") );
+        $fields[] = array( "value" => "form_title" , "label" => __("Form Title", "gravityforms") );
+
+        // Populate entry meta
+        $entry_meta = GFFormsModel::get_entry_meta( $form["id"] );
+        foreach( $entry_meta as $meta_key => $meta ) {
+            $fields[] = array( 'value' => $meta_key , 'label' => rgars($entry_meta, "{$meta_key}/label") );
+        }
+
+        // Populate form fields
+        if( is_array( $form["fields"] ) ) {
+            foreach( $form["fields"] as $field ) {
+                if( is_array( rgar( $field, "inputs") ) ) {
+
+                    //If this is an address field, add full name to the list
+                    if(RGFormsModel::get_input_type($field) == "address")
+                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
+
+                    //If this is a name field, add full name to the list
+                    if(RGFormsModel::get_input_type($field) == "name")
+                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
+
+                    //If this is a checkbox field, add to the list
+                    if(RGFormsModel::get_input_type($field) == "checkbox")
+                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Selected" , "gravityforms") . ")" );
+
+                    foreach($field["inputs"] as $input)
+                        $fields[] =  array( 'value' => $input["id"], 'label' => GFCommon::get_label($field, $input["id"]) );
+                }
+                else if(!rgar($field,"displayOnly")){
+                    $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field));
+                }
+            }
+        }
+
+        return $fields;
+    }
+
+    public function get_mapped_field_name( $parent_field, $field_name ) {
+        return "{$parent_field['name']}_{$field_name}";
+    }
+
+    public static function get_field_map_fields( $feed, $field_name ) {
+
+        $fields = array();
+        $prefix = "field_map_{$field_name}_";
+
+        foreach( $feed['meta'] as $name => $value ) {
+            if( strpos( $name, $prefix ) === 0 ) {
+                $name = str_replace( $prefix, '', $name );
+                $fields[$name] = $value;
+            }
+        }
+
+        return $fields;
+    }
+
+    //----------------------------------------------------------------
+
+
+    public function settings_dynamic_field_map( $field, $echo = true ) {
+
+        $html = '';
+        $form = $this->get_current_form();
+
+        $field = wp_parse_args( $field, array(
+            'label'             => false,
+            'name'              => false,
+            'key_choices'       => array(),
+            'enable_custom_key' => true
+        ) );
+
+        $field['choices'] = $field['key_choices'];
+        if( $field['enable_custom_key'] )
+            $field['choices']['_gf_add_custom'] = array( 'value' => '_gf_add_custom', 'label' => __( 'Add Custom', 'gravityformsuserregistration' ) );
+
+        $key_field = $field;
+        $key_field['name'] .= '_key';
+        $key_field['class'] = 'key_{i}';
+
+        $value_field = $field;
+        $value_field['name'] = '_value';
+        $value_field['class'] = 'value_{i}';
+
+        $html .= '
+            <table class="settings-dynamic-field-map-table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>' . $this->field_map_title() . '</th>
+                        <th>' . __( 'Form Field', 'gravityforms' ) . '</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody id="' . $field['name'] . '_repeater" class="dynamic-field-map-repeater" data-save-field-id="' . $field['name'] . '">
+                    <tr>
+                        <td>' .
+                            $this->settings_select( $key_field, false ) .
+                        '</td>
+                        <td>' .
+                            $this->settings_field_map_select( $value_field, $form['id'] ) .
+                        '</td>
+                        <td>{buttons}</td>
+                    </tr>
+                </tbody>
+            </table>';
+
+        $html .= $this->settings_hidden( $field, false );
+
+        if( $echo )
+            echo $html;
+
+        return $html;
+
+    }
+
+    public function settings_field_select( $field, $echo = true ) {
+
+        $args = is_array( rgar( $field, 'args' ) ) ? rgar( $field, 'args' ) : array( rgar( $field, 'args' ) );
+
+        $args = wp_parse_args( $args, array(
+            'append_choices' => array(),
+            'disable_first_choice' => false
+        ) );
+
+        $field['choices'] = array();
+
+        if( ! $args['disable_first_choice'] )
+            $field['choices'][] = array( 'value' => '', 'label' => '' );
+
+        $field['choices'] = array_merge( $field['choices'], $this->get_form_fields_as_choices( $this->get_current_form(), $args ) );
+
+        if( ! empty( $args['append_choices'] ) )
+            $field['choices'] = array_merge( $field['choices'], $args['append_choices'] );
+
+        $html = $this->settings_select( $field, false );
+
+        if( $echo )
+            echo $html;
+
+        return $html;
+    }
+
+    public function get_form_fields_as_choices( $form, $args = array() ) {
+
+        $fields = array();
+
+        if( ! is_array( $form['fields'] ) )
+            return $fields;
+
+        $args = wp_parse_args( $args, array(
+            'field_types' => array(),
+            'input_types' => array()
+        ) );
+
+        foreach( $form['fields'] as $field ) {
+
+            $input_type = GFFormsModel::get_input_type( $field );
+
+            if( ! empty( $args['input_types'] ) && ! in_array( $input_type, $args['input_types'] ) )
+                continue;
+
+            if( is_array( rgar( $field, 'inputs' ) ) ) {
+
+                // if this is an address field, add full name to the list
+                if( $input_type == 'address' )
+                    $fields[] =  array( 'value' => $field['id'], 'label' => GFCommon::get_label( $field ) . ' (' . __( 'Full' , 'gravityforms' ) . ')' );
+
+                // if this is a name field, add full name to the list
+                if( $input_type == 'name' )
+                    $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . ' (' . __( 'Full', 'gravityforms' ) . ')' );
+
+                // if this is a checkbox field, add to the list
+                if( $input_type == 'checkbox' )
+                    $fields[] =  array( 'value' => $field['id'], 'label' => GFCommon::get_label($field) . ' (' . __( 'Selected', 'gravityforms' ) . ')' );
+
+                foreach( $field['inputs'] as $input ) {
+                    $fields[] =  array( 'value' => $input['id'], 'label' => GFCommon::get_label( $field, $input['id'] ) );
+                }
+
+            }
+            else if( ! rgar( $field, 'displayOnly' ) ) {
+
+                $fields[] =  array( 'value' => $field['id'], 'label' => GFCommon::get_label( $field ) );
+
+            }
+        }
+
+        return $fields;
+    }
+
+
+
+
+
 
     /***
      * Renders the save button for settings pages
@@ -1444,7 +1860,7 @@ abstract class GFAddOn {
         // each nonstandard property will be extracted from the $props array so it is not auto-output in the field HTML
         $no_output_props = apply_filters( 'gaddon_no_output_field_properties',
                 array( 'default_value', 'label', 'choices', 'feedback_callback', 'checked', 'checkbox_label', 'value', 'type',
-                    'validation_callback', 'required', 'hidden', 'tooltip', 'dependency' ), $field );
+                    'validation_callback', 'required', 'hidden', 'tooltip', 'dependency', "messages" ), $field );
 
         $default_props = array(
             'class' => '',          // will default to gaddon-setting
@@ -1506,7 +1922,7 @@ abstract class GFAddOn {
         foreach( $choice as $prop => $val ) {
             $no_output_choice_attributes = array( 'default_value', 'label', 'checked', 'value', 'type',
                 'validation_callback', 'required', 'tooltip' );
-            if(in_array($prop, $no_output_choice_attributes))
+            if(in_array($prop, $no_output_choice_attributes) || is_array($val))
                 unset($choice_attributes[$prop]);
             else
                 $choice_attributes[$prop] = "{$prop}='" . esc_attr($val) . "'";
@@ -1534,15 +1950,34 @@ abstract class GFAddOn {
                 if( ! $this->setting_dependency_met( rgar( $field, 'dependency' ) ) )
                     continue;
 
-                $field_setting = rgar( $settings, rgar( $field, 'name' ) );
-
                 if( is_callable( rgar( $field, 'validation_callback' ) ) ) {
                     call_user_func( rgar( $field, 'validation_callback' ), $field, $field_setting );
-                } else if( rgar( $field, 'required' ) ) {
-                    if( rgblank( $field_setting ) )
-                        $this->set_field_error( $field, rgar( $field, 'error_message' ) );
+                    continue;
                 }
 
+                switch($field["type"]){
+                    case "field_map" :
+
+                        $this->validate_field_map_settings($field, $settings);
+
+                        break;
+
+                    case "checkbox" :
+
+                        $this->validate_checkbox_settings($field, $settings);
+
+                        break;
+
+                    default :
+
+                        $field_setting = rgar( $settings, rgar( $field, 'name' ) );
+
+                        if( rgar( $field, 'required' ) && rgblank( $field_setting )) {
+                            $this->set_field_error( $field, rgar( $field, 'error_message' ) );
+                        }
+
+                        break;
+                }
             }
         }
 
@@ -1550,6 +1985,48 @@ abstract class GFAddOn {
         $is_valid = empty( $field_errors );
 
         return $is_valid;
+    }
+
+    protected function validate_checkbox_settings( $field, $settings ) {
+
+        if( !rgar( $field, 'required' ) )
+            return;
+
+        if(!is_array(rgar($field, "choices")))
+            return;
+
+        foreach($field["choices"] as $choice){
+            $choice_setting = rgar( $settings, rgar( $choice, 'name' ) );
+            if(!empty($choice_setting))
+                return;
+        }
+
+        $this->set_field_error( $field, rgar( $field, 'error_message' ) );
+    }
+
+    protected function validate_field_map_settings( $field, $settings ) {
+
+        $field_map = rgar( $field, 'field_map' );
+
+        if( empty( $field_map ) )
+            return;
+
+        foreach( $field_map as $child_field ) {
+
+            if( ! $this->setting_dependency_met( rgar( $child_field, 'dependency' ) ) )
+                continue;
+
+            $child_field['name'] = $this->get_mapped_field_name( $field, $child_field['name'] );
+            $setting_value = rgar( $settings, $child_field['name'] );
+
+            if( rgar( $child_field, 'required' ) && rgblank( $setting_value ) ) {
+                $this->set_field_error( $child_field );
+            } else if( rgar( $child_field, 'validation_callback' ) && is_callable( rgar( $child_field, 'validation_callback' ) ) ) {
+                call_user_func( rgar( $child_field, 'validation_callback' ), $child_field, $field );
+            }
+
+        }
+
     }
 
     /**
@@ -1663,6 +2140,53 @@ abstract class GFAddOn {
         return $settings;
     }
 
+    protected function replace_field( $name, $fields, $settings ) {
+
+        if( rgar( $fields, 'name' ) )
+            $fields = array( $fields );
+
+        foreach( $settings as &$section ) {
+            for( $i = 0; $i < count( $section['fields'] ); $i++ ) {
+                if( $section['fields'][$i]['name'] == $name ) {
+                    array_splice( $section['fields'], $i, 1, $fields );
+                    break 2;
+                }
+            }
+        }
+
+        return $settings;
+
+    }
+
+    protected function get_field( $name, $settings ) {
+        foreach( $settings as $section ) {
+            for( $i = 0; $i < count( $section['fields'] ); $i++ ) {
+                if( $section['fields'][$i]['name'] == $name )
+                    return $section['fields'][$i];
+            }
+        }
+        return false;
+    }
+
+    public function build_choices( $key_value_pairs ) {
+
+        $choices = array();
+
+        if( ! is_array( $key_value_pairs ) )
+            return $choices;
+
+        $first_key = key( $key_value_pairs );
+        $is_numeric = is_int( $first_key ) && $first_key === 0;
+
+        foreach( $key_value_pairs as $value => $label ) {
+            if( $is_numeric )
+                $value = $label;
+            $choices[] = array( 'value' => $value, 'label' => $label );
+        }
+
+        return $choices;
+    }
+
     //--------------  Form settings  ---------------------------------------------------
 
     /**
@@ -1746,6 +2270,22 @@ abstract class GFAddOn {
 
                     GFCommon::display_admin_message();
 
+                    $page_title = $this->form_settings_page_title();
+                    if(empty($page_title)){
+                        $page_title = rgar($sections[0], "title");
+
+                        //using first section title as page title, so disable section title
+                        $sections[0]["title"] = false;
+                    }
+                    $icon = $this->form_settings_icon();
+                    if (empty($icon)){
+						$icon = '<i class="fa fa-cogs"></i>';
+                    }
+
+                    ?>
+                    <h3><span><?php echo $icon ?> <?php echo $page_title ?></span></h3>
+                    <?php
+
                     //rendering settings based on fields and current settings
                     $this->render_settings( $sections );
                 }
@@ -1820,6 +2360,21 @@ abstract class GFAddOn {
      * Before overriding this function, consider using the form_settings_fields() and specifying your field meta.
      */
     protected function form_settings($form){}
+
+    /**
+     * Custom form settings title
+     * Override this function to display a custom title on the Form Settings Page.
+     * By default, the first section in the configuration done in form_settings_fields() will be used as the page title.
+     * Use this function to override that behavior and add a custom page title.
+     */
+    protected function form_settings_page_title(){
+        return "";
+    }
+
+    protected function form_settings_icon(){
+        return "";
+    }
+
 
     /**
      * Checks whether the current Add-On has a plugin page.
@@ -1921,15 +2476,31 @@ abstract class GFAddOn {
         if (rgget("page") == "gf_settings" && $subview == $this->get_short_title() && $this->current_user_can_any($this->_capabilities_settings_page)) {
             require_once(GFCommon::get_base_path() . "/tooltips.php");
         }
+
+        add_filter('plugin_action_links', array($this, 'plugin_settings_link'),10,2);
+    }
+
+    public function plugin_settings_link( $links, $file ) {
+        if ( $file != $this->_path ){
+            return $links;
+        }
+
+        array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->get_short_title() . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
+
+        return $links;
     }
 
     /**
     * Plugin settings page
     */
     public function plugin_settings_page() {
+        $icon = $this->plugin_settings_icon();
+        if (empty($icon)){
+			$icon = '<i class="fa fa-cogs"></i>';
+        }
         ?>
 
-        <h3><span><?php echo $this->plugin_settings_title() ?></span></h3>
+        <h3><span><?php echo $icon ?> <?php echo $this->plugin_settings_title() ?></span></h3>
 
         <?php
 
@@ -1969,6 +2540,10 @@ abstract class GFAddOn {
 
     public function plugin_settings_title(){
         return $this->get_short_title() . ' ' . __( "Settings", "gravityforms" );
+    }
+
+    protected function plugin_settings_icon(){
+        return "";
     }
 
     /**
@@ -2030,10 +2605,14 @@ abstract class GFAddOn {
             $sections = $this->plugin_settings_fields();
             $is_valid = $this->validate_settings( $sections, $settings );
 
-            if( $is_valid )
+            if( $is_valid ){
                 $this->update_plugin_settings( $settings );
+                GFCommon::add_message( $this->get_save_success_message( $sections ) );
+            }
+            else{
+                GFCommon::add_error_message( $this->get_save_error_message( $sections ) );
+            }
 
-            GFCommon::add_message( $this->get_save_success_message( $sections ) );
         }
 
     }
@@ -2339,11 +2918,20 @@ abstract class GFAddOn {
         return $class;
     }
 
-
+    /**
+     * Checked whether an object is locked
+     *
+     * @param int|mixed $object_id The object ID
+     * @return bool
+     */
+    public function is_object_locked($object_id) {
+        $gf_locking = new GFAddonLocking($this->get_locking_config(),$this);
+        return $gf_locking->is_locked($object_id);
+    }
 
     //--------------  Helper functions  ---------------------------------------------------
 
-    protected final function method_is_overridden($method_name, $base_class="GFAddOn"){
+    protected final function method_is_overridden( $method_name, $base_class = 'GFAddOn' ) {
         $reflector = new ReflectionMethod($this, $method_name);
         $name = $reflector->getDeclaringClass()->getName();
         return $name !== $base_class;
@@ -2630,5 +3218,7 @@ abstract class GFAddOn {
 
         return false;
     }
+
+
 
 }

@@ -5,9 +5,9 @@ Plugin URI: http://c-pr.es/satellite
 Author: C- Pres
 Author URI: http://c-pr.es
 Description: Responsive display for all your photo needs. Customize to your hearts content.
-Version: 2.2
+Version: 2.2.4
 */
-define('SATL_VERSION', '2.2');
+define('SATL_VERSION', '2.2.4');
 $uploads = wp_upload_dir();
 if (!defined('SATL_PLUGIN_BASENAME'))
     define('SATL_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -132,7 +132,7 @@ class Satellite extends SatellitePlugin
         if (!empty($_GET[$this->pre . 'message'])) {
             $msg_type = (!empty($_GET[$this->pre . 'updated'])) ? 'msg' : 'err';
             $render_method = 'render_' . $msg_type;
-            call_user_func($this->$render_method(), $this, $_GET[$this->pre . 'message']);
+            call_user_func(array('SatellitePlugin', $render_method), $_GET[$this->pre . 'message']);
         }
     }
 
@@ -322,9 +322,11 @@ class Satellite extends SatellitePlugin
 
         /******** PRO ONLY **************/
         if (SATL_PRO) {
-            require SATL_PLUGIN_DIR . '/pro/custom_sizing.php';
+            $custom_sizing = SATL_PLUGIN_DIR . '/pro/custom_sizing.php';
+            if (file_exists($custom_sizing)) {
+                require $custom_sizing;
+            }
         }
-        //$this -> add_action(array($this, 'pro_custom_wh'));
         /******** END PRO ONLY **************/
         if (!empty($nocaption)) {
             $this->update_option('information', 'N');
@@ -349,7 +351,6 @@ class Satellite extends SatellitePlugin
             /* THIS IS WHERE THE VIEW MAGIC HAPPENS */
             $view = $this->getCustomView($multigallery, $gallery);
             $this->log_me('View for this embed is: ' . $view);
-            error_log('wtf');
 
             switch ($view) {
                 case 'multigallery':
@@ -370,7 +371,7 @@ class Satellite extends SatellitePlugin
                     if (has_filter('satl_render_view')) {
                         $content = apply_filters('satl_render_view', array($view, $slides));
                     }
-                    if (!$content) {
+                    if (!$content || is_array($content) ) {
                         $content = $this->render('default', array('slides' => $slides, 'frompost' => false), false, 'orbit');
                     }
 
@@ -380,7 +381,6 @@ class Satellite extends SatellitePlugin
         } else { // from post "frompost => true"
             global $post;
             $post_id_orig = $post->ID;
-
 
             if (empty($slug)) {
                 $pid = (empty($post_id)) ? $post->ID : $post_id;
@@ -573,7 +573,9 @@ class Satellite extends SatellitePlugin
                     }
                 } else {
                     $this->Db->model = $this->Slide->model;
-                    $this->Slide->find(array('id' => $_GET['id']));
+                    if (isset($_GET['id'])) {
+                        $this->Slide->find(array('id' => $_GET['id']));
+                    }
                     $this->render('slides/save', false, true, 'admin');
                 }
                 break;
@@ -707,7 +709,9 @@ class Satellite extends SatellitePlugin
                     }
                 } else {
                     $this->Db->model = $this->Gallery->model;
-                    $this->Gallery->find(array('id' => $_GET['id']));
+                    if (isset($_GET['id'])){
+                        $this->Gallery->find(array('id' => $_GET['id']));
+                    }
                     $this->render('galleries/save', false, true, 'admin');
                 }
                 break;
