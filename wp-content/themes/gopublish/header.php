@@ -133,7 +133,7 @@
     googletag.defineSlot('/35190362/RDR_ROS_300_LR', [300, 250], 'div-gpt-ad-1375711686389-7').addService(googletag.pubads());
     googletag.defineSlot('/35190362/RDR_ROS_300_Mid', [300, 250], 'div-gpt-ad-1375711686389-8').addService(googletag.pubads());
     googletag.defineSlot('/35190362/RDR_ROS_300_Mid2', [300, 250], 'div-gpt-ad-1375711686389-9').addService(googletag.pubads());
-    googletag.defineSlot('/35190362/RDR_ROS_300_UR', [300, 250], 'div-gpt-ad-1375711686389-10').addService(googletag.pubads());
+    googletag.defineSlot('/35190362/RDR_ROS_300_UR', [[300, 250], [300, 600]], 'div-gpt-ad-1398710304449-0').addService(googletag.pubads())
     googletag.defineSlot('/35190362/RDR_ROS_Footerboard', [[468, 60], [728, 90]], 'div-gpt-ad-1375711686389-11').addService(googletag.pubads());
     googletag.defineSlot('/35190362/RDR_ROS_Leaderboard', [728, 90], 'div-gpt-ad-1375711686389-12').addService(googletag.pubads());
     googletag.defineSlot('/35190362/RDR_ROS_middle468', [468, 60], 'div-gpt-ad-1375711686389-13').addService(googletag.pubads());

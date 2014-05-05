@@ -27,37 +27,37 @@
 	<div class="dropdown-menu">
 					<div class="" data-action="posterboard">
 				<a id="ai1ec-view-posterboard" data-type="json"					class="ai1ec-load-view posterboard"
-					href="http://www.ridermagazine.com/calendar/action~posterboard/time_limit~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~posterboard/time_limit~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/posterboard-view.png" alt="Posterboard" />
 					Posterboard				</a>
 			</div>
 					<div class="" data-action="stream">
 				<a id="ai1ec-view-stream" data-type="json"					class="ai1ec-load-view stream"
-					href="http://www.ridermagazine.com/calendar/action~stream/time_limit~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~stream/time_limit~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
 					Stream				</a>
 			</div>
 					<div class="" data-action="month">
 				<a id="ai1ec-view-month" data-type="json"					class="ai1ec-load-view month"
-					href="http://www.ridermagazine.com/calendar/action~month/exact_date~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~month/exact_date~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
 					Month				</a>
 			</div>
 					<div class="" data-action="week">
 				<a id="ai1ec-view-week" data-type="json"					class="ai1ec-load-view week"
-					href="http://www.ridermagazine.com/calendar/action~week/exact_date~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~week/exact_date~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/week-view.png" alt="Week" />
 					Week				</a>
 			</div>
 					<div class="active" data-action="oneday">
 				<a id="ai1ec-view-oneday" data-type="json"					class="ai1ec-load-view oneday"
-					href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
 					Day				</a>
 			</div>
 					<div class="" data-action="agenda">
 				<a id="ai1ec-view-agenda" data-type="json"					class="ai1ec-load-view agenda"
-					href="http://www.ridermagazine.com/calendar/action~agenda/time_limit~1398402000/">
+					href="http://www.ridermagazine.com/calendar/action~agenda/time_limit~1399266000/">
 					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/agenda-view.png" alt="Agenda" />
 					Agenda				</a>
 			</div>
@@ -72,15 +72,15 @@
 			<div id="ai1ec-calendar-view-loading" class="ai1ec-loading"></div>
 			<div id="ai1ec-calendar-view">
 				<div class="clearfix">
-	<h2 class="ai1ec-calendar-title">April 25, 2014</h2>
+	<h2 class="ai1ec-calendar-title">May 5, 2014</h2>
 	<div class="ai1ec-title-buttons btn-toolbar pull-right">
 		<div class="ai1ec-pagination btn-group">
 						<a class="ai1ec-prev-day ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1398315600/"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1399179600/"
 				>
 				<i class="icon-chevron-left"></i>			</a>
-								<a class='ai1ec-minical-trigger btn'  data-date='4/25/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1398488400/"
+								<a class='ai1ec-minical-trigger btn'  data-date='5/5/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1399352400/"
 				>
 				<i class="icon-chevron-right"></i>			</a>
 			</div><!--/.ai1ec-pagination-->
@@ -89,7 +89,7 @@
 <table class="ai1ec-oneday-view-original">
 	<thead>
 		<tr>
-										<th class="ai1ec-weekday ">
+										<th class="ai1ec-weekday ai1ec-today">
 											<div class="ai1ec-reveal-full-day">
 							<button class="btn btn-small ai1ec-tooltip-trigger"
 								data-placement="left"
@@ -97,48 +97,21 @@
 								<i class="icon-resize-full icon-large"></i>
 							</button>
 						</div>
-										<span class="ai1ec-weekday-date">Friday </span>
+										<span class="ai1ec-weekday-date">Monday </span>
 				</th>
 					</tr>
 		<tr>
-							<td class="ai1ec-allday-events ">
+							<td class="ai1ec-allday-events ai1ec-today">
 
 											<div class="ai1ec-allday-label">All-day</div>
 											
-											<a href="http://www.ridermagazine.com/calendar/laughlin-river-run/?instance_id=96"
-														data-instance-id="96"
-							class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
-								ai1ec-event-id-34374								ai1ec-event-instance-id-96								ai1ec-allday
-								ai1ec-multiday"
-							>
-							<div class="ai1ec-event"
-								style="">
-								<span class="ai1ec-event-title">
-									Laughlin River Run																	</span>
-							</div>
-						</a>
-
-						<div class="ai1ec-popup hide ai1ec-popup-in-oneday-view">
-							
-							<span class="ai1ec-popup-title popover-title">
-								<a href="http://www.ridermagazine.com/calendar/laughlin-river-run/?instance_id=96">
-																			Laughlin River Run</a>
-																							</span>
-							
-							<div class="ai1ec-event-time">
-								Apr 23 – Apr 26 <span class="ai1ec-allday-badge">all-day</span>							</div>
-
-							
-															<div class="ai1ec-popup-excerpt">The 32th annual version of the West Coast’s largest motorcycle event will include a custom bike show, poker runs, rides, vendors, concerts, casino action and the Ms. Laughlin River Run contest.</div>
-													</div><!-- .ai1ec-popup -->
-
 					
 				</td>
 					</tr>
 	</thead>
 	<tbody>
 		<tr class="ai1ec-oneday">
-			<td >
+			<td class="ai1ec-today">
 
 				<div class="ai1ec-grid-container">
 											<div class="ai1ec-hour-marker " style="top: 0px;">
@@ -285,7 +258,12 @@
 													<div class="ai1ec-quarter-marker" style="top: 1395px;"></div>
 													<div class="ai1ec-quarter-marker" style="top: 1410px;"></div>
 													<div class="ai1ec-quarter-marker" style="top: 1425px;"></div>
-																				</div>
+																						<div class="ai1ec-now-marker"
+							style="top: 835px;">
+							<div>
+								Now: 1:55 pm							</div>
+						</div>
+									</div>
 
 				<div class="ai1ec-day">
 									</div>
@@ -295,11 +273,11 @@
 </table>
 <div class="pull-right"><div class="ai1ec-pagination btn-group">
 						<a class="ai1ec-prev-day ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1398315600/"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1399179600/"
 				>
 				<i class="icon-chevron-left"></i>			</a>
-								<a class='ai1ec-minical-trigger btn'  data-date='4/25/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1398488400/"
+								<a class='ai1ec-minical-trigger btn'  data-date='5/5/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1399352400/"
 				>
 				<i class="icon-chevron-right"></i>			</a>
 			</div><!--/.ai1ec-pagination-->
@@ -309,13 +287,13 @@
 
 		<div class="ai1ec-subscribe-container btn-group pull-left">
 	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
-		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=973545552"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=1605532854"
 		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
 		<i class="icon-plus"></i>
 					Subscribe			</a>
 	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
 		data-placement="bottom"
-		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D973545552"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D1605532854"
 		title="Subscribe to this calendar in your Google Calendar" >
 		<i class="icon-google-plus icon-large"></i>
 		Add to Google	</a>
