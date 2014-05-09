@@ -1,11 +1,12 @@
 <div class="wrap">
-	<h2><?php _e('Search Everything', 'SearchEverything'); ?> <?php _e('options','SearchEverything');?> (<?php _e('current version','SearchEverything') ?> <?php echo $meta['version']; ?>)</h2>
+	<h2><?php _e('Search Everything', 'SearchEverything'); ?> <?php _e('options','SearchEverything');?> (<?php _e('current version','SearchEverything') ?> <?php echo SE_VERSION; ?>)</h2>
 	<div id="se-description" class="widefat">
-		<p><span class="se-name"><?php _e('Search Everything', 'SearchEverything'); ?> </span><?php _e('is the most reliable and efficient search plugin for WordPress. 
-	It improves the search results for your readers and comes with the','SearchEverything')?> <span class="se-name"><?php _e('Research Everything','SearchEverything') ?></span> <?php _e('compose-screen widget to help you write better. 
+		<p><span class="se-name"><?php _e('Search Everything', 'SearchEverything'); ?> </span><?php _e('is the most reliable and efficient search plugin for WordPress.
+	It improves the search results for your readers and comes with the','SearchEverything')?> <span class="se-name"><?php _e('Research Everything','SearchEverything') ?></span> <?php _e('compose-screen widget to help you write better.
 	On this page you can customize each of these two features.','SearchEverything') ?></p>
 	</div>
 	<form method="post">
+		<?php wp_nonce_field('se-everything-nonce'); ?>
 		<table id="se-research-settings" class="widefat">
 				<tr class="title">
 					<th scope="col" class="manage-column se-col"><?php _e('Research Everything compose-screen widget', 'SearchEverything'); ?></th>
@@ -15,7 +16,7 @@
 				<td><input type="checkbox" id="research_metabox" name="research_metabox" value="yes" <?php checked($options['se_research_metabox']['visible_on_compose']); ?> /></td>
 				</tr>
 				<tr scope="row"><td><?php _e('Enable search results from the web on compose screen','SearchEverything')?><br>
-				<small>(This will help you research similar posts. <a href="http://www.zemanta.com/blog/research-everything/" target="_blank">Learn more.</a>)</small></td>
+				<small>(This will help you research similar posts. <a href="http://zem.si/1l7q5KS" target="_blank">Learn more.</a>)</small></td>
 	 <td><input type="checkbox" id="research_external_results" name="research_external_results" value="yes" <?php checked($options['se_research_metabox']['external_search_enabled']); ?> /><span class="se-zem-color">&lArr; Try me. ;)</span></td>
 				</tr>
 				<tr scope="row"><td><?php _e('Zemanta api key','SearchEverything')?><br>
@@ -58,7 +59,7 @@
 					<td>
 						<input type="checkbox" id="appvd_pages" name="appvd_pages" value="yes" <?php checked($options['se_approved_pages_only']); ?> />
 					</td>
-				</tr><?php endif; ?> <?php 
+				</tr><?php endif; ?> <?php
 										 // Show tags only for WP 2.3+
 										 if ($wp_version >= '2.3') : ?>
 				<tr valign="middle">
@@ -68,7 +69,7 @@
 					<td>
 						<input type="checkbox" id="search_tags" name="search_tags" value="yes" <?php checked($options['se_use_tag_search']); ?> />
 					</td>
-				</tr><?php endif; ?> <?php 
+				</tr><?php endif; ?> <?php
 										 // Show taxonomies only for WP 2.3+
 										 if ($wp_version >= '2.3') : ?>
 				<tr valign="middle">
@@ -88,7 +89,7 @@
 							</label>
 					</th>
 					<td>
-						<input type="checkbox" id="search_categories" name="search_categories" value="yes" <?php checked($options['se_use_category_search']); ?> /> 
+						<input type="checkbox" id="search_categories" name="search_categories" value="yes" <?php checked($options['se_use_category_search']); ?> />
 					</td>
 				</tr><?php endif; ?>
 				<tr valign="middle">
@@ -291,7 +292,7 @@ The <span class="se-name">Search Everything</span> writing helper enables you to
 					<li><a href="http://www.alohastone.com" target="blank">alohastone (DE)</a></li>
 					<li><a href="http://gidibao.net/" target="blank">Gianni Diurno (ES)</a></li>
 					<li><a href="#">János Csárdi-Braunstein (HU)</a></li>
-					<li><a href="http://idimensie.nl" target="blank">Joeke-Remkus de Vries (NL)</a></li>
+					<li><a href="http://www.forsitemedia.nl" target="blank">Remkus de Vries (nl_NL)</a></li>
 					<li><a href="#">Silver Ghost (RU)</a></li>
 					<li><a href="http://mishkin.se" target="blank">Mikael Jorhult (RU)</a></li>
 					<li><a href="#">Baris Unver (TR)</a></li>

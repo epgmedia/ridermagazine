@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: Search Everything
-Plugin URI: https://github.com/Zemanta/search-everything-wordpress-plugin/
+Plugin URI: http://wordpress.org/plugins/search-everything/
 Description: Adds search functionality without modifying any template pages: Activate, Configure and Search. Options Include: search highlight, search pages, excerpts, attachments, drafts, comments, tags and custom fields (metadata). Also offers the ability to exclude specific pages and posts. Does not search password-protected content.
-Version: 8.0
+Version: 8.1.1
 Author: Zemanta
 Author URI: http://www.zemanta.com
 */
 
-define('SE_VERSION', '8.0');
+define('SE_VERSION', '8.1.1');
 
 if (!defined('SE_PLUGIN_FILE'))
 	define('SE_PLUGIN_FILE', plugin_basename(__FILE__));
@@ -20,7 +20,7 @@ if (!defined('SE_PLUGIN_DIR'))
 	define('SE_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . SE_PLUGIN_NAME);
 
 if (!defined('SE_PLUGIN_URL'))
-	define('SE_PLUGIN_URL', WP_PLUGIN_URL . '/' . SE_PLUGIN_NAME);
+	define('SE_PLUGIN_URL', plugins_url() . '/' . SE_PLUGIN_NAME);
 
 if (!defined('SE_ZEMANTA_API_GATEWAY'))
 	define('SE_ZEMANTA_API_GATEWAY', 'http://api.zemanta.com/services/rest/0.0/');
@@ -64,11 +64,18 @@ function se_admin_head() {
 	$se_metabox = $se_options['se_research_metabox'];
 	include(se_get_view('admin_head'));
 }
-
 add_action('admin_head', 'se_admin_head');
+
+function se_global_head() {
+	include(se_get_view('global_head'));
+}
+add_action('wp_head', 'se_global_head');
 
 function se_global_notice() {
 	global $pagenow, $se_global_notice_pages;
+	if (!current_user_can('manage_options')) {
+		return;
+	}
 	
 	$se_meta = se_get_meta();
 
@@ -119,11 +126,13 @@ class SearchEverything {
 	function init() {
 		if ( current_user_can('manage_options') ) {
 			$SEAdmin = new se_admin();
-			// Disable Search-Everything, because posts_join is not working properly in Wordpress-backend's Ajax functions
-			if (basename( $_SERVER["SCRIPT_NAME"] ) == "admin-ajax.php") {
-				return true;
-			}
 		}
+		// Disable Search-Everything, because posts_join is not working properly in Wordpress-backend's Ajax functions
+		//(for example in wp_link_query from compose screen (article search when inserting links))
+		if (basename( $_SERVER["SCRIPT_NAME"] ) == "admin-ajax.php") {
+			return true;
+		}
+
 
 		$this->search_hooks();
 
@@ -137,6 +146,7 @@ class SearchEverything {
 
 	function search_hooks() {
 		//add filters based upon option settings
+		
 		if ( $this->options['se_use_tag_search'] || $this->options['se_use_category_search'] || $this->options['se_use_tax_search'] ) {
 			add_filter( 'posts_join', array( &$this, 'se_terms_join' ) );
 			if ( $this->options['se_use_tag_search'] ) {
@@ -665,7 +675,11 @@ class SearchEverything {
 		if ( !empty( $this->query_instance->query_vars['s'] ) ) {
 			$excludedPostList = trim( $this->options['se_exclude_posts_list'] );
 			if ( $excludedPostList != '' ) {
-				$excl_list = implode( ',', explode( ',', $excludedPostList ) );
+				$excluded_post_list = array();
+				foreach(explode( ',', $excludedPostList ) as $post_id) {
+					$excluded_post_list[] = (int)$post_id;
+				}
+				$excl_list = implode( ',', $excluded_post_list);
 				$excludeQuery = ' AND ('.$wpdb->posts.'.ID NOT IN ( '.$excl_list.' ))';
 			}
 			$this->se_log( "ex posts where: ".$excludeQuery );
@@ -680,7 +694,11 @@ class SearchEverything {
 		if ( !empty( $this->query_instance->query_vars['s'] ) ) {
 			$excludedCatList = trim( $this->options['se_exclude_categories_list'] );
 			if ( $excludedCatList != '' ) {
-				$excl_list = implode( ',', explode( ',', $excludedCatList ) );
+				$excluded_cat_list = array();
+				foreach(explode( ',', $excludedCatList ) as $cat_id) {
+					$excluded_cat_list[] = (int)$cat_id;
+				}
+				$excl_list = implode( ',', $excluded_cat_list);
 				if ( $this->wp_ver23 ) {
 					$excludeQuery = " AND ( ctax.term_id NOT IN ( ".$excl_list." ))";
 				}
@@ -787,7 +805,6 @@ class SearchEverything {
 			}
 			// build our final string
 			$on = ' ( ' . implode( ' OR ', $on ) . ' ) ';
-
 			$join .= " LEFT JOIN $wpdb->term_relationships AS trel ON ($wpdb->posts.ID = trel.object_id) LEFT JOIN $wpdb->term_taxonomy AS ttax ON ( " . $on . " AND trel.term_taxonomy_id = ttax.term_taxonomy_id) LEFT JOIN $wpdb->terms AS tter ON (ttax.term_id = tter.term_id) ";
 		}
 		$this->se_log( "tags join: ".$join );
@@ -848,7 +865,7 @@ function search_everything_callback() {
 			's' => $_GET['s']
 		);
 
-		$zemanta_response = api(array(
+		$zemanta_response = se_api(array(
 			'method' => 'zemanta.suggest',
 			'return_images' => 0,
 			'return_rich_objects' => 0,
@@ -867,12 +884,13 @@ function search_everything_callback() {
 			$result['external'] = json_decode($zemanta_response['body'])->articles;
 		}
 
+		
 		$SE = new SearchEverything(true);
 
 		if (!empty($_GET['exact'])) {
 			$params['exact'] = true;
 		}
-
+		$params["showposts"] = 5;
 		$post_query = new WP_query($params);
 
 		while ( $post_query->have_posts() ) {
@@ -897,10 +915,10 @@ add_action('wp_enqueue_scripts', 'se_enqueue_styles');
 
 function se_post_publish_ping($post_id) {
 	//should happen only on first publish
+	$status = false;
 	if( ( $_POST['post_status'] == 'publish' ) && ( $_POST['original_post_status'] != 'publish' ) ) {
 		$permalink = get_permalink($post_id);
-
-		$zemanta_response = api(array(
+		$zemanta_response = se_api(array(
 			'method' => 'zemanta.post_published_ping',
 			'current_url' => $permalink,
 			'post_url' => $permalink,
@@ -909,9 +927,11 @@ function se_post_publish_ping($post_id) {
 			'deployment' => 'search-everything',
 			'format' => 'json'
 		));
-
-		$status = json_decode($zemanta_response['body'])->status;
+		if (!is_wp_error($zemanta_response)) {
+			$status = json_decode($zemanta_response['body'])->status;
+		}
 	}
+	return $status;
 }
 
 add_action( 'publish_post', 'se_post_publish_ping' );
