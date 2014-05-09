@@ -80,7 +80,7 @@
 				>
 				<i class="icon-chevron-left"></i>			</a>
 								<a class='ai1ec-minical-trigger btn'  data-date='5/9/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~posterboard/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-page ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~posterboard/page_offset~1/time_limit~1405746001/"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~posterboard/page_offset~1/time_limit~1405227601/"
 				>
 				<i class="icon-chevron-right"></i>			</a>
 			</div><!--/.ai1ec-pagination-->
@@ -118,6 +118,33 @@ This rally is essentially a condensed version of Daytona and features vendors, c
 													</div><!--/.ai1ec-event-wrap-->
 					</div><!--/.ai1ec-event-->
 																																			<div class="ai1ec-event
+						ai1ec-event-id-36482						ai1ec-event-instance-id-250						">
+						<div class="ai1ec-event-wrap clearfix">
+							<div class="ai1ec-date-block-wrap" >
+								<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~5-10-2014/" data-type="json" >
+									<div class="ai1ec-month">May</div>
+                  <div class="ai1ec-day">10</div>
+									<div class="ai1ec-weekday">Sat</div>
+                  								</a><!--/.ai1ec-load-view-->
+							</div><!--/.ai1ec-date-block-wrap-->
+														<div class="ai1ec-event-title-wrap">
+								<span class="ai1ec-event-title">
+									<a class="ai1ec-load-event"
+									    href="http://www.ridermagazine.com/calendar/6th-annual-bikers-against-breast-cancer-motorcycle-ride-sjhd-spring-open-house/?instance_id=250"
+									   									   									   title="6th Annual Bikers Against Breast Cancer Motorcycle Ride &amp; SJHD Spring Open House" >
+										6th Annual Bikers Against Breast Cancer Motorcycle Ride &amp; SJHD Spring Open House									</a>
+																			<span class="ai1ec-event-location">@ San Jacinto Harley Davidson </span>
+																	</span><!--/.ai1ec-event-title-->
+								<div class="ai1ec-event-time">
+																		May 10, 2014 @ 8:30 am – 4:00 pm								</div>
+							</div>
+							<div class="clearfix">
+								<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/6th-annual-bikers-against-breast-cancer-motorcycle-ride-sjhd-spring-open-house/?instance_id=250"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/05/BABC-FLYER-14-236x300.gif" alt="6th Annual Bikers Against Breast Cancer Motorcycle Ride &amp; SJHD Spring Open House @ San Jacinto Harley Davidson  | Pasadena | Texas | United States" width="236" height="300" /></a></div>																	<div class="ai1ec-event-description">
+										60-mile police-escorted ride starts and ends at San Jacinto Harley-Davidson in Pasadena, Texas. After party and SJHD Spring Open House after the ride with live [...]									</div>
+															</div>
+													</div><!--/.ai1ec-event-wrap-->
+					</div><!--/.ai1ec-event-->
+																												<div class="ai1ec-event
 						ai1ec-event-id-35503						ai1ec-event-instance-id-215						">
 						<div class="ai1ec-event-wrap clearfix">
 							<div class="ai1ec-date-block-wrap" >
@@ -659,7 +686,34 @@ This is a nine-day motorcycle ride down old Route 66. The ride starts on the Jun
 															</div>
 													</div><!--/.ai1ec-event-wrap-->
 					</div><!--/.ai1ec-event-->
-																												<div class="ai1ec-event
+																<div class="ai1ec-event
+						ai1ec-event-id-36376						ai1ec-event-instance-id-248						">
+						<div class="ai1ec-event-wrap clearfix">
+							<div class="ai1ec-date-block-wrap" >
+								<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-14-2014/" data-type="json" >
+									<div class="ai1ec-month">Jun</div>
+                  <div class="ai1ec-day">14</div>
+									<div class="ai1ec-weekday">Sat</div>
+                  								</a><!--/.ai1ec-load-view-->
+							</div><!--/.ai1ec-date-block-wrap-->
+														<div class="ai1ec-event-title-wrap">
+								<span class="ai1ec-event-title">
+									<a class="ai1ec-load-event"
+									    href="http://www.ridermagazine.com/calendar/poker-run-for-kevin-corsaro-cancer-fund/?instance_id=248"
+									   									   									   title="Poker Run for Kevin Corsaro Cancer Fund" >
+										Poker Run for Kevin Corsaro Cancer Fund									</a>
+																			<span class="ai1ec-event-location">@ Monday&#039;s Union Restaurant</span>
+																	</span><!--/.ai1ec-event-title-->
+								<div class="ai1ec-event-time">
+																		June 14, 2014 @ 11:00 am								</div>
+							</div>
+							<div class="clearfix">
+																									<div class="ai1ec-event-description">
+										Located 40 miles east of Pittsburgh, Pennsylvania. Kevin Corsaro is a 45-year-old single father of 2 children (ages 12 and 13) and he has cancer. [...]									</div>
+															</div>
+													</div><!--/.ai1ec-event-wrap-->
+					</div><!--/.ai1ec-event-->
+																					<div class="ai1ec-event
 						ai1ec-event-id-35264						ai1ec-event-instance-id-197						ai1ec-allday">
 						<div class="ai1ec-event-wrap clearfix">
 							<div class="ai1ec-date-block-wrap" >
@@ -848,60 +902,6 @@ The Concours Owners Group (COG) will host the 2014 “Silverdammit” National R
 															</div>
 													</div><!--/.ai1ec-event-wrap-->
 					</div><!--/.ai1ec-event-->
-																																			<div class="ai1ec-event
-						ai1ec-event-id-35254						ai1ec-event-instance-id-196						">
-						<div class="ai1ec-event-wrap clearfix">
-							<div class="ai1ec-date-block-wrap" >
-								<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~7-18-2014/" data-type="json" >
-									<div class="ai1ec-month">Jul</div>
-                  <div class="ai1ec-day">18</div>
-									<div class="ai1ec-weekday">Fri</div>
-                  								</a><!--/.ai1ec-load-view-->
-							</div><!--/.ai1ec-date-block-wrap-->
-														<div class="ai1ec-event-title-wrap">
-								<span class="ai1ec-event-title">
-									<a class="ai1ec-load-event"
-									    href="http://www.ridermagazine.com/calendar/british-biker-cooperative-34th-motorcycle-rally-show-year-of-the-sidecar/?instance_id=196"
-									   									   									   title="British Biker Cooperative 34th Motorcycle Rally &amp; Show “Year of the Sidecar&#8221;" >
-										British Biker Cooperative 34th Motorcycle Rally &amp; Show “Year of the Sidecar&#8221;									</a>
-																			<span class="ai1ec-event-location">@ Eagle Cave Natural Campground</span>
-																	</span><!--/.ai1ec-event-title-->
-								<div class="ai1ec-event-time">
-																		July 18, 2014 @ 1:00 pm – July 20, 2014 @ 1:00 pm								</div>
-							</div>
-							<div class="clearfix">
-																									<div class="ai1ec-event-description">
-										On July 18-20, 2014, the British Biker Cooperative (BBC) will celebrate their 34th Annual British Biker Cooperative &#8211; Motorcycle Rally and Show at Eagle Cave [...]									</div>
-															</div>
-													</div><!--/.ai1ec-event-wrap-->
-					</div><!--/.ai1ec-event-->
-																					<div class="ai1ec-event
-						ai1ec-event-id-34473						ai1ec-event-instance-id-131						ai1ec-allday">
-						<div class="ai1ec-event-wrap clearfix">
-							<div class="ai1ec-date-block-wrap" >
-								<a class="ai1ec-load-view" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~7-19-2014/" data-type="json" >
-									<div class="ai1ec-month">Jul</div>
-                  <div class="ai1ec-day">19</div>
-									<div class="ai1ec-weekday">Sat</div>
-                  								</a><!--/.ai1ec-load-view-->
-							</div><!--/.ai1ec-date-block-wrap-->
-														<div class="ai1ec-event-title-wrap">
-								<span class="ai1ec-event-title">
-									<a class="ai1ec-load-event"
-									    href="http://www.ridermagazine.com/calendar/marysville-ride-for-kids-2/?instance_id=131"
-									   									   									   title="Marysville Ride for Kids" >
-										Marysville Ride for Kids									</a>
-																			<span class="ai1ec-event-location">@ Honda Marysville Motorsports</span>
-																	</span><!--/.ai1ec-event-title-->
-								<div class="ai1ec-event-time">
-																		July 19, 2014 <span class="ai1ec-allday-badge">all-day</span>								</div>
-							</div>
-							<div class="clearfix">
-																									<div class="ai1ec-event-description">
-										Marysville (Ohio) Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. (may change). See event website for details. 									</div>
-															</div>
-													</div><!--/.ai1ec-event-wrap-->
-					</div><!--/.ai1ec-event-->
 																	</div><!--/.ai1ec-posterboard-view-->
 <div class="pull-right"><div class="ai1ec-pagination btn-group">
 						<a class="ai1ec-prev-page ai1ec-load-view btn"
@@ -909,7 +909,7 @@ The Concours Owners Group (COG) will host the 2014 “Silverdammit” National R
 				>
 				<i class="icon-chevron-left"></i>			</a>
 								<a class='ai1ec-minical-trigger btn'  data-date='5/9/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~posterboard/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-page ai1ec-load-view btn"
-				data-type="json"				href="http://www.ridermagazine.com/calendar/action~posterboard/page_offset~1/time_limit~1405746001/"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~posterboard/page_offset~1/time_limit~1405227601/"
 				>
 				<i class="icon-chevron-right"></i>			</a>
 			</div><!--/.ai1ec-pagination-->
@@ -919,13 +919,13 @@ The Concours Owners Group (COG) will host the 2014 “Silverdammit” National R
 
 		<div class="ai1ec-subscribe-container btn-group pull-left">
 	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
-		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=501971123"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=1420930983"
 		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
 		<i class="icon-plus"></i>
 					Subscribe			</a>
 	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
 		data-placement="bottom"
-		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D501971123"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D1420930983"
 		title="Subscribe to this calendar in your Google Calendar" >
 		<i class="icon-google-plus icon-large"></i>
 		Add to Google	</a>
