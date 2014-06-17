@@ -1,0 +1,874 @@
+<!-- START All-in-One Event Calendar Plugin - Version 1.11.4-pro -->
+<div id="ai1ec-container" class="ai1ec-container">
+	<!-- AI1EC_PAGE_CONTENT_PLACEHOLDER -->
+	<div id="ai1ec-calendar" class="timely">
+			<div class="timely">
+		<div class="ai1ec-calendar-toolbar clearfix">
+							<div class="pull-right">
+						<div class="btn-group">
+										<a href="#ai1ec-create-event-modal" class="btn btn-primary btn-mini"
+				data-toggle="ai1ec_modal">
+							<i class="icon-plus"></i>
+				Post Your Event			</a>
+			</div>
+
+<div class="ai1ec-modal hide fade" id="ai1ec-create-event-modal">
+	<div class="ai1ec-loading show"></div>
+	<div class="ai1ec-ajax-placeholder">
+		<!-- Form content is loaded here via AJAX. -->
+	</div>
+</div>
+				</div>
+						<ul class="nav nav-pills pull-left"><li class="ai1ec-views-dropdown dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown">
+		<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+		Month		<span class="caret"></span>
+	</a>
+	<div class="dropdown-menu">
+					<div class="" data-action="posterboard">
+				<a id="ai1ec-view-posterboard" data-type="json"					class="ai1ec-load-view posterboard"
+					href="http://www.ridermagazine.com/calendar/action~posterboard/time_limit~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/posterboard-view.png" alt="Posterboard" />
+					Posterboard				</a>
+			</div>
+					<div class="" data-action="stream">
+				<a id="ai1ec-view-stream" data-type="json"					class="ai1ec-load-view stream"
+					href="http://www.ridermagazine.com/calendar/action~stream/time_limit~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
+					Stream				</a>
+			</div>
+					<div class="active" data-action="month">
+				<a id="ai1ec-view-month" data-type="json"					class="ai1ec-load-view month"
+					href="http://www.ridermagazine.com/calendar/action~month/exact_date~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+					Month				</a>
+			</div>
+					<div class="" data-action="week">
+				<a id="ai1ec-view-week" data-type="json"					class="ai1ec-load-view week"
+					href="http://www.ridermagazine.com/calendar/action~week/exact_date~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/week-view.png" alt="Week" />
+					Week				</a>
+			</div>
+					<div class="" data-action="oneday">
+				<a id="ai1ec-view-oneday" data-type="json"					class="ai1ec-load-view oneday"
+					href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
+					Day				</a>
+			</div>
+					<div class="" data-action="agenda">
+				<a id="ai1ec-view-agenda" data-type="json"					class="ai1ec-load-view agenda"
+					href="http://www.ridermagazine.com/calendar/action~agenda/time_limit~1402722000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/agenda-view.png" alt="Agenda" />
+					Agenda				</a>
+			</div>
+			</div>
+</li>
+</ul>
+							<div class='pull-left'>
+					<div class='btn-group'  ><a class='btn btn-mini ai1ec-tooltip-trigger' id='save_filtered_views' title='Save this filter as default'><icon class='icon-pushpin'  ></icon></a></div>				</div>
+					</div><!-- /.ai1ec-calendar-toolbar -->
+	</div>
+		<div id="ai1ec-calendar-view-container">
+			<div id="ai1ec-calendar-view-loading" class="ai1ec-loading"></div>
+			<div id="ai1ec-calendar-view">
+				<div class="clearfix">
+	<h2 class="ai1ec-calendar-title">June 2014</h2>
+	<div class="ai1ec-title-buttons btn-toolbar pull-right">
+		<div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-year ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1370062800/"
+				>
+				<i class="icon-double-angle-left"></i> 2013			</a>
+								<a class="ai1ec-prev-month ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1398920400/"
+				>
+				<i class="icon-angle-left"></i> May			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='6/1/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~month/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-month ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1404190800/"
+				>
+				Jul <i class="icon-angle-right"></i>			</a>
+								<a class="ai1ec-next-year ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1433134800/"
+				>
+				2015 <i class="icon-double-angle-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+	</div>
+</div>
+<table class="ai1ec-month-view ai1ec-popover-boundary">
+	<thead>
+		<tr>
+							<th class="ai1ec-weekday">Sun</th>
+							<th class="ai1ec-weekday">Mon</th>
+							<th class="ai1ec-weekday">Tue</th>
+							<th class="ai1ec-weekday">Wed</th>
+							<th class="ai1ec-weekday">Thu</th>
+							<th class="ai1ec-weekday">Fri</th>
+							<th class="ai1ec-weekday">Sat</th>
+					</tr>
+	</thead>
+	<tbody>
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-1-2014/">1</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/warrensbrg-bike-rally/?instance_id=172"
+																															data-end-day="08"
+											data-start-truncated="true"
+											data-end-truncated="false"
+																				data-instance-id="172"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34959											ai1ec-event-instance-id-172																						ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Warrensbrg Bike Rally</span>
+																							<span class="ai1ec-event-time">10:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/warrensbrg-bike-rally/?instance_id=172">
+																									Warrensbrg Bike Rally</a>
+																							<span class="ai1ec-event-location">@ Warrensburg Bike Rally 2014</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">May 30 @ 10:00 am – Jun 8 @ 10:00 am</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">This is the Warrensburg Bike Rallys 12th year, and the third at the Warren County Fairgrounds, Schroon River Road (State Route 50 ). The Rally [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/americade/?instance_id=276"
+																															data-end-day="06"
+											data-start-truncated="true"
+											data-end-truncated="false"
+																				data-instance-id="276"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34370											ai1ec-event-instance-id-276											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Americade Motorcycle Rally, New York</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/americade/?instance_id=276">
+																									Americade Motorcycle Rally, New &#8230;</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">May 31 – Jun 6 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Billed as the world’s largest touring rally, Americade has been around for more than 30 years. Enjoy parties on the lawn, ghost tours of old Fort William Henry, mini tours, fireworks, boat cruises, seminars, stunt shows, demo rides from many manufacturers, the TourExpo trade show (in two locations) and huge parade. Guest speakers include members of the Rider editorial staff.</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/atlanta-ride-for-kids/?instance_id=125"
+																														data-instance-id="125"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34468											ai1ec-event-instance-id-125											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Atlanta Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/atlanta-ride-for-kids/?instance_id=125">
+																									Atlanta Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Cumming Fairgrounds</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 1 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Atlanta Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/virginia-ride-for-kids/?instance_id=126"
+																														data-instance-id="126"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34469											ai1ec-event-instance-id-126											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Virginia Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/virginia-ride-for-kids/?instance_id=126">
+																									Virginia Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Richmond Times-Dispatch</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 1 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Virginia Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/blue-knights-ncii-10th-annual-officer-down-memorial-ride/?instance_id=223"
+																														data-instance-id="223"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-35814											ai1ec-event-instance-id-223																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Blue Knights NCII 10th Annual Officer Down Memorial Ride</span>
+																							<span class="ai1ec-event-time">10:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/blue-knights-ncii-10th-annual-officer-down-memorial-ride/?instance_id=223">
+																									Blue Knights NCII 10th Annual Of&#8230;</a>
+																							<span class="ai1ec-event-location">@ Ray Price Harley-Davidson</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 1 @ 10:00 am</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">The 10th Annual Officer Down Memorial Ride will take place on Sunday, June 1, 2014 at Ray Price Harley-Davidson in Raleigh, North Carolina.  Registration will begin at 10 [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-2-2014/">2</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-3-2014/">3</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-4-2014/">4</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-5-2014/">5</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-6-2014/">6</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/7th-annual-friends-of-steve-mcqueen-car-and-motorcycle-show/?instance_id=86"
+																															data-end-day="07"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="86"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34295											ai1ec-event-instance-id-86											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">7th Annual Friends of Steve McQueen Car and Motorcycle Show</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/7th-annual-friends-of-steve-mcqueen-car-and-motorcycle-show/?instance_id=86">
+																									7th Annual Friends of Steve McQu&#8230;</a>
+																							<span class="ai1ec-event-location">@ The Boys Republic of Chino HIlls</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 6 – Jun 7 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Chino Hills, California
+&lt;br&gt;
+The 7th Annual Friends of Steve McQueen Car and Motorcycle Show celebrates “The Thomas Crown Affair.” Click for more details.</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/street-vibrations-spring-rally-in-reno/?instance_id=267"
+																															data-end-day="08"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="267"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36739											ai1ec-event-instance-id-267											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Street Vibrations Spring Rally in Reno</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/street-vibrations-spring-rally-in-reno/?instance_id=267">
+																									Street Vibrations Spring Rally i&#8230;</a>
+																							<span class="ai1ec-event-location">@ Downtown Reno, Nevada</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 6 – Jun 8 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-content_img ai1ec-landscape"><a href="http://www.ridermagazine.com/calendar/street-vibrations-spring-rally-in-reno/?instance_id=267"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/05/Unknown.jpeg" alt="Street Vibrations Spring Rally in Reno @ Downtown Reno, Nevada | Reno | Nevada | United States" width="297" height="155" /></a></div>
+																					<div class="ai1ec-popup-excerpt">Street Vibrations Spring Rally will roar into downtown Reno, Nevada, June 6-8. Live entertainment, bike games, competition ride-in shows, a scavenger hunt, more than 80 [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-7-2014/">7</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-8-2014/">8</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/cleveland-ride-for-kids/?instance_id=127"
+																														data-instance-id="127"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34470											ai1ec-event-instance-id-127											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Cleveland Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/cleveland-ride-for-kids/?instance_id=127">
+																									Cleveland Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Independence Fieldhouse Soccer Fields</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 8 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Cleveland Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/colorado-ride-for-kids/?instance_id=129"
+																														data-instance-id="129"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34471											ai1ec-event-instance-id-129																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Colorado Ride for Kids</span>
+																							<span class="ai1ec-event-time">1:15 pm</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/colorado-ride-for-kids/?instance_id=129">
+																									Colorado Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Jefferson Co. Human Services Bldg.</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 8 @ 1:15 pm</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Colorado Ride for Kids benefiting the Pediatric Brain Tumor Foundation. Registration from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-9-2014/">9</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-10-2014/">10</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/two-wheel-tuesday-in-brainerd-minnesota/?instance_id=261"
+																														data-instance-id="261"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36737											ai1ec-event-instance-id-261											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Two Wheel Tuesday in Brainerd, Minnesota</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/two-wheel-tuesday-in-brainerd-minnesota/?instance_id=261">
+																									Two Wheel Tuesday in Brainerd, M&#8230;</a>
+																							<span class="ai1ec-event-location">@ Bolder Tap House</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 10 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Riders come to show their bikes, and meet other riders. Simple as can be! It is a great time and most of us step in [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-11-2014/">11</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-12-2014/">12</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-13-2014/">13</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-14-2014/">14</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/laconia-motorcycle-week/?instance_id=76"
+																															data-end-day="21"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="76"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34369											ai1ec-event-instance-id-76											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Laconia Motorcycle Week</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/laconia-motorcycle-week/?instance_id=76">
+																									Laconia Motorcycle Week</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 14 – Jun 21 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Come celebrate the 91st anniversary of the longest running motorcycle event in North America. It’s huge and includes vendors, demo rides, guided tours, boat cruises, bike shows, a bike build-off, swap meet and a major street scene with live bands. Also enjoy vintage roadracing including GP, flat-track and the Loudon Classic roadrace.</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/mother-road-ride-rally-20th-anniversary-ride-of-route-66/?instance_id=1"
+																															data-end-day="21"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="1"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34294											ai1ec-event-instance-id-1											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Mother Road Ride Rally: 20th Anniversary Ride of Route 66</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/mother-road-ride-rally-20th-anniversary-ride-of-route-66/?instance_id=1">
+																									Mother Road Ride Rally: 20th Ann&#8230;</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 14 – Jun 21 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Willow Brook, Illinois, to Santa Monica, California
+&lt;br&gt;
+This is a nine-day motorcycle ride down old Route 66. The ride starts on the June 14, 2014, at La Quinta Inn in Willow Brook, Illinois. The ride will follow Route 66 to Santa Monica, California and will end on June 22, 2014, with an awards dinner in California. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/2nd-annual-lcpl-steven-g-sutton-memorial-dice-run/?instance_id=281"
+																														data-instance-id="281"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36744											ai1ec-event-instance-id-281																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">2nd Annual LCPL Steven G Sutton Memorial Dice Run</span>
+																							<span class="ai1ec-event-time">9:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/2nd-annual-lcpl-steven-g-sutton-memorial-dice-run/?instance_id=281">
+																									2nd Annual LCPL Steven G Sutton &#8230;</a>
+																							<span class="ai1ec-event-location">@ VFW Albany, Ga</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 14 @ 9:00 am – 9:00 pm</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">2nd Annual Steven Sutton Memorial Dice Run. Event will be held at the VFW, 315 Philema Rd, Albany, Georgia. Registration will be at 9am at [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/poker-run-for-kevin-corsaro-cancer-fund/?instance_id=248"
+																														data-instance-id="248"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36376											ai1ec-event-instance-id-248																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Poker Run for Kevin Corsaro Cancer Fund</span>
+																							<span class="ai1ec-event-time">11:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/poker-run-for-kevin-corsaro-cancer-fund/?instance_id=248">
+																									Poker Run for Kevin Corsaro Canc&#8230;</a>
+																							<span class="ai1ec-event-location">@ Monday&#039;s Union Restaurant</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 14 @ 11:00 am</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Located 40 miles east of Pittsburgh, Pennsylvania. Kevin Corsaro is a 45-year-old single father of 2 children (ages 12 and 13) and he has cancer. [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-15-2014/">15</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/motorado-motorcycle-classic-show/?instance_id=197"
+																														data-instance-id="197"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-35264											ai1ec-event-instance-id-197											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Motorado Motorcycle Classic Show</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/motorado-motorcycle-classic-show/?instance_id=197">
+																									Motorado Motorcycle Classic Show</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 15 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">The third annual Motorado Motorcycle Classic Show will be held on Father&#8217;s Day, June 15, 2014, in Santa Fe, New Mexico. The event is staged [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td class="ai1ec-today">
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-16-2014/">16</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/2014-silverdammit-national-rally-concours-owners-group/?instance_id=9"
+																															data-end-day="19"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="9"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34302											ai1ec-event-instance-id-9											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">2014 Silverdammit National Rally—Concours Owners Group</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/2014-silverdammit-national-rally-concours-owners-group/?instance_id=9">
+																									2014 Silverdammit National Rally&#8230;</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 16 – Jun 19 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Johnson City, Tennessee
+&lt;br&gt;
+The Concours Owners Group (COG) will host the 2014 “Silverdammit” National Rally the week of June 16-20, 2014, in Johnson City, Tennessee. The rally marks the celebration of the group’s 25th anniversary, and will include many social activities, information seminars, guest speakers, technical sessions, and a banquet dinner.</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/motorcycle-touring-association-30th-annual-gathering/?instance_id=169"
+																															data-end-day="19"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="169"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34933											ai1ec-event-instance-id-169											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Motorcycle Touring Association 30th Annual Gathering</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/motorcycle-touring-association-30th-annual-gathering/?instance_id=169">
+																									Motorcycle Touring Association 3&#8230;</a>
+																							<span class="ai1ec-event-location">@ Montrose Pavilion Center - Montrose, Colorado</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 16 – Jun 19 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/motorcycle-touring-association-30th-annual-gathering/?instance_id=169"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/02/MTALogo-300x300.png" alt="Motorcycle Touring Association 30th Annual Gathering @ Montrose Pavilion Center - Montrose, Colorado | Montrose | Colorado | United States" width="300" height="300" /></a></div>
+																					<div class="ai1ec-popup-excerpt">From the very first V-Daze in Steamboat Springs, Colorado, in 1984, Venture Touring Society celebrated the Yamaha Venture touring motorcycle. Thirty year later, we are [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-17-2014/">17</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-18-2014/">18</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-19-2014/">19</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/2014-ohio-state-hog-rally/?instance_id=170"
+																															data-end-day="21"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="170"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34953											ai1ec-event-instance-id-170											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">2014 Ohio State HOG Rally</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/2014-ohio-state-hog-rally/?instance_id=170">
+																									2014 Ohio State HOG Rally</a>
+																							<span class="ai1ec-event-location">@ Kings Island Resort &amp; Conference Center</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 19 – Jun 21 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-landscape"><a href="http://www.ridermagazine.com/calendar/2014-ohio-state-hog-rally/?instance_id=170"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/02/RiverRiders2013Rally-300x202.jpg" alt="2014 Ohio State HOG Rally @ Kings Island Resort &amp; Conference Center | Mason | Ohio | United States" width="300" height="202" /></a></div>
+																					<div class="ai1ec-popup-excerpt">Share the pride of patriotism with other Harley Owners Group members at The All American Rally in Mason, Ohio. Three days and three nights of [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-20-2014/">20</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-21-2014/">21</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-22-2014/">22</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-23-2014/">23</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-24-2014/">24</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-25-2014/">25</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-26-2014/">26</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-27-2014/">27</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-28-2014/">28</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-29-2014/">29</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/bikes-on-the-bay-vintage-show-and-swap/?instance_id=256"
+																														data-instance-id="256"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36722											ai1ec-event-instance-id-256											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Bikes On The Bay Vintage Show and Swap</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/bikes-on-the-bay-vintage-show-and-swap/?instance_id=256">
+																									Bikes On The Bay Vintage Show an&#8230;</a>
+																							<span class="ai1ec-event-location">@ Capitola, California</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 29 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Please join us for the eighth annual vintage motorcycle show and swap meet. This year’s event will feature several demonstration events, demo rides, great raffle [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/camp-riley-poker-run-indianapolis/?instance_id=246"
+																														data-instance-id="246"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-36330											ai1ec-event-instance-id-246																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Camp Riley Poker Run&#8211;Indianapolis</span>
+																							<span class="ai1ec-event-time">8:30 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/camp-riley-poker-run-indianapolis/?instance_id=246">
+																									Camp Riley Poker Run&#8211;Indianapolis</a>
+																							<span class="ai1ec-event-location">@ American Legion Post #64</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Jun 29 @ 8:30 am – 5:00 pm</div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Ride with us to support the kids of Camp Riley for Youth with Disabilities, Bradford Woods, and Martinsville, Indiana. Sponsored by Gamma Pi Chapter of [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~6-30-2014/">30</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+												</tr><!--/tr.ai1ec-week-->
+			</tbody>
+</table>
+			</div>
+		</div>
+
+		<div class="ai1ec-subscribe-container btn-group pull-left">
+	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=1596033231"
+		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
+		<i class="icon-plus"></i>
+					Subscribe			</a>
+	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
+		data-placement="bottom"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D1596033231"
+		title="Subscribe to this calendar in your Google Calendar" >
+		<i class="icon-google-plus icon-large"></i>
+		Add to Google	</a>
+</div>
+	</div><!-- /.timely -->
+</div>
+<!-- END All-in-One Event Calendar Plugin -->
