@@ -1,5 +1,5 @@
 <?php
-//08Dec2011 FR widgetized-page code added
+
 // Templates
 include(TEMPLATEPATH."/tools/theme-options.php");
 include(TEMPLATEPATH."/tools/enews.php");
