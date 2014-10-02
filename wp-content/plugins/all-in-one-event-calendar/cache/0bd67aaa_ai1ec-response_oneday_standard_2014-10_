@@ -1,0 +1,327 @@
+<!-- START All-in-One Event Calendar Plugin - Version 1.11.4-pro -->
+<div id="ai1ec-container" class="ai1ec-container">
+	<!-- AI1EC_PAGE_CONTENT_PLACEHOLDER -->
+	<div id="ai1ec-calendar" class="timely">
+			<div class="timely">
+		<div class="ai1ec-calendar-toolbar clearfix">
+							<div class="pull-right">
+						<div class="btn-group">
+										<a href="#ai1ec-create-event-modal" class="btn btn-primary btn-mini"
+				data-toggle="ai1ec_modal">
+							<i class="icon-plus"></i>
+				Post Your Event			</a>
+			</div>
+
+<div class="ai1ec-modal hide fade" id="ai1ec-create-event-modal">
+	<div class="ai1ec-loading show"></div>
+	<div class="ai1ec-ajax-placeholder">
+		<!-- Form content is loaded here via AJAX. -->
+	</div>
+</div>
+				</div>
+						<ul class="nav nav-pills pull-left"><li class="ai1ec-views-dropdown dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown">
+		<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
+		Day		<span class="caret"></span>
+	</a>
+	<div class="dropdown-menu">
+					<div class="" data-action="posterboard">
+				<a id="ai1ec-view-posterboard" data-type="json"					class="ai1ec-load-view posterboard"
+					href="http://www.ridermagazine.com/calendar/action~posterboard/time_limit~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/posterboard-view.png" alt="Posterboard" />
+					Posterboard				</a>
+			</div>
+					<div class="" data-action="stream">
+				<a id="ai1ec-view-stream" data-type="json"					class="ai1ec-load-view stream"
+					href="http://www.ridermagazine.com/calendar/action~stream/time_limit~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
+					Stream				</a>
+			</div>
+					<div class="" data-action="month">
+				<a id="ai1ec-view-month" data-type="json"					class="ai1ec-load-view month"
+					href="http://www.ridermagazine.com/calendar/action~month/exact_date~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+					Month				</a>
+			</div>
+					<div class="" data-action="week">
+				<a id="ai1ec-view-week" data-type="json"					class="ai1ec-load-view week"
+					href="http://www.ridermagazine.com/calendar/action~week/exact_date~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/week-view.png" alt="Week" />
+					Week				</a>
+			</div>
+					<div class="active" data-action="oneday">
+				<a id="ai1ec-view-oneday" data-type="json"					class="ai1ec-load-view oneday"
+					href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
+					Day				</a>
+			</div>
+					<div class="" data-action="agenda">
+				<a id="ai1ec-view-agenda" data-type="json"					class="ai1ec-load-view agenda"
+					href="http://www.ridermagazine.com/calendar/action~agenda/time_limit~1407646800/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/agenda-view.png" alt="Agenda" />
+					Agenda				</a>
+			</div>
+			</div>
+</li>
+</ul>
+							<div class='pull-left'>
+					<div class='btn-group'  ><a class='btn btn-mini ai1ec-tooltip-trigger' id='save_filtered_views' title='Save this filter as default'><icon class='icon-pushpin'  ></icon></a></div>				</div>
+					</div><!-- /.ai1ec-calendar-toolbar -->
+	</div>
+		<div id="ai1ec-calendar-view-container">
+			<div id="ai1ec-calendar-view-loading" class="ai1ec-loading"></div>
+			<div id="ai1ec-calendar-view">
+				<div class="clearfix">
+	<h2 class="ai1ec-calendar-title">August 10, 2014</h2>
+	<div class="ai1ec-title-buttons btn-toolbar pull-right">
+		<div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1407560400/"
+				>
+				<i class="icon-chevron-left"></i>			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='8/10/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1407733200/"
+				>
+				<i class="icon-chevron-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+	</div>
+</div>
+<table class="ai1ec-oneday-view-original">
+	<thead>
+		<tr>
+										<th class="ai1ec-weekday ">
+											<div class="ai1ec-reveal-full-day">
+							<button class="btn btn-small ai1ec-tooltip-trigger"
+								data-placement="left"
+								title="Reveal full day">
+								<i class="icon-resize-full icon-large"></i>
+							</button>
+						</div>
+										<span class="ai1ec-weekday-date">Sunday </span>
+				</th>
+					</tr>
+		<tr>
+							<td class="ai1ec-allday-events ">
+
+											<div class="ai1ec-allday-label">All-day</div>
+											
+											<a href="http://www.ridermagazine.com/calendar/wisconsin-ride-for-kids-2/?instance_id=140"
+														data-instance-id="140"
+							class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+								ai1ec-event-id-34481								ai1ec-event-instance-id-140								ai1ec-allday
+								"
+							>
+							<div class="ai1ec-event"
+								style="">
+								<span class="ai1ec-event-title">
+									Wisconsin Ride for Kids																			<span class="ai1ec-event-location">@ Firemen's Park</span>
+																	</span>
+							</div>
+						</a>
+
+						<div class="ai1ec-popup hide ai1ec-popup-in-oneday-view">
+							
+							<span class="ai1ec-popup-title popover-title">
+								<a href="http://www.ridermagazine.com/calendar/wisconsin-ride-for-kids-2/?instance_id=140">
+																			Wisconsin Ride for Kids</a>
+																	<span class="ai1ec-event-location">@ Firemen&#039;s Park</span>
+																							</span>
+							
+							<div class="ai1ec-event-time">
+								Aug 10 <span class="ai1ec-allday-badge">all-day</span>							</div>
+
+							
+															<div class="ai1ec-popup-excerpt">Wisconsin Ride for Kids benefiting the Pediatric Brain Tumor Foundation. (Starting location is next to  Middleton High School.) Registration from 8-9:30 a.m. See website for [...]</div>
+													</div><!-- .ai1ec-popup -->
+
+					
+				</td>
+					</tr>
+	</thead>
+	<tbody>
+		<tr class="ai1ec-oneday">
+			<td >
+
+				<div class="ai1ec-grid-container">
+											<div class="ai1ec-hour-marker " style="top: 0px;">
+							<div>12:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 15px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 30px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 45px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 60px;">
+							<div>1:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 75px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 90px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 105px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 120px;">
+							<div>2:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 135px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 150px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 165px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 180px;">
+							<div>3:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 195px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 210px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 225px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 240px;">
+							<div>4:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 255px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 270px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 285px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 300px;">
+							<div>5:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 315px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 330px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 345px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 360px;">
+							<div>6:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 375px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 390px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 405px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 420px;">
+							<div>7:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 435px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 450px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 465px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 480px;">
+							<div>8:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 495px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 510px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 525px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 540px;">
+							<div>9:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 555px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 570px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 585px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 600px;">
+							<div>10:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 615px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 630px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 645px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 660px;">
+							<div>11:00 am</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 675px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 690px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 705px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 720px;">
+							<div>12:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 735px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 750px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 765px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 780px;">
+							<div>1:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 795px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 810px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 825px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 840px;">
+							<div>2:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 855px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 870px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 885px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 900px;">
+							<div>3:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 915px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 930px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 945px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 960px;">
+							<div>4:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 975px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 990px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1005px;"></div>
+																	<div class="ai1ec-hour-marker ai1ec-business-hour" style="top: 1020px;">
+							<div>5:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1035px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1050px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1065px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1080px;">
+							<div>6:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1095px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1110px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1125px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1140px;">
+							<div>7:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1155px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1170px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1185px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1200px;">
+							<div>8:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1215px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1230px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1245px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1260px;">
+							<div>9:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1275px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1290px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1305px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1320px;">
+							<div>10:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1335px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1350px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1365px;"></div>
+																	<div class="ai1ec-hour-marker " style="top: 1380px;">
+							<div>11:00 pm</div>
+						</div>
+													<div class="ai1ec-quarter-marker" style="top: 1395px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1410px;"></div>
+													<div class="ai1ec-quarter-marker" style="top: 1425px;"></div>
+																				</div>
+
+				<div class="ai1ec-day">
+									</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="pull-right"><div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1407560400/"
+				>
+				<i class="icon-chevron-left"></i>			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='8/10/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~oneday/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-day ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1407733200/"
+				>
+				<i class="icon-chevron-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+</div>
+			</div>
+		</div>
+
+		<div class="ai1ec-subscribe-container btn-group pull-left">
+	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=2079245910"
+		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
+		<i class="icon-plus"></i>
+					Subscribe			</a>
+	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
+		data-placement="bottom"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D2079245910"
+		title="Subscribe to this calendar in your Google Calendar" >
+		<i class="icon-google-plus icon-large"></i>
+		Add to Google	</a>
+</div>
+	</div><!-- /.timely -->
+</div>
+<!-- END All-in-One Event Calendar Plugin -->

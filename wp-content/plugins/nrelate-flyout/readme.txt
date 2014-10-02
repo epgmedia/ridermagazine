@@ -3,7 +3,7 @@ Contributors: nrelate, slipfire, sbruner
 Tags: related posts, related content, related, pages, post, posts, fly-out, flyout, slider, fade, thumbnails, animated, animation, box, featured, jquery, new york times, NYTimes, nrelate
 Tested up to: 3.9
 Requires at least: 2.9
-Stable tag: 1.0.3
+Stable tag: 1.2.0
 
 
 Display related content in a cool flyout box... similarly to NYTimes.com.
@@ -108,8 +108,24 @@ As of May 10, 2013, nRelate is working with <a href="http://www.comscore.com">co
 13. Advertising mixed into content
 14. Hovering on an advertisement
 
-
 == Changelog ==
+
+= 1.2.0 =
+* Optimized nRelate loader.
+* Updated nRelate api request.
+* Removed style previews.
+
+= 1.1.1 = 
+* Added support for older versions of PHP.
+
+= 1.1.0 =
+* API updates
+
+= 1.0.5 =
+* FIX: more relevant content when using excerpts.
+
+= 1.0.4 =
+* Javascript update - improvement in placeholder finder
 
 = 1.0.3 =
 * Javascript update.

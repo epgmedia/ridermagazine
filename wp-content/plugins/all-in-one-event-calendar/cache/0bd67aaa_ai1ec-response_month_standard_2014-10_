@@ -1,0 +1,663 @@
+<!-- START All-in-One Event Calendar Plugin - Version 1.11.4-pro -->
+<div id="ai1ec-container" class="ai1ec-container">
+	<!-- AI1EC_PAGE_CONTENT_PLACEHOLDER -->
+	<div id="ai1ec-calendar" class="timely">
+			<div class="timely">
+		<div class="ai1ec-calendar-toolbar clearfix">
+							<div class="pull-right">
+						<div class="btn-group">
+										<a href="#ai1ec-create-event-modal" class="btn btn-primary btn-mini"
+				data-toggle="ai1ec_modal">
+							<i class="icon-plus"></i>
+				Post Your Event			</a>
+			</div>
+
+<div class="ai1ec-modal hide fade" id="ai1ec-create-event-modal">
+	<div class="ai1ec-loading show"></div>
+	<div class="ai1ec-ajax-placeholder">
+		<!-- Form content is loaded here via AJAX. -->
+	</div>
+</div>
+				</div>
+						<ul class="nav nav-pills pull-left"><li class="ai1ec-views-dropdown dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown">
+		<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+		Month		<span class="caret"></span>
+	</a>
+	<div class="dropdown-menu">
+					<div class="" data-action="posterboard">
+				<a id="ai1ec-view-posterboard" data-type="json"					class="ai1ec-load-view posterboard"
+					href="http://www.ridermagazine.com/calendar/action~posterboard/time_limit~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/posterboard-view.png" alt="Posterboard" />
+					Posterboard				</a>
+			</div>
+					<div class="" data-action="stream">
+				<a id="ai1ec-view-stream" data-type="json"					class="ai1ec-load-view stream"
+					href="http://www.ridermagazine.com/calendar/action~stream/time_limit~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/stream-view.png" alt="Stream" />
+					Stream				</a>
+			</div>
+					<div class="active" data-action="month">
+				<a id="ai1ec-view-month" data-type="json"					class="ai1ec-load-view month"
+					href="http://www.ridermagazine.com/calendar/action~month/exact_date~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/month-view.png" alt="Month" />
+					Month				</a>
+			</div>
+					<div class="" data-action="week">
+				<a id="ai1ec-view-week" data-type="json"					class="ai1ec-load-view week"
+					href="http://www.ridermagazine.com/calendar/action~week/exact_date~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/week-view.png" alt="Week" />
+					Week				</a>
+			</div>
+					<div class="" data-action="oneday">
+				<a id="ai1ec-view-oneday" data-type="json"					class="ai1ec-load-view oneday"
+					href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/oneday-view.png" alt="Day" />
+					Day				</a>
+			</div>
+					<div class="" data-action="agenda">
+				<a id="ai1ec-view-agenda" data-type="json"					class="ai1ec-load-view agenda"
+					href="http://www.ridermagazine.com/calendar/action~agenda/time_limit~1413522000/">
+					<img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/agenda-view.png" alt="Agenda" />
+					Agenda				</a>
+			</div>
+			</div>
+</li>
+</ul>
+							<div class='pull-left'>
+					<div class='btn-group'  ><a class='btn btn-mini ai1ec-tooltip-trigger' id='save_filtered_views' title='Save this filter as default'><icon class='icon-pushpin'  ></icon></a></div>				</div>
+					</div><!-- /.ai1ec-calendar-toolbar -->
+	</div>
+		<div id="ai1ec-calendar-view-container">
+			<div id="ai1ec-calendar-view-loading" class="ai1ec-loading"></div>
+			<div id="ai1ec-calendar-view">
+				<div class="clearfix">
+	<h2 class="ai1ec-calendar-title">October 2014</h2>
+	<div class="ai1ec-title-buttons btn-toolbar pull-right">
+		<div class="ai1ec-pagination btn-group">
+						<a class="ai1ec-prev-year ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1380603600/"
+				>
+				<i class="icon-double-angle-left"></i> 2013			</a>
+								<a class="ai1ec-prev-month ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1409547600/"
+				>
+				<i class="icon-angle-left"></i> Sep			</a>
+								<a class='ai1ec-minical-trigger btn'  data-date='10/1/2014' data-date-format='m/d/yyyy' data-date-weekstart='0' data-type='json' data-href='http://www.ridermagazine.com/calendar/action~month/exact_date~__DATE__/' href='#'><img src="http://www.ridermagazine.com/wp-content/themes-ai1ec/vortex/img/date-icon.png" class="ai1ec-icon-datepicker" /></a>								<a class="ai1ec-next-month ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1414818000/"
+				>
+				Nov <i class="icon-angle-right"></i>			</a>
+								<a class="ai1ec-next-year ai1ec-load-view btn"
+				data-type="json"				href="http://www.ridermagazine.com/calendar/action~month/exact_date~1443675600/"
+				>
+				2015 <i class="icon-double-angle-right"></i>			</a>
+			</div><!--/.ai1ec-pagination-->
+	</div>
+</div>
+<table class="ai1ec-month-view ai1ec-popover-boundary">
+	<thead>
+		<tr>
+							<th class="ai1ec-weekday">Sun</th>
+							<th class="ai1ec-weekday">Mon</th>
+							<th class="ai1ec-weekday">Tue</th>
+							<th class="ai1ec-weekday">Wed</th>
+							<th class="ai1ec-weekday">Thu</th>
+							<th class="ai1ec-weekday">Fri</th>
+							<th class="ai1ec-weekday">Sat</th>
+					</tr>
+	</thead>
+	<tbody>
+					<tr class="ai1ec-week">
+															<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-empty"></td>
+																				<td class="ai1ec-today">
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-1-2014/">1</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-2-2014/">2</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-3-2014/">3</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-4-2014/">4</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-5-2014/">5</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/las-vegas-ride-for-kids-3/?instance_id=152"
+																														data-instance-id="152"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34492											ai1ec-event-instance-id-152											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Las Vegas Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/las-vegas-ride-for-kids-3/?instance_id=152">
+																									Las Vegas Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Solano Community College</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 5 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Las Vegas Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Registration from 7:30-9:30 a.m. Location may change. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/ride-for-autism-speaks/?instance_id=8290"
+																														data-instance-id="8290"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-38135											ai1ec-event-instance-id-8290											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Ride for Autism Speaks</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/ride-for-autism-speaks/?instance_id=8290">
+																									Ride for Autism Speaks</a>
+																							<span class="ai1ec-event-location">@ Traymore Ballroom at Bally&#039;s</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 5 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-landscape"><a href="http://www.ridermagazine.com/calendar/ride-for-autism-speaks/?instance_id=8290"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/09/Philly-Ride-Save-the-Date-PROD_Page_2-300x220.jpg" alt="Ride for Autism Speaks @ Traymore Ballroom at Bally&#039;s | Atlantic City | New Jersey | United States" width="300" height="220" /></a></div>
+																					<div class="ai1ec-popup-excerpt">Join us for the 9th annual Ride for Autism Speaks Philadelphia, a 60-mile police-escorted ride that starts with a kick off party at the Camden [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/chrome-up-motorcycle-show-missouri/?instance_id=8298"
+																														data-instance-id="8298"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-38417											ai1ec-event-instance-id-8298																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Chrome Up Motorcycle Show-Missouri</span>
+																							<span class="ai1ec-event-time">11:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/chrome-up-motorcycle-show-missouri/?instance_id=8298">
+																									Chrome Up Motorcycle Show-Missouri</a>
+																							<span class="ai1ec-event-location">@ District 9 Machinist Hall</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 5 @ 11:00 am – 6:00 pm</div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-portrait"><a href="http://www.ridermagazine.com/calendar/chrome-up-motorcycle-show-missouri/?instance_id=8298"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/09/Chrome-Up-Rack-Card-142x300.jpg" alt="Chrome Up Motorcycle Show-Missouri @ District 9 Machinist Hall | Bridgeton | Missouri | United States" width="142" height="300" /></a></div>
+																					<div class="ai1ec-popup-excerpt">A family friendly event in Bridgeton, Missouri, open to all makes/models of motorcycles, trikes and custom bikes. Get a look at some of the most [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-6-2014/">6</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-7-2014/">7</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-8-2014/">8</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-9-2014/">9</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-10-2014/">10</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/cruisin-the-county-big-bike-weekend/?instance_id=7"
+																															data-end-day="11"
+											data-start-truncated="false"
+											data-end-truncated="false"
+																				data-instance-id="7"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34300											ai1ec-event-instance-id-7											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Cruisin’ the County &#8211; Big Bike Weekend</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/cruisin-the-county-big-bike-weekend/?instance_id=7">
+																									Cruisin’ the County &#8211; Big Bike W&#8230;</a>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 10 – Oct 11 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Redding, California
+&lt;br&gt;
+This three-day Big Bike Weekend includes a Cal-Neva Training Series for Motor Officers, 3-day motorcycle rally, Green Light Police Escorted Ride (hour ride through county). Riders pay a registration fee but spectators can attend for free. The event includes entertainment, food and merchandise vendors. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-11-2014/">11</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/6th-annual-think-pint-motorcycle-ride-and-car-show-florida/?instance_id=285"
+																														data-instance-id="285"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-37123											ai1ec-event-instance-id-285											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">6th Annual Think Pint Motorcycle Ride and Car Show—Florida</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/6th-annual-think-pint-motorcycle-ride-and-car-show-florida/?instance_id=285">
+																									6th Annual Think Pint Motorcycle&#8230;</a>
+																							<span class="ai1ec-event-location">@ Flagler Imaging Center </span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 11 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">70 mile ESCORTED ride thru beautiful historical downtown St. Augustine, Florida, and scenic beach side and shady farm land. Also includes 50/50, silent auction, live [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-12-2014/">12</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/dallas-fort-worth-ride-for-kids-2/?instance_id=153"
+																														data-instance-id="153"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34494											ai1ec-event-instance-id-153											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Dallas-Fort Worth Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/dallas-fort-worth-ride-for-kids-2/?instance_id=153">
+																									Dallas-Fort Worth Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Texas Motor Speedway</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 12 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Dallas-Fort Worth Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Register from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/s-c-midlands-ride-for-kids-2/?instance_id=154"
+																														data-instance-id="154"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34495											ai1ec-event-instance-id-154											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">S.C. Midlands Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/s-c-midlands-ride-for-kids-2/?instance_id=154">
+																									S.C. Midlands Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Lexington High School</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 12 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">S.C. Midlands Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Register from 12-1:30 p.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-13-2014/">13</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-14-2014/">14</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-15-2014/">15</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-16-2014/">16</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-17-2014/">17</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-18-2014/">18</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-19-2014/">19</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/phoenix-ride-for-kids-2/?instance_id=155"
+																														data-instance-id="155"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34496											ai1ec-event-instance-id-155											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Phoenix Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/phoenix-ride-for-kids-2/?instance_id=155">
+																									Phoenix Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Higley High School</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 19 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Phoenix Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Register from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-20-2014/">20</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-21-2014/">21</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-22-2014/">22</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-23-2014/">23</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-24-2014/">24</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-25-2014/">25</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/pasos-pink-moto-ride-california/?instance_id=8304"
+																														data-instance-id="8304"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-38543											ai1ec-event-instance-id-8304																						"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Paso&#8217;s Pink Moto Ride (California)</span>
+																							<span class="ai1ec-event-time">10:00 am</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/pasos-pink-moto-ride-california/?instance_id=8304">
+																									Paso&#8217;s Pink Moto Ride (California)</a>
+																							<span class="ai1ec-event-location">@ Barrelhouse Brewery</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 25 @ 10:00 am – 5:00 pm</div>
+
+										<div class="ai1ec-event-avatar timely  ai1ec-post_thumbnail ai1ec-landscape"><a href="http://www.ridermagazine.com/calendar/pasos-pink-moto-ride-california/?instance_id=8304"><img src="http://www.ridermagazine.com/wp-content/uploads/2014/09/PinkPhoto.jpg" alt="Paso&#039;s Pink Moto Ride (California) @ Barrelhouse Brewery | Paso Robles | California | United States" width="300" height="272" /></a></div>
+																					<div class="ai1ec-popup-excerpt">Paso&#8217;s Pink Moto Ride will be held on October 25, 2014 to raise funds and awareness for the cancer support community. Riders will meet up [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+												</tr><!--/tr.ai1ec-week-->
+					<tr class="ai1ec-week">
+															<td >
+
+															<div class="ai1ec-day-stretcher"></div>
+															
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-26-2014/">26</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/mississippi-ride-for-kids/?instance_id=156"
+																														data-instance-id="156"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34497											ai1ec-event-instance-id-156											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">Mississippi Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/mississippi-ride-for-kids/?instance_id=156">
+																									Mississippi Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Holmes Community College</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 26 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Mississippi Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Register from 11:30 a.m.-1 p.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+																	<a href="http://www.ridermagazine.com/calendar/san-antonio-ride-for-kids-2/?instance_id=157"
+																														data-instance-id="157"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-34498											ai1ec-event-instance-id-157											ai1ec-allday											"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">San Antonio Ride for Kids</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/san-antonio-ride-for-kids-2/?instance_id=157">
+																									San Antonio Ride for Kids</a>
+																							<span class="ai1ec-event-location">@ Retama Park</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 26 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">San Antonio Ride for Kids, benefiting the Pediatric Brain Tumor Foundation. Register from 8-9:30 a.m. See website for full details. </div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-27-2014/">27</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-28-2014/">28</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-29-2014/">29</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-30-2014/">30</a></div>
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td >
+
+							
+							<div class="ai1ec-day">
+								<div class="ai1ec-date"><a class="ai1ec-load-view" data-type="json" href="http://www.ridermagazine.com/calendar/action~oneday/exact_date~10-31-2014/">31</a></div>
+																	<a href="http://www.ridermagazine.com/calendar/44th-south-central-bmw-owners-reunion-in-texas/?instance_id=311"
+																															data-end-day="01"
+											data-start-truncated="false"
+											data-end-truncated="true"
+																				data-instance-id="311"
+										class="ai1ec-event-container ai1ec-load-event ai1ec-popup-trigger
+											ai1ec-event-id-37676											ai1ec-event-instance-id-311											ai1ec-allday											ai1ec-multiday"
+										>
+
+										<div class="ai1ec-event"
+											style="">
+											<span class="ai1ec-event-title">44th South Central BMW Owners Reunion in Texas</span>
+																					</div>
+									</a>
+									<div class="ai1ec-popup hide">
+										
+										<span class="ai1ec-popup-title popover-title">
+											<a href="http://www.ridermagazine.com/calendar/44th-south-central-bmw-owners-reunion-in-texas/?instance_id=311">
+																									44th South Central BMW Owners Re&#8230;</a>
+																							<span class="ai1ec-event-location">@ Oak Thicket Park On Lake Fayette</span>
+																																</span><!--/.span.ai1ec-popup-title-->
+										
+										<div class="ai1ec-event-time">Oct 31 – Nov 1 <span class="ai1ec-allday-badge">all-day</span></div>
+
+										
+																					<div class="ai1ec-popup-excerpt">Join the BMW Motorcycle Club of Houston at the 44th South Central BMW Owners Reunion, Friday Oct. 31 &#8211; Saturday Nov. 1, 2014, at Oak [...]</div>
+																			</div><!-- .ai1ec-popup.hide -->
+															</div><!--/.ai1ec-day-->
+						</td>
+																				<td class="ai1ec-empty"></td>
+												</tr><!--/tr.ai1ec-week-->
+			</tbody>
+</table>
+			</div>
+		</div>
+
+		<div class="ai1ec-subscribe-container btn-group pull-left">
+	<a class="btn ai1ec-subscribe ai1ec-tooltip-trigger" data-placement="bottom"
+		href="webcal://www.ridermagazine.com/?plugin=all-in-one-event-calendar&controller=ai1ec_exporter_controller&action=export_events&cb=1717159749"
+		title="Subscribe to this calendar in your personal calendar (iCal, Outlook, etc.)" >
+		<i class="icon-plus"></i>
+					Subscribe			</a>
+	<a class="btn ai1ec-subscribe-google ai1ec-tooltip-trigger" target="_blank"
+		data-placement="bottom"
+		href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.ridermagazine.com%2F%3Fplugin%3Dall-in-one-event-calendar%26controller%3Dai1ec_exporter_controller%26action%3Dexport_events%26cb%3D1717159749"
+		title="Subscribe to this calendar in your Google Calendar" >
+		<i class="icon-google-plus icon-large"></i>
+		Add to Google	</a>
+</div>
+	</div><!-- /.timely -->
+</div>
+<!-- END All-in-One Event Calendar Plugin -->
