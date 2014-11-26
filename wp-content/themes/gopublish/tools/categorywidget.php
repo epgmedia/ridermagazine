@@ -167,7 +167,7 @@ $attachment = wp_get_attachment_url($attachment_id); if ($attachment) { ?><a hre
                   <p><a class="homeheadline" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p><?php if ($instance['teaser-date']==on) { ?><p><?php the_time(' F j, Y'); ?></p><?php } ?>
 
                   <?php $teaser = $instance['headline-teaser']; if ($teaser) the_content_limit($teaser, "Read more &raquo;"); ?>
-				<div style="clear:both;margin-top:15px"></div>
+				<div style="clear:both;height:1px;margin-top:15px"></div>
                  <?php }}        
 
         endwhile; else: endif;
