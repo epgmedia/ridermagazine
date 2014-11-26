@@ -890,5 +890,3 @@ class sno_category extends WP_Widget {
 	<?php
 	}
 }
-
-?>

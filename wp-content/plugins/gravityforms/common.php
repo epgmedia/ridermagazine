@@ -2460,7 +2460,7 @@ class GFCommon{
     public static function get_countries(){
         return apply_filters("gform_countries", array(
         __('Afghanistan', 'gravityforms'),__('Albania', 'gravityforms'),__('Algeria', 'gravityforms'), __('American Samoa', 'gravityforms'), __('Andorra', 'gravityforms'),__('Angola', 'gravityforms'),__('Antigua and Barbuda', 'gravityforms'),__('Argentina', 'gravityforms'),__('Armenia', 'gravityforms'),__('Australia', 'gravityforms'),__('Austria', 'gravityforms'),__('Azerbaijan', 'gravityforms'),__('Bahamas', 'gravityforms'),__('Bahrain', 'gravityforms'),__('Bangladesh', 'gravityforms'),__('Barbados', 'gravityforms'),__('Belarus', 'gravityforms'),__('Belgium', 'gravityforms'),__('Belize', 'gravityforms'),__('Benin', 'gravityforms'),__('Bermuda', 'gravityforms'),__('Bhutan', 'gravityforms'),__('Bolivia', 'gravityforms'),__('Bosnia and Herzegovina', 'gravityforms'),__('Botswana', 'gravityforms'),__('Brazil', 'gravityforms'),__('Brunei', 'gravityforms'),__('Bulgaria', 'gravityforms'),__('Burkina Faso', 'gravityforms'),__('Burundi', 'gravityforms'),__('Cambodia', 'gravityforms'),__('Cameroon', 'gravityforms'),__('Canada', 'gravityforms'),__('Cape Verde', 'gravityforms'),__('Cayman Islands', 'gravityforms'),__('Central African Republic', 'gravityforms'),__('Chad', 'gravityforms'),__('Chile', 'gravityforms'),__('China', 'gravityforms'),__('Colombia', 'gravityforms'),__('Comoros', 'gravityforms'),__('Congo, Democratic Republic of the', 'gravityforms'),__('Congo, Republic of the', 'gravityforms'),__('Costa Rica', 'gravityforms'),__('C&ocirc;te d\'Ivoire', 'gravityforms'),__('Croatia', 'gravityforms'),__('Cuba', 'gravityforms'),__('Cyprus', 'gravityforms'),__('Czech Republic', 'gravityforms'),__('Denmark', 'gravityforms'),__('Djibouti', 'gravityforms'),__('Dominica', 'gravityforms'),__('Dominican Republic', 'gravityforms'),__('East Timor', 'gravityforms'),__('Ecuador', 'gravityforms'),__('Egypt', 'gravityforms'),__('El Salvador', 'gravityforms'),__('Equatorial Guinea', 'gravityforms'),__('Eritrea', 'gravityforms'),__('Estonia', 'gravityforms'),__('Ethiopia', 'gravityforms'),__('Fiji', 'gravityforms'),__('Finland', 'gravityforms'),__('France', 'gravityforms'), __('French Polynesia', 'gravityforms'), __('Gabon', 'gravityforms'),
-        __('Gambia', 'gravityforms'),__('Georgia', 'gravityforms'),__('Germany', 'gravityforms'),__('Ghana', 'gravityforms'),__('Greece', 'gravityforms'),__('Greenland', 'gravityforms'),__('Grenada', 'gravityforms'),__('Guam', 'gravityforms'),__('Guatemala', 'gravityforms'),__('Guinea', 'gravityforms'),__('Guinea-Bissau', 'gravityforms'),__('Guyana', 'gravityforms'),__('Haiti', 'gravityforms'),__('Honduras', 'gravityforms'),__('Hong Kong', 'gravityforms'),__('Hungary', 'gravityforms'),__('Iceland', 'gravityforms'),__('India', 'gravityforms'),__('Indonesia', 'gravityforms'),__('Iran', 'gravityforms'),__('Iraq', 'gravityforms'),__('Ireland', 'gravityforms'),__('Israel', 'gravityforms'),__('Italy', 'gravityforms'),__('Jamaica', 'gravityforms'),__('Japan', 'gravityforms'),__('Jordan', 'gravityforms'),__('Kazakhstan', 'gravityforms'),__('Kenya', 'gravityforms'),__('Kiribati', 'gravityforms'),__('North Korea', 'gravityforms'),__('South Korea', 'gravityforms'),__('Kosovo', 'gravityforms'),__('Kuwait', 'gravityforms'),__('Kyrgyzstan', 'gravityforms'),__('Laos', 'gravityforms'),__('Latvia', 'gravityforms'),__('Lebanon', 'gravityforms'),__('Lesotho', 'gravityforms'),__('Liberia', 'gravityforms'),__('Libya', 'gravityforms'),__('Liechtenstein', 'gravityforms'),__('Lithuania', 'gravityforms'),__('Luxembourg', 'gravityforms'),__('Macedonia', 'gravityforms'),__('Madagascar', 'gravityforms'),__('Malawi', 'gravityforms'),__('Malaysia', 'gravityforms'),__('Maldives', 'gravityforms'),__('Mali', 'gravityforms'),__('Malta', 'gravityforms'),__('Marshall Islands', 'gravityforms'),__('Mauritania', 'gravityforms'),__('Mauritius', 'gravityforms'),__('Mexico', 'gravityforms'),__('Micronesia', 'gravityforms'),__('Moldova', 'gravityforms'),__('Monaco', 'gravityforms'),__('Mongolia', 'gravityforms'),__('Montenegro', 'gravityforms'),__('Morocco', 'gravityforms'),__('Mozambique', 'gravityforms'),__('Myanmar', 'gravityforms'),__('Namibia', 'gravityforms'),__('Nauru', 'gravityforms'),__('Nepal', 'gravityforms'),__('Netherlands', 'gravityforms'),__('New Zealand', 'gravityforms'),
+        __('Gambia', 'gravityforms'),_x('Georgia', 'Country', 'gravityforms'),__('Germany', 'gravityforms'),__('Ghana', 'gravityforms'),__('Greece', 'gravityforms'),__('Greenland', 'gravityforms'),__('Grenada', 'gravityforms'),__('Guam', 'gravityforms'),__('Guatemala', 'gravityforms'),__('Guinea', 'gravityforms'),__('Guinea-Bissau', 'gravityforms'),__('Guyana', 'gravityforms'),__('Haiti', 'gravityforms'),__('Honduras', 'gravityforms'),__('Hong Kong', 'gravityforms'),__('Hungary', 'gravityforms'),__('Iceland', 'gravityforms'),__('India', 'gravityforms'),__('Indonesia', 'gravityforms'),__('Iran', 'gravityforms'),__('Iraq', 'gravityforms'),__('Ireland', 'gravityforms'),__('Israel', 'gravityforms'),__('Italy', 'gravityforms'),__('Jamaica', 'gravityforms'),__('Japan', 'gravityforms'),__('Jordan', 'gravityforms'),__('Kazakhstan', 'gravityforms'),__('Kenya', 'gravityforms'),__('Kiribati', 'gravityforms'),__('North Korea', 'gravityforms'),__('South Korea', 'gravityforms'),__('Kosovo', 'gravityforms'),__('Kuwait', 'gravityforms'),__('Kyrgyzstan', 'gravityforms'),__('Laos', 'gravityforms'),__('Latvia', 'gravityforms'),__('Lebanon', 'gravityforms'),__('Lesotho', 'gravityforms'),__('Liberia', 'gravityforms'),__('Libya', 'gravityforms'),__('Liechtenstein', 'gravityforms'),__('Lithuania', 'gravityforms'),__('Luxembourg', 'gravityforms'),__('Macedonia', 'gravityforms'),__('Madagascar', 'gravityforms'),__('Malawi', 'gravityforms'),__('Malaysia', 'gravityforms'),__('Maldives', 'gravityforms'),__('Mali', 'gravityforms'),__('Malta', 'gravityforms'),__('Marshall Islands', 'gravityforms'),__('Mauritania', 'gravityforms'),__('Mauritius', 'gravityforms'),__('Mexico', 'gravityforms'),__('Micronesia', 'gravityforms'),__('Moldova', 'gravityforms'),__('Monaco', 'gravityforms'),__('Mongolia', 'gravityforms'),__('Montenegro', 'gravityforms'),__('Morocco', 'gravityforms'),__('Mozambique', 'gravityforms'),__('Myanmar', 'gravityforms'),__('Namibia', 'gravityforms'),__('Nauru', 'gravityforms'),__('Nepal', 'gravityforms'),__('Netherlands', 'gravityforms'),__('New Zealand', 'gravityforms'),
         __('Nicaragua', 'gravityforms'),__('Niger', 'gravityforms'),__('Nigeria', 'gravityforms'),__('Norway', 'gravityforms'), __('Northern Mariana Islands', 'gravityforms'), __('Oman', 'gravityforms'),__('Pakistan', 'gravityforms'),__('Palau', 'gravityforms'),__('Palestine', 'gravityforms'),__('Panama', 'gravityforms'),__('Papua New Guinea', 'gravityforms'),__('Paraguay', 'gravityforms'),__('Peru', 'gravityforms'),__('Philippines', 'gravityforms'),__('Poland', 'gravityforms'),__('Portugal', 'gravityforms'),__('Puerto Rico', 'gravityforms'),__('Qatar', 'gravityforms'),__('Romania', 'gravityforms'),__('Russia', 'gravityforms'),__('Rwanda', 'gravityforms'),__('Saint Kitts and Nevis', 'gravityforms'),__('Saint Lucia', 'gravityforms'),__('Saint Vincent and the Grenadines', 'gravityforms'),__('Samoa', 'gravityforms'),__('San Marino', 'gravityforms'),__('Sao Tome and Principe', 'gravityforms'),__('Saudi Arabia', 'gravityforms'),__('Senegal', 'gravityforms'),__('Serbia and Montenegro', 'gravityforms'),__('Seychelles', 'gravityforms'),__('Sierra Leone', 'gravityforms'),__('Singapore', 'gravityforms'),__('Slovakia', 'gravityforms'),__('Slovenia', 'gravityforms'),__('Solomon Islands', 'gravityforms'),__('Somalia', 'gravityforms'),__('South Africa', 'gravityforms'),__('Spain', 'gravityforms'),__('Sri Lanka', 'gravityforms'),__('Sudan', 'gravityforms'),__('Sudan, South', 'gravityforms'),__('Suriname', 'gravityforms'),__('Swaziland', 'gravityforms'),__('Sweden', 'gravityforms'),__('Switzerland', 'gravityforms'),__('Syria', 'gravityforms'),__('Taiwan', 'gravityforms'),__('Tajikistan', 'gravityforms'),__('Tanzania', 'gravityforms'),__('Thailand', 'gravityforms'),__('Togo', 'gravityforms'),__('Tonga', 'gravityforms'),__('Trinidad and Tobago', 'gravityforms'),__('Tunisia', 'gravityforms'),__('Turkey', 'gravityforms'),__('Turkmenistan', 'gravityforms'),__('Tuvalu', 'gravityforms'),__('Uganda', 'gravityforms'),__('Ukraine', 'gravityforms'),__('United Arab Emirates', 'gravityforms'),__('United Kingdom', 'gravityforms'),
         __('United States', 'gravityforms'),__('Uruguay', 'gravityforms'),__('Uzbekistan', 'gravityforms'),__('Vanuatu', 'gravityforms'),__('Vatican City', 'gravityforms'),__('Venezuela', 'gravityforms'),__('Vietnam', 'gravityforms'), __('Virgin Islands, British', 'gravityforms'), __('Virgin Islands, U.S.', 'gravityforms'),__('Yemen', 'gravityforms'),__('Zambia', 'gravityforms'),__('Zimbabwe', 'gravityforms')));
 
@@ -2535,7 +2535,7 @@ class GFCommon{
             __('FRANCE', 'gravityforms') => "FR" ,
             __('GABON', 'gravityforms') => "GA" ,
             __('GAMBIA', 'gravityforms') => "GM" ,
-            __('GEORGIA', 'gravityforms') => "GE" ,
+			_x('GEORGIA', 'Country', 'gravityforms') => "GE" ,
             __('GERMANY', 'gravityforms') => "DE" ,
             __('GHANA', 'gravityforms') => "GH" ,
             __('GREECE', 'gravityforms') => "GR" ,
@@ -2684,7 +2684,7 @@ class GFCommon{
         return apply_filters("gform_us_states", array(
             __("Alabama","gravityforms"),__("Alaska","gravityforms"),__("Arizona","gravityforms"),__("Arkansas","gravityforms"),
             __("California","gravityforms"),__("Colorado","gravityforms"),__("Connecticut","gravityforms"),__("Delaware","gravityforms"),
-            __("District of Columbia", "gravityforms"), __("Florida","gravityforms"),__("Georgia","gravityforms"),
+            __("District of Columbia", "gravityforms"), __("Florida","gravityforms"),_x("Georgia","US State","gravityforms"),
             __("Hawaii","gravityforms"),__("Idaho","gravityforms"),__("Illinois","gravityforms"),__("Indiana","gravityforms"),
             __("Iowa","gravityforms"),__("Kansas","gravityforms"),__("Kentucky","gravityforms"),__("Louisiana","gravityforms"),
             __("Maine","gravityforms"),__("Maryland","gravityforms"),__("Massachusetts","gravityforms"),__("Michigan","gravityforms"),
@@ -2712,7 +2712,7 @@ class GFCommon{
             strtoupper(__("Delaware","gravityforms")) => "DE",
             strtoupper(__("District of Columbia", "gravityforms")) => "DC",
             strtoupper(__("Florida","gravityforms")) => "FL",
-            strtoupper(__("Georgia","gravityforms")) => "GA",
+            strtoupper(_x("Georgia","US State","gravityforms")) => "GA",
             strtoupper(__("Hawaii","gravityforms")) => "HI",
             strtoupper(__("Idaho","gravityforms")) => "ID",
             strtoupper(__("Illinois","gravityforms")) => "IL",
@@ -3700,7 +3700,11 @@ class GFCommon{
                         $upload .= sprintf('<input type="hidden" name="input_%d" value=\'%s\' />', $id, esc_attr($value));
 
                 } else {
-                    $upload = sprintf("<input type='hidden' name='MAX_FILE_SIZE' value='%d' />", $max_upload_size);
+	                $upload = '';
+	                if ( $max_upload_size <= 2047 * 1048576 ) {
+		                //  MAX_FILE_SIZE > 2048MB fails. The file size is checked anyway once uploaded, so it's not necessary.
+		                $upload = sprintf( "<input type='hidden' name='MAX_FILE_SIZE' value='%d' />", $max_upload_size );
+	                }
                     $upload .= sprintf("<input name='input_%d' id='%s' type='file' class='%s' $tabindex %s/>", $id, $field_id, esc_attr($class), $disabled_text);
                 }
 
@@ -4145,8 +4149,26 @@ class GFCommon{
     }
 
     public static function get_disallowed_file_extensions(){
-        return array("php", "asp", "exe", "com", "htaccess");
+        return array("php", "asp", "exe", "com", "htaccess", "phtml", "php3", "php4", "php5", "php6");
     }
+
+	public static function match_file_extension( $file_name, $extensions ) {
+		if ( empty ( $extensions ) || ! is_array( $extensions ) ) {
+			return false;
+		}
+
+		$ext = strtolower( pathinfo( $file_name, PATHINFO_EXTENSION ) );
+		if ( in_array( $ext, $extensions ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public static function file_name_has_disallowed_extension( $file_name ) {
+
+		return self::match_file_extension( $file_name, self::get_disallowed_file_extensions() ) || strpos( strtolower( $file_name ), '.php.' ) !== false;
+	}
 
     public static function to_money($number, $currency_code=""){
         if(!class_exists("RGCurrency"))
@@ -4677,48 +4699,48 @@ class GFCommon{
 
                         default :
                             if($media == "email"){
-                                $list = "<table class='gfield_list' style='border-top: 1px solid #DFDFDF; border-left: 1px solid #DFDFDF; border-spacing: 0; padding: 0; margin: 2px 0 6px; width: 100%'><thead><tr>";
+                                $list = "<table class='gfield_list' style='border-top: 1px solid #DFDFDF; border-left: 1px solid #DFDFDF; border-spacing: 0; padding: 0; margin: 2px 0 6px; width: 100%'><thead><tr>\n";
 
                                 //reading columns from entry data
                                 foreach($columns as $column){
-                                    $list .= "<th style='background-image: none; border-right: 1px solid #DFDFDF; border-bottom: 1px solid #DFDFDF; padding: 6px 10px; font-family: sans-serif; font-size: 12px; font-weight: bold; background-color: #F1F1F1; color:#333; text-align:left'>" . esc_html($column) . "</th>";
+                                    $list .= "<th style='background-image: none; border-right: 1px solid #DFDFDF; border-bottom: 1px solid #DFDFDF; padding: 6px 10px; font-family: sans-serif; font-size: 12px; font-weight: bold; background-color: #F1F1F1; color:#333; text-align:left'>" . esc_html($column) . "</th>\n";
                                 }
-                                $list .= "</tr></thead>";
+                                $list .= "</tr></thead>\n";
 
                                 $list .= "<tbody style='background-color: #F9F9F9'>";
                                 foreach($value as $item){
                                     $list .= "<tr>";
                                     foreach($columns as $column){
                                         $val = rgar($item, $column);
-                                        $list .= "<td style='padding: 6px 10px; border-right: 1px solid #DFDFDF; border-bottom: 1px solid #DFDFDF; border-top: 1px solid #FFF; font-family: sans-serif; font-size:12px;'>{$val}</td>";
+                                        $list .= "<td style='padding: 6px 10px; border-right: 1px solid #DFDFDF; border-bottom: 1px solid #DFDFDF; border-top: 1px solid #FFF; font-family: sans-serif; font-size:12px;'>{$val}</td>\n";
                                     }
 
-                                    $list .="</tr>";
+                                    $list .="</tr>\n";
                                 }
 
-                                $list .="<tbody></table>";
+                                $list .="<tbody></table>\n";
                             }
                             else{
-                                $list = "<table class='gfield_list'><thead><tr>";
+                                $list = "<table class='gfield_list'><thead><tr>\n";
 
                                 //reading columns from entry data
                                 foreach($columns as $column){
-                                    $list .= "<th>" . esc_html($column) . "</th>";
+                                    $list .= "<th>" . esc_html($column) . "</th>\n";
                                 }
-                                $list .= "</tr></thead>";
+                                $list .= "</tr></thead>\n";
 
                                 $list .= "<tbody>";
                                 foreach($value as $item){
                                     $list .= "<tr>";
                                     foreach($columns as $column){
                                         $val = rgar($item, $column);
-                                        $list .= "<td>{$val}</td>";
+                                        $list .= "<td>{$val}</td>\n";
                                     }
 
-                                    $list .="</tr>";
+                                    $list .="</tr>\n";
                                 }
 
-                                $list .="<tbody></table>";
+                                $list .="<tbody></table>\n";
                             }
                         break;
                     }
@@ -4902,6 +4924,12 @@ class GFCommon{
 
         return do_shortcode($content);
     }
+
+	public static function spam_enabled( $form_id ) {
+		$spam_enabled = self::akismet_enabled( $form_id ) || has_filter( 'gform_entry_is_spam' ) || has_filter( "gform_entry_is_spam_{$form_id}" );
+
+		return $spam_enabled;
+	}
 
     public static function has_akismet(){
     	$akismet_exists = function_exists('akismet_http_post') || function_exists('Akismet::http_post');
@@ -5620,11 +5648,17 @@ class GFCommon{
 
         foreach ($fields as $field) {
 
+	        $input_type = GFFormsModel::get_input_type( $field );
+
             $field_type  = GFFormsModel::get_input_type($field);
 
             $operators = isset($operators_by_field_type[$field_type]) ? $operators_by_field_type[$field_type] : $operators_by_field_type["default"];
-            if (!isset($field["choices"]) && !in_array("contains", $operators))
-                $operators[] = "contains";
+
+	        if ( $field['type'] == 'product' && in_array( $input_type, array( 'radio', 'select' ) ) ) {
+		        $operators = array( 'is' );
+	        } elseif (!isset($field["choices"]) && !in_array("contains", $operators)){
+		        $operators[] = "contains";
+	        }
 
             $field_filter = array();
             $key          = $field["id"];
@@ -5746,8 +5780,8 @@ class GFCommon{
                 "operators" => array( "is", "isnot"),
                 "values" => array(
                     array(
-                        "text" => "Approved",
-                        "value" => "Approved"
+                        "text" => "Paid",
+                        "value" => "Paid"
                     ),
                     array(
                         "text" => "Failed",
@@ -5807,7 +5841,7 @@ class GFCommon{
     }
 
 
-    public static function get_field_filters_from_post(){
+    public static function get_field_filters_from_post($form){
         $field_filters = array();
         $filter_fields = rgpost("f");
         if (is_array($filter_fields)) {
@@ -5828,6 +5862,15 @@ class GFCommon{
                     $val       = $key_array[1] . ":" . $val;
                 }
                 $field_filter["key"]      = $key;
+
+	            $field = GFFormsModel::get_field( $form, $key );
+	            if ( $field ) {
+		            $input_type = GFFormsModel::get_input_type( $field );
+		            if ( $field['type'] == 'product' && in_array( $input_type, array( 'radio', 'select' ) ) ) {
+			            $operator = 'contains';
+		            }
+	            }
+
                 $field_filter["operator"] = $operator;
                 $field_filter["value"]    = $val;
                 $field_filters[]        = $field_filter;
