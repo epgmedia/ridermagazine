@@ -176,8 +176,8 @@ class sno_video extends WP_Widget {
 						<?php if ( ( $videocount >= 1 ) && ( $videocount < $totalvideos )
 						           && ( $totalvideos != 1 )
 						) { ?><?php if ( $instance['dividing-line'] == on ) { ?>
-							<div class="storybottom" <?php if ( $instance['remove-padding']
-							                                    == on ) { ?>style="margin-left: 10px; margin-right: 10px;"<?php } ?>></div><?php } else { ?>
+						<div class="storybottom" <?php if ( $instance['remove-padding']
+						                                    == on ) { ?>style="margin-left: 10px; margin-right: 10px;"<?php } ?>></div><?php } else { ?>
 							<div class="storybottomnoline"></div><?php } ?><?php } ?>
 
 
@@ -199,11 +199,11 @@ class sno_video extends WP_Widget {
 
 							<?php if ( has_post_thumbnail() ) {
 								the_post_thumbnail( 'videothumb', array(
-										'class' => 'catboxthumb',
-										'style' =>
-											'margin-bottom:10px; float:' . $thumbplacement
-											. '; margin-' . $thumbplacement . ':0px;'
-									) );
+									'class' => 'catboxthumb',
+									'style' =>
+										'margin-bottom:10px; float:' . $thumbplacement
+										. '; margin-' . $thumbplacement . ':0px;'
+								) );
 							}
 
 
@@ -220,7 +220,7 @@ class sno_video extends WP_Widget {
 
 			<?php if ( $instance['view-all'] == on ) { ?>
 				<?php if ( $instance['dividing-line'] == on ) { ?>
-					<div
+				<div
 					class="storybottom" <?php if ( $instance['remove-padding'] ) { ?>style="margin-left:10px;margin-right:10px;"<?php } ?>></div><?php } else { ?>
 					<div class="storybottomnoline"></div><?php } ?>
 				<a href="<?php echo cat_id_to_slug( $instance['category'] ); ?>"><p
@@ -344,238 +344,238 @@ class sno_video extends WP_Widget {
 
 		<div
 			style="float:left;width:230px;margin-right:20px;border-right:1px solid #aaaaaa;padding-right:10px;">
-			<p style="font-weight:bold;text-decoration:underline">Widget Content</p>
+		<p style="font-weight:bold;text-decoration:underline">Widget Content</p>
 
-			<p>
-				<label
-					for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( "Widget Title:" ); ?></label><br/>
-				<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>"
-				       name="<?php echo $this->get_field_name( 'title' ); ?>"
-				       value="<?php echo $instance['title']; ?>" style="width:95%;"/>
-			</p>
+		<p>
+			<label
+				for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( "Widget Title:" ); ?></label><br/>
+			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>"
+			       name="<?php echo $this->get_field_name( 'title' ); ?>"
+			       value="<?php echo $instance['title']; ?>" style="width:95%;"/>
+		</p>
 
-			<p>
-				<label
-					for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( "Select your video category:" ); ?></label><br/>
-				<?php wp_dropdown_categories( array(
-					                              'selected'         => $instance['category'],
-					                              'name'             => $this->get_field_name( 'category' ),
-					                              'orderby'          => 'Name',
-					                              'hierarchical'     => 1,
-					                              'show_option_none' => __( "None",
-					                                                        'studiopress' ),
-					                              'hide_empty'       => '0'
-				                              ) ); ?>
-			</p>
+		<p>
+			<label
+				for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( "Select your video category:" ); ?></label><br/>
+			<?php wp_dropdown_categories( array(
+				                              'selected'         => $instance['category'],
+				                              'name'             => $this->get_field_name( 'category' ),
+				                              'orderby'          => 'Name',
+				                              'hierarchical'     => 1,
+				                              'show_option_none' => __( "None",
+				                                                        'studiopress' ),
+				                              'hide_empty'       => '0'
+			                              ) ); ?>
+		</p>
 
-			<div
-				style="clear:both;border-bottom:1px solid #aaaaaa;padding-top:10px;margin-bottom:10px"></div>
-			<p>
-				<input id="<?php echo $this->get_field_id( 'number' ); ?>"
-				       name="<?php echo $this->get_field_name( 'number' ); ?>" type="text"
-				       maxlength="1" size="1" value="<?php echo $instance['number']; ?>"/>
-				<label
-					for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of Videos' ); ?></label>
-			</p>
+		<div
+			style="clear:both;border-bottom:1px solid #aaaaaa;padding-top:10px;margin-bottom:10px"></div>
+		<p>
+			<input id="<?php echo $this->get_field_id( 'number' ); ?>"
+			       name="<?php echo $this->get_field_name( 'number' ); ?>" type="text"
+			       maxlength="1" size="1" value="<?php echo $instance['number']; ?>"/>
+			<label
+				for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of Videos' ); ?></label>
+		</p>
 
-			<p>
+		<p>
 
-				<input class="checkbox" type="checkbox" <?php if ( $instance['show-headline']
-				                                                   == on
+			<input class="checkbox" type="checkbox" <?php if ( $instance['show-headline']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'show-headline' ); ?>"
+			       name="<?php echo $this->get_field_name( 'show-headline' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'show-headline' ); ?>">Show
+			                                                                   Headline</label>
+			<br/>
+
+			<select id="<?php echo $this->get_field_id( 'headline-size' ); ?>"
+			        name="<?php echo $this->get_field_name( 'headline-size' ); ?>">
+				<option value="14" <?php if ( '14' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>14
+				</option>
+				<option value="16" <?php if ( '16' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>16
+				</option>
+				<option value="18" <?php if ( '18' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>18
+				</option>
+				<option value="20" <?php if ( '20' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>20
+				</option>
+				<option value="22" <?php if ( '22' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>22
+				</option>
+				<option value="24" <?php if ( '24' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>24
+				</option>
+				<option value="26" <?php if ( '26' == $instance['headline-size'] ) {
+					echo 'selected="selected"';
+				} ?>>26
+				</option>
+			</select>
+			<label for="<?php echo $this->get_field_id( 'headline-size' ); ?>">Headline
+			                                                                   Size</label>
+		</p>
+
+		<p>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['show-teaser']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'show-teaser' ); ?>"
+			       name="<?php echo $this->get_field_name( 'show-teaser' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'show-teaser' ); ?>">Show
+			                                                                 Teaser</label>
+			<br/>
+
+			<input id="<?php echo $this->get_field_id( 'category-teaser' ); ?>"
+			       name="<?php echo $this->get_field_name( 'category-teaser' ); ?>"
+			       type="text" maxlength="3" size="3"
+			       value="<?php echo $instance['category-teaser']; ?>"/>
+			<label for="<?php echo $this->get_field_id( 'category-teaser' ); ?>">Teaser
+			                                                                     Length
+			                                                                     (characters)</label>
+		</p>
+
+		<p>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['show-writer']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'show-writer' ); ?>"
+			       name="<?php echo $this->get_field_name( 'show-writer' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'show-writer' ); ?>"> Show Video
+			                                                                  Credit</label>
+			<br/>
+
+			<input class="checkbox" type="checkbox" <?php if ( $instance['show-date']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'show-date' ); ?>"
+			       name="<?php echo $this->get_field_name( 'show-date' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'show-date' ); ?>"> Show
+			                                                                Date</label>
+			<br/>
+
+			<input class="checkbox" type="checkbox" <?php if ( $instance['show-comments']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'show-comments' ); ?>"
+			       name="<?php echo $this->get_field_name( 'show-comments' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'show-comments' ); ?>"> Show
+			                                                                    Comments
+			                                                                    Link</label>
+		</p>
+
+		<p>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['remove-padding']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'remove-padding' ); ?>"
+			       name="<?php echo $this->get_field_name( 'remove-padding' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'remove-padding' ); ?>"> Remove
+			                                                                     padding
+			                                                                     around
+			                                                                     video</label>
+			<br/>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['dividing-line']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'dividing-line' ); ?>"
+			       name="<?php echo $this->get_field_name( 'dividing-line' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'dividing-line' ); ?>"> Show
+			                                                                    Dividing
+			                                                                    Lines</label>
+
+		</p>
+
+		<div style="width:210px;border-bottom:1px solid #aaaaaa;margin-bottom:10px;"></div>
+
+		<p>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['headline-header']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'headline-header' ); ?>"
+			       name="<?php echo $this->get_field_name( 'headline-header' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'headline-header' ); ?>"> Show
+			                                                                      Recent
+			                                                                      Headlines
+			                                                                      Header</label><br/>
+
+			<input id="<?php echo $this->get_field_id( 'number-headlines' ); ?>"
+			       name="<?php echo $this->get_field_name( 'number-headlines' ); ?>"
+			       type="text" maxlength="1" size="1"
+			       value="<?php echo $instance['number-headlines']; ?>"/>
+			<label
+				for="<?php echo $this->get_field_id( 'number-headlines' ); ?>"><?php _e( 'Additional Video Headlines' ); ?></label><br/>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-thumb']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"
+			       name="<?php echo $this->get_field_name( 'teaser-thumb' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"> Show
+			                                                                   Thumbnail
+			                                                                   Images</label><br/>
+
+			<select id="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>"
+			        name="<?php echo $this->get_field_name( 'teaser-thumb-placement' ); ?>">
+				<option value="left" <?php if ( 'left'
+				                                == $instance['teaser-thumb-placement']
 				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'show-headline' ); ?>"
-				       name="<?php echo $this->get_field_name( 'show-headline' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'show-headline' ); ?>">Show
-				                                                                   Headline</label>
-				<br/>
-
-				<select id="<?php echo $this->get_field_id( 'headline-size' ); ?>"
-				        name="<?php echo $this->get_field_name( 'headline-size' ); ?>">
-					<option value="14" <?php if ( '14' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>14
-					</option>
-					<option value="16" <?php if ( '16' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>16
-					</option>
-					<option value="18" <?php if ( '18' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>18
-					</option>
-					<option value="20" <?php if ( '20' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>20
-					</option>
-					<option value="22" <?php if ( '22' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>22
-					</option>
-					<option value="24" <?php if ( '24' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>24
-					</option>
-					<option value="26" <?php if ( '26' == $instance['headline-size'] ) {
-						echo 'selected="selected"';
-					} ?>>26
-					</option>
-				</select>
-				<label for="<?php echo $this->get_field_id( 'headline-size' ); ?>">Headline
-				                                                                   Size</label>
-			</p>
-
-			<p>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['show-teaser']
-				                                                   == on
+					echo 'selected="selected"';
+				} ?>>Left
+				</option>
+				<option value="right" <?php if ( 'right'
+				                                 == $instance['teaser-thumb-placement']
 				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'show-teaser' ); ?>"
-				       name="<?php echo $this->get_field_name( 'show-teaser' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'show-teaser' ); ?>">Show
-				                                                                 Teaser</label>
-				<br/>
+					echo 'selected="selected"';
+				} ?>>Right
+				</option>
+			</select>
+			<label for="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>">Thumbnail
+			                                                                            Placement</label><br/>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-date']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'teaser-date' ); ?>"
+			       name="<?php echo $this->get_field_name( 'teaser-date' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'teaser-date' ); ?>"> Show
+			                                                                  Date</label>
 
-				<input id="<?php echo $this->get_field_id( 'category-teaser' ); ?>"
-				       name="<?php echo $this->get_field_name( 'category-teaser' ); ?>"
-				       type="text" maxlength="3" size="3"
-				       value="<?php echo $instance['category-teaser']; ?>"/>
-				<label for="<?php echo $this->get_field_id( 'category-teaser' ); ?>">Teaser
-				                                                                     Length
-				                                                                     (characters)</label>
-			</p>
-
-			<p>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['show-writer']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'show-writer' ); ?>"
-				       name="<?php echo $this->get_field_name( 'show-writer' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'show-writer' ); ?>"> Show Video
-				                                                                  Credit</label>
-				<br/>
-
-				<input class="checkbox" type="checkbox" <?php if ( $instance['show-date']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'show-date' ); ?>"
-				       name="<?php echo $this->get_field_name( 'show-date' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'show-date' ); ?>"> Show
-				                                                                Date</label>
-				<br/>
-
-				<input class="checkbox" type="checkbox" <?php if ( $instance['show-comments']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'show-comments' ); ?>"
-				       name="<?php echo $this->get_field_name( 'show-comments' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'show-comments' ); ?>"> Show
-				                                                                    Comments
-				                                                                    Link</label>
-			</p>
-
-			<p>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['remove-padding']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'remove-padding' ); ?>"
-				       name="<?php echo $this->get_field_name( 'remove-padding' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'remove-padding' ); ?>"> Remove
-				                                                                     padding
-				                                                                     around
-				                                                                     video</label>
-				<br/>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['dividing-line']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'dividing-line' ); ?>"
-				       name="<?php echo $this->get_field_name( 'dividing-line' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'dividing-line' ); ?>"> Show
-				                                                                    Dividing
-				                                                                    Lines</label>
-
-			</p>
-
-			<div style="width:210px;border-bottom:1px solid #aaaaaa;margin-bottom:10px;"></div>
-
-			<p>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['headline-header']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'headline-header' ); ?>"
-				       name="<?php echo $this->get_field_name( 'headline-header' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'headline-header' ); ?>"> Show
-				                                                                      Recent
-				                                                                      Headlines
-				                                                                      Header</label><br/>
-
-				<input id="<?php echo $this->get_field_id( 'number-headlines' ); ?>"
-				       name="<?php echo $this->get_field_name( 'number-headlines' ); ?>"
-				       type="text" maxlength="1" size="1"
-				       value="<?php echo $instance['number-headlines']; ?>"/>
-				<label
-					for="<?php echo $this->get_field_id( 'number-headlines' ); ?>"><?php _e( 'Additional Video Headlines' ); ?></label><br/>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-thumb']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"
-				       name="<?php echo $this->get_field_name( 'teaser-thumb' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"> Show
-				                                                                   Thumbnail
-				                                                                   Images</label><br/>
-
-				<select id="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>"
-				        name="<?php echo $this->get_field_name( 'teaser-thumb-placement' ); ?>">
-					<option value="left" <?php if ( 'left'
-					                                == $instance['teaser-thumb-placement']
-					) {
-						echo 'selected="selected"';
-					} ?>>Left
-					</option>
-					<option value="right" <?php if ( 'right'
-					                                 == $instance['teaser-thumb-placement']
-					) {
-						echo 'selected="selected"';
-					} ?>>Right
-					</option>
-				</select>
-				<label for="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>">Thumbnail
-				                                                                            Placement</label><br/>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-date']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'teaser-date' ); ?>"
-				       name="<?php echo $this->get_field_name( 'teaser-date' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'teaser-date' ); ?>"> Show
-				                                                                  Date</label>
-
-			</p>
-			<div
-				style="clear:both;border-bottom:1px solid #aaaaaa;padding-top:10px;margin-bottom:10px"></div>
-			<p>
-				<input class="checkbox" type="checkbox" <?php if ( $instance['view-all']
-				                                                   == on
-				) {
-					echo checked;
-				} ?> id="<?php echo $this->get_field_id( 'view-all' ); ?>"
-				       name="<?php echo $this->get_field_name( 'view-all' ); ?>"/>
-				<label for="<?php echo $this->get_field_id( 'view-all' ); ?>"> Show "View All"
-				                                                               Link</label>
-			</p>
-			<input type="hidden" id="<?php echo $this->get_field_id( 'videowidth' ); ?>"
-			       name="<?php echo $this->get_field_name( 'videowidth' ); ?>"
-			       value="<?php echo $instance['videowidth']; ?>"/>
-			<input type="hidden" id="<?php echo $this->get_field_id( 'sidebarname' ); ?>"
-			       name="<?php echo $this->get_field_name( 'sidebarname' ); ?>"
-			       value="<?php echo $instance['sidebarname']; ?>"/>
+		</p>
+		<div
+			style="clear:both;border-bottom:1px solid #aaaaaa;padding-top:10px;margin-bottom:10px"></div>
+		<p>
+			<input class="checkbox" type="checkbox" <?php if ( $instance['view-all']
+			                                                   == on
+			) {
+				echo checked;
+			} ?> id="<?php echo $this->get_field_id( 'view-all' ); ?>"
+			       name="<?php echo $this->get_field_name( 'view-all' ); ?>"/>
+			<label for="<?php echo $this->get_field_id( 'view-all' ); ?>"> Show "View All"
+			                                                               Link</label>
+		</p>
+		<input type="hidden" id="<?php echo $this->get_field_id( 'videowidth' ); ?>"
+		       name="<?php echo $this->get_field_name( 'videowidth' ); ?>"
+		       value="<?php echo $instance['videowidth']; ?>"/>
+		<input type="hidden" id="<?php echo $this->get_field_id( 'sidebarname' ); ?>"
+		       name="<?php echo $this->get_field_name( 'sidebarname' ); ?>"
+		       value="<?php echo $instance['sidebarname']; ?>"/>
 
 		</div>
 		<div style="float:left;width:210px">
@@ -757,5 +757,3 @@ class sno_video extends WP_Widget {
 	<?php
 	}
 }
-
-?>
