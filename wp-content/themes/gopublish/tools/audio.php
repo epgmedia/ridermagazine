@@ -114,10 +114,10 @@ class sno_audio extends WP_Widget {
 					$feature_photo = get_post_meta( $post->ID, review_thumbnail, TRUE );
 					if ( has_post_thumbnail() ) {
 						the_post_thumbnail( 'homethumb', array(
-								'class' => 'catboxthumb',
-								'style' => 'margin-bottom:10px; float:' . $thumbplacement
-								           . '; margin-' . $thumbplacement . ':0px;'
-							) );
+							'class' => 'catboxthumb',
+							'style' => 'margin-bottom:10px; float:' . $thumbplacement
+							           . '; margin-' . $thumbplacement . ':0px;'
+						) );
 					} else if ( $feature_photo ) {
 						?><a href="<?php the_permalink(); ?>"><img
 							src="<?php echo $feature_photo; ?>" class="catboxthumb"
@@ -519,5 +519,3 @@ class sno_audio extends WP_Widget {
 	<?php
 	}
 }
-
-?>
