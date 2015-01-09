@@ -20,35 +20,8 @@
 <p>Sidecar + Scooter + Trike Motorcycles is a catch&#8211;all category that, according to guides, includes machines that have styling, controls and seating positions like those found on motorcycles, but are different in important ways. Reviews of the Sidecars category include motorcycles with an affixed sidecar rig, also known as a &#8220;sidehack,&#8221; that adds a third wheel and a car that can be used to carry a passenger or cargo. Scooters have a step&#8211;through design that offers a chair&#8211;like seating position with the rider&#8217;s knees close together, as well as a twist&#8211;and&#8211;go transmission (usually a CVT) that doesn&#8217;t require a rider to change gears manually. Trikes are typically conversions&#8211;motorcycles with the rear wheel replaced by an axle and two car&#8211;like wheels/tires.</p>	
 				"; ?>
                 </p>
-           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-           <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-            <?php 	$audio = get_post_meta($post->ID, audio, true); 
-            		$video = get_post_meta($post->ID, video, true); 
-            		?>
-
-				<?php if (has_post_thumbnail()) 
-					{ the_post_thumbnail( 'archive', array('class' => 'categoryimage')); } ?>
-
-				<?php if ($video) { $pattern = "/height=\"[0-9]*\"/"; $video = preg_replace($pattern, "height='150'", $video); $pattern = "/width=\"[0-9]*\"/"; $video = preg_replace($pattern, "width='200'", $video); ?><div style="float:right;width:200px;margin-bottom:15px;margin-left:10px"><?php echo $video; ?></div><?php } ?>
-                <?php if ($audio) { ?><div style="width:300px;"><?php $audioplayer = "[audio:" . $audio . "]"; if (function_exists('insert_audio_player')) { insert_audio_player($audioplayer); } echo '</div>'; } ?>
-
-
-
-            <p><?php snowriter(); ?><?php the_time('F j, Y'); ?><?php edit_post_link('(Edit)', ' &bull; ', ''); ?></p>
-        
-            <?php the_content_limit(300, "Read more &raquo;"); ?><div style="clear:both;"></div>
-            
-
-            
-            <div class="postmeta2">
-                <?php the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>'); ?> 
-            </div>
-            
-            <?php endwhile; else: ?>
-           
-           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-           <p><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></p>
+           <?php get_template_part('inc/loop-category'); ?>
            
        </div>
                

@@ -20,35 +20,8 @@
 <p>Cruiser + Touring Motorcycles includes two of the most popular motorcycle categories, accounting for nearly three out of every four on-highway motorcycles sold in the United States. According to sales data from the Motorcycle Industry Council for 2012, motorcycles classified as &#8220;Cruiser&#8221; accounted for 32.3% and those classified as &#8220;Touring&#8221; accounted for 41.9% of total on-highway units sold. As discussed in Cruiser motorcycle guides, most cruisers are classically styled motorcycles that highlight the exposed engine&#8211;usually an air-cooled V&#8211;twin&#8211;and metalwork such as chrome exhaust pipes or heavy fenders. They typically offer a relaxed, feet-forward riding position favored by riders who, as the name implies, enjoy cruising down Main Street or their favorite back road. Touring motorcycles, which includes some cruisers as well as other types of bikes, are designed for long-distance travel. Touring motorcycle reviews look for typical details like a windshield (and sometimes a fairing) to protect the rider from wind, a comfortable seat and attached luggage, such as hard or soft saddlebags and possibly a trunk. Baggers, a nickname for motorcycles equipped with saddlebags, straddle the cruiser and touring categories and they&#8217;re very popular today.</p>		
 				"; ?>
                 </p>
-           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-           <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-            <?php 	$audio = get_post_meta($post->ID, audio, true); 
-            		$video = get_post_meta($post->ID, video, true); 
-            		?>
-
-				<?php if (has_post_thumbnail()) 
-					{ the_post_thumbnail( 'archive', array('class' => 'categoryimage')); } ?>
-
-				<?php if ($video) { $pattern = "/height=\"[0-9]*\"/"; $video = preg_replace($pattern, "height='150'", $video); $pattern = "/width=\"[0-9]*\"/"; $video = preg_replace($pattern, "width='200'", $video); ?><div style="float:right;width:200px;margin-bottom:15px;margin-left:10px"><?php echo $video; ?></div><?php } ?>
-                <?php if ($audio) { ?><div style="width:300px;"><?php $audioplayer = "[audio:" . $audio . "]"; if (function_exists('insert_audio_player')) { insert_audio_player($audioplayer); } echo '</div>'; } ?>
-
-
-
-            <p><?php snowriter(); ?><?php the_time('F j, Y'); ?><?php edit_post_link('(Edit)', ' &bull; ', ''); ?></p>
-        
-            <?php the_content_limit(300, "Read more &raquo;"); ?><div style="clear:both;"></div>
-            
-
-            
-            <div class="postmeta2">
-                <?php the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>'); ?> 
-            </div>
-            
-            <?php endwhile; else: ?>
-           
-           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-           <p><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></p>
+           <?php get_template_part('inc/loop-category'); ?>
            
        </div>
                
