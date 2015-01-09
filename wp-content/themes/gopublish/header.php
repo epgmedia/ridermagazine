@@ -63,21 +63,24 @@
 
 	<script type="text/javascript">
 		var $ = jQuery.noConflict();
-		$(document).ready(function () {
+		jQuery(document).ready(function ($) {
 			$('#slideshow').cycle({
-				fx: "<?php echo get_theme_mod('top-stories-transition'); ?>", // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-				pager: '#pager',  // selector for element to use as pager container
-				speed: <?php echo get_theme_mod('top-stories-trans-speed'); ?>,
-				<?php if (get_theme_mod('top-stories-automate')=="On") { ?>
-				timeout: <?php echo get_theme_mod('top-stories-speed'); ?>,  // milliseconds between slide transitions (0 to disable auto advance)
-				pause: true,	  // true to enable "pause on hover"
-				pauseOnPagerHover: true // true to pause when hovering over pager link
-				<?php } else { ?>
-				timeout: 0
-				<?php } ?>
+				fx : "<?php echo get_theme_mod('top-stories-transition'); ?>", // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+				pager : '#pager',  // selector for element to use as pager container
+				speed : <?php echo get_theme_mod('top-stories-trans-speed'); ?>,
+			<?php if (get_theme_mod('top-stories-automate')=="On") { ?>
+				timeout : <?php echo get_theme_mod('top-stories-speed'); ?>,  // milliseconds between slide transitions (0 to disable auto advance)
+				pause : true,	  // true to enable "pause on hover"
+				pauseOnPagerHover : true // true to pause when hovering over pager link
+			<?php } else { ?>
+				timeout : 0
+			<?php } ?>
 			});
 		});
+	</script>
 
+	<script type="text/javascript">
+		var $ = jQuery.noConflict();
 		$( function() {
 			$(".newsticker-jcarousellite").jCarouselLite({
 				<?php echo get_theme_mod('sports-scroll-style'); ?>: true,
@@ -101,6 +104,9 @@
 				speed:<?php echo get_theme_mod('breakingnews-transition'); ?>
 			});
 		});
+	</script>
+
+	<script type="text/javascript">
 
 		sfHover = function () {
 			if (!document.getElementsByTagName) return false;
