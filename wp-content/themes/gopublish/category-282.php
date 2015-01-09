@@ -20,35 +20,8 @@
 <p>Sport Standard + Standard Motorcycles are, like cruisers, bikes that are stripped bare with no bodywork, which is why they are sometimes referred to as &#8220;naked&#8221; bikes, though included in reviews and road tests of this category are some bikes with small fairings and windshields. But unlike cruisers, sport standards and standards have a more upright riding position and styling that can range from basic to sporty. Motorcycle guides state that they&#8217;re lighter, have more cornering clearance and are more performance oriented than cruisers. The term &#8220;standard&#8221; is used because they are versatile, general purpose motorbikes. Included in this category are &#8220;streetfighters,&#8221; tough&#8211;looking street bikes that are essentially sportbikes without bodywork. </p>	
 				"; ?>
                 </p>
-           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-           <h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-            <?php 	$audio = get_post_meta($post->ID, audio, true); 
-            		$video = get_post_meta($post->ID, video, true); 
-            		?>
-
-				<?php if (has_post_thumbnail()) 
-					{ the_post_thumbnail( 'archive', array('class' => 'categoryimage')); } ?>
-
-				<?php if ($video) { $pattern = "/height=\"[0-9]*\"/"; $video = preg_replace($pattern, "height='150'", $video); $pattern = "/width=\"[0-9]*\"/"; $video = preg_replace($pattern, "width='200'", $video); ?><div style="float:right;width:200px;margin-bottom:15px;margin-left:10px"><?php echo $video; ?></div><?php } ?>
-                <?php if ($audio) { ?><div style="width:300px;"><?php $audioplayer = "[audio:" . $audio . "]"; if (function_exists('insert_audio_player')) { insert_audio_player($audioplayer); } echo '</div>'; } ?>
-
-
-
-            <p><?php snowriter(); ?><?php the_time('F j, Y'); ?><?php edit_post_link('(Edit)', ' &bull; ', ''); ?></p>
-        
-            <?php the_content_limit(300, "Read more &raquo;"); ?><div style="clear:both;"></div>
-            
-
-            
-            <div class="postmeta2">
-                <?php the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>'); ?> 
-            </div>
-            
-            <?php endwhile; else: ?>
-           
-           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-           <p><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></p>
+           <?php get_template_part('inc/loop-category'); ?>
            
        </div>
                

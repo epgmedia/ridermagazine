@@ -1,7 +1,8 @@
 <?php
+/** Header File */
 
+global $post;
 get_header();
-
 ?>
 
 <div id="content">
@@ -11,36 +12,34 @@ get_header();
         <div class="postarea">
 
             <?php
-
-            include(TEMPLATEPATH."/breadcrumb.php");
+            get_template_part('breadcrumb');
 
             if (have_posts()) : while (have_posts()) : the_post();
            
-                $photographer = get_post_meta($post->ID, photographer, true);
-                $caption = get_post_meta($post->ID, caption, true);
-                $video = get_post_meta($post->ID, video, true);
-                $slideshowcredit = get_post_meta($post->ID, slideshowcredit, true);
-                $jobtitle = get_post_meta($post->ID, jobtitle, true);
-                $writer = get_post_meta($post->ID, writer, true);
-                $featured = get_post_meta($post->ID, featured, true);
-                $related = get_post_meta($post->ID, related, true);
-                $slideshow = get_post_meta($post->ID, slideshow, true);
-                $gallery = get_post_meta($post->ID, gallery, true);
-                $videographer = get_post_meta($post->ID, videographer, true);
+                $photographer = get_post_meta($post->ID, 'photographer', true);
+                $caption = get_post_meta($post->ID, 'caption', true);
+                $video = get_post_meta($post->ID, 'video', true);
+                $slideshowcredit = get_post_meta($post->ID, 'slideshowcredit', true);
+                $jobtitle = get_post_meta($post->ID, 'jobtitle', true);
+                $writer = get_post_meta($post->ID, 'writer', true);
+                $featured = get_post_meta($post->ID, 'featured', true);
+                $related = get_post_meta($post->ID, 'related', true);
+                $slideshow = get_post_meta($post->ID, 'slideshow', true);
+                $gallery = get_post_meta($post->ID, 'gallery', true);
+                $videographer = get_post_meta($post->ID, 'videographer', true);
 
 
                 if ($video) {
-
                     $pattern = "/height=\"[0-9]*\"/";
                     $video1 = preg_replace($pattern, "height='400'", $video);
                     $pattern = "/width=\"[0-9]*\"/";
                     $video1 = preg_replace($pattern, "width='590'", $video1);
                     ?>
-				    <div style="margin-bottom:15px">
+				    <div style="margin-bottom:15px;">
                         <?php
                         echo $video1;
                         if ($videographer) { ?>
-                            <p class="photocredit" style="padding-bottom:0px">
+                            <p class="photocredit" style="padding-bottom:0;">
                                 Video Credit: <?php echo $videographer; ?>
                             </p>
                         <?php } ?>
@@ -98,11 +97,7 @@ get_header();
                 </div>
 
                 <p>
-                    <?php
-                    snowriter();
-                    the_time('F j, Y');
-                    edit_post_link('(Edit)', '', '');
-                    ?>
+                    <?php snowriter(); ?> <?php the_time('F j, Y'); ?> <?php edit_post_link('(Edit)', '', ''); ?>
                     <br />
                     Filed under <?php the_category(', ') ?>
                 </p>
@@ -134,9 +129,8 @@ get_header();
    		<div style="clear:both;"></div>
  
         <?php
-        $related = get_post_meta($post->ID, related, true);
 
-        if ($related != "No") { ?>
+        if ( get_post_meta($post->ID, 'related', true) != "No" ) { ?>
 
             <div style="clear:both;margin-bottom:15px;"></div>
 
@@ -149,19 +143,15 @@ get_header();
                 </div>
 
                 <div id="permalinksidebar">
-                    <?php
-                    if (function_exists('ddop_show_posts') ) {
+                    <?php if (function_exists('ddop_show_posts') ) {
                         echo ddop_show_posts();
-                    }
-                    ?>
+                    } ?>
 
                     <h3>Other stories that might interest you...</h3>
 
-                    <?php
-                    if ( function_exists('similar_posts')) {
+                    <?php if ( function_exists('similar_posts')) {
                         similar_posts();
-                    }
-                    ?>
+                    } ?>
 
                 </div>
 
@@ -176,20 +166,16 @@ get_header();
             <div class="widgetwrap">
 
                 <div class="titlewrap610">
-
                     <h2>Comments</h2>
-
                 </div>
 
                 <div class="widgetbody">
-
                     <?php
-                    $commentspolicy = get_theme_mod('comments-policy');
-                    if ($commentspolicy) echo '<p>'.$commentspolicy.'</p>';
+                    if ( $commentspolicy = get_theme_mod('comments-policy') ) {
+                        echo '<p>'.$commentspolicy.'</p>';
+                    }
+                    comments_template();
                     ?>
-
-           	        <?php comments_template(); // Get wp-comments.php template ?>
-
                 </div>
 
                 <div class="widgetfooter"></div>
@@ -200,10 +186,8 @@ get_header();
        
     </div>
 
-    <?php include(TEMPLATEPATH."/sidebar.php");?>
+    <?php get_sidebar(); ?>
 
 </div>
-
-<!-- The main column ends  -->
 
 <?php get_footer(); ?>
