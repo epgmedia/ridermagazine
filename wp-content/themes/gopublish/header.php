@@ -171,7 +171,7 @@
 
 				<?php if ( get_theme_mod( 'header_blog_title' ) == 'Image' ) { ?>
 
-					<a href="<?php echo get_settings( 'home' ); ?>/">
+					<a href="<?php echo get_option( 'home' ); ?>/">
 						<img src="<?php echo get_theme_mod( 'header-image' ); ?>"
 						     style="width:<?php echo get_theme_mod( 'header-width' ); ?>px;height:<?php echo get_theme_mod( 'header-height' ); ?>px"
 						     alt="<?php bloginfo( 'description' ); ?>"/>
@@ -180,7 +180,7 @@
 				<?php } else if ( get_theme_mod( 'header_blog_title' ) == 'SubscribeAd' ) { ?>
 
 					<div id="subscribeHeader">
-						<a href="<?php echo get_settings( 'home' ); ?>/">
+						<a href="<?php echo get_option( 'home' ); ?>/">
 							<img src="<?php echo get_theme_mod( 'header-image' ); ?>"
 							     style="width:<?php echo get_theme_mod( 'header-width' ); ?>px;height:<?php echo get_theme_mod( 'header-height' ); ?>px"
 							     alt="<?php bloginfo( 'description' ); ?>"/>
@@ -197,7 +197,7 @@
 
 				<?php } else { ?>
 
-					<a href="<?php echo get_settings( 'home' ); ?>/">
+					<a href="<?php echo get_option( 'home' ); ?>/">
 						<h1><?php bloginfo( 'name' ); ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
