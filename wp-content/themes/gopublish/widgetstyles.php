@@ -30,8 +30,8 @@ if ( $instance['widget-style'] == "Style 1" ) { ?>
 		} ?>
 	</h4>
 	<div class="widgetbody1" style="
-	<?php if ( $instance['remove-padding'] == 'on' ) { ?>
-		padding:0px !important;
+	<?php if ( isset($instance['remove-padding'] ) && $instance['remove-padding'] == 'on' ) { ?>
+		padding:0 !important;
 	<?php } ?>
 	<?php if ( $customcolors == 'on' ) { ?>
 		background-color:<?php echo $instance['widget-background']; ?> !important;
@@ -61,7 +61,7 @@ if ( $instance['widget-style'] == "Style 1" ) { ?>
 		} ?>
 	</h4>
 	<div class="widgetbody2" style="
-	<?php if ( $instance['remove-padding'] == 'on' ) { ?>
+	<?php if ( isset($instance['remove-padding'] ) && $instance['remove-padding'] == 'on' ) { ?>
 		padding:0px !important;
 	<?php } ?>
 	<?php if ( $customcolors == 'on' ) { ?>
@@ -251,7 +251,7 @@ if ( $instance['widget-style'] == "Style 1" ) { ?>
 		} ?>
 	</h4>
 <div class="widgetbody7" style="
-<?php if ( $instance['remove-padding'] == 'on' ) { ?>
+<?php if ( isset($instance['remove-padding'] ) && $instance['remove-padding'] == 'on' ) { ?>
 	padding:0px !important;
 <?php } ?>
 <?php if ( $customcolors == 'on' ) { ?>
