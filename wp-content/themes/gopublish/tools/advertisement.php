@@ -84,8 +84,8 @@ class sno_rightad extends WP_Widget {
 		if ( $instance['sidebarname'] == "Ads Sidebar" ) {
 
 			echo '<div class="widgetwrap" style="-moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important;">'; ?>
-			<?php if ( $showtitle == on ) { ?>
-				<h4 <?php if ($customcolors == on) { ?>style="
+			<?php if ( $showtitle == 'on' ) { ?>
+				<h4 <?php if ($customcolors == 'on') { ?>style="
 					background-color:<?php echo $instance['header-color']; ?> !important;
 					color:<?php echo $instance['header-text']; ?> !important;
 					"<?php } ?> class="widget3">
@@ -114,9 +114,9 @@ class sno_rightad extends WP_Widget {
 
 			</div>
 
-			<?php if ( $showtitle == on ) { ?>
+			<?php if ( $showtitle == 'on' ) { ?>
 				<div <?php if ($customcolors
-				               == on) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
+				               == 'on') { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
 				     <?php } ?>class="widgetfooter3"></div>
 			<?php } else { ?>
 				<div class="widgetfooter"></div>
@@ -126,15 +126,15 @@ class sno_rightad extends WP_Widget {
 		} else {
 
 			echo '<div class="widgetwrap">'; ?>
-			<?php if ( $showtitle == on ) { ?>
-				<h4 <?php if ($customcolors == on) { ?>style="
+			<?php if ( $showtitle == 'on' ) { ?>
+				<h4 <?php if ($customcolors == 'on') { ?>style="
 					background-color:<?php echo $instance['header-color']; ?> !important;
 					color:<?php echo $instance['header-text']; ?> !important;
 					"<?php } ?> class="widget3">
 					<?php echo $instance['title']; ?>
 				</h4>
 			<?php } ?>
-			<div class="widgetbody3" <?php if ( $customcolors == on ) { ?> style="
+			<div class="widgetbody3" <?php if ( $customcolors == 'on' ) { ?> style="
 				background-color:<?php echo $instance['widget-background']; ?> !important;
 				"<?php } ?>><?php
 
@@ -157,9 +157,9 @@ class sno_rightad extends WP_Widget {
 
 			</div>
 
-			<?php if ( $showtitle == on ) { ?>
+			<?php if ( $showtitle == 'on' ) { ?>
 				<div <?php if ($customcolors
-				               == on) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
+				               == 'on') { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
 				     <?php } ?>class="widgetfooter3"></div>
 			<?php } else { ?>
 				<div class="widgetfooter"></div>
@@ -176,7 +176,7 @@ class sno_rightad extends WP_Widget {
 		$instance['title']             = $new_instance['title'];
 		$instance['text']              = $new_instance['text'];
 		$instance['widget-style']      = $new_instance['widget-style'];
-		$instance['custom-colors']     = ( isset( $new_instance['custom-colors'] ) ? on : "" );
+		$instance['custom-colors']     = ( isset( $new_instance['custom-colors'] ) ? 'on' : "" );
 		$instance['header-color']      = $new_instance['header-color'];
 		$instance['header-text']       = $new_instance['header-text'];
 		$instance['widget-border']     = $new_instance['widget-border'];
@@ -335,7 +335,7 @@ class sno_rightad extends WP_Widget {
 
 			<p>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['show-title']
-				                                                   == on
+				                                                   == 'on'
 				) {
 					echo checked;
 				} ?> id="<?php echo $this->get_field_id( 'show-title' ); ?>"
@@ -346,7 +346,7 @@ class sno_rightad extends WP_Widget {
 
 			<p>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['custom-colors']
-				                                                   == on
+				                                                   == 'on'
 				) {
 					echo checked;
 				} ?> id="<?php echo $this->get_field_id( 'custom-colors' ); ?>"
