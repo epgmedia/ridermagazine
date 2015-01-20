@@ -325,7 +325,7 @@ function the_content_limit(
 	$content = str_replace( ']]>', ']]&gt;', $content );
 	$content = strip_tags( $content );
 
-	if ( strlen( $_GET['p'] ) > 0 ) {
+	if ( isset($_GET['p']) && strlen( $_GET['p'] ) > 0 ) {
 		echo "<p>";
 		echo $content;
 		echo "</p>";
