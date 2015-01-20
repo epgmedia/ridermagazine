@@ -5,189 +5,190 @@ global $post;
 get_header();
 ?>
 
-<div id="content">
+	<div id="content">
 
-    <div id="contentleft">
+		<div id="contentleft">
 
-        <div class="postarea">
+			<div class="postarea">
 
-            <?php
-            get_template_part('breadcrumb');
+				<?php
+				get_template_part( 'breadcrumb' );
 
-            if (have_posts()) : while (have_posts()) : the_post();
-           
-                $photographer = get_post_meta($post->ID, 'photographer', true);
-                $caption = get_post_meta($post->ID, 'caption', true);
-                $video = get_post_meta($post->ID, 'video', true);
-                $slideshowcredit = get_post_meta($post->ID, 'slideshowcredit', true);
-                $jobtitle = get_post_meta($post->ID, 'jobtitle', true);
-                $writer = get_post_meta($post->ID, 'writer', true);
-                $featured = get_post_meta($post->ID, 'featured', true);
-                $related = get_post_meta($post->ID, 'related', true);
-                $slideshow = get_post_meta($post->ID, 'slideshow', true);
-                $gallery = get_post_meta($post->ID, 'gallery', true);
-                $videographer = get_post_meta($post->ID, 'videographer', true);
+				if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+					$photographer    = get_post_meta( $post->ID, 'photographer', true );
+					$caption         = get_post_meta( $post->ID, 'caption', true );
+					$video           = get_post_meta( $post->ID, 'video', true );
+					$slideshowcredit = get_post_meta( $post->ID, 'slideshowcredit', true );
+					$jobtitle        = get_post_meta( $post->ID, 'jobtitle', true );
+					$writer          = get_post_meta( $post->ID, 'writer', true );
+					$featured        = get_post_meta( $post->ID, 'featured', true );
+					$related         = get_post_meta( $post->ID, 'related', true );
+					$slideshow       = get_post_meta( $post->ID, 'slideshow', true );
+					$gallery         = get_post_meta( $post->ID, 'gallery', true );
+					$videographer    = get_post_meta( $post->ID, 'videographer', true );
+					$audio           = get_post_meta( $post->id, 'audio', true);
 
 
-                if ($video) {
-                    $pattern = "/height=\"[0-9]*\"/";
-                    $video1 = preg_replace($pattern, "height='400'", $video);
-                    $pattern = "/width=\"[0-9]*\"/";
-                    $video1 = preg_replace($pattern, "width='590'", $video1);
-                    ?>
-				    <div style="margin-bottom:15px;">
-                        <?php
-                        echo $video1;
-                        if ($videographer) { ?>
-                            <p class="photocredit" style="padding-bottom:0;">
-                                Video Credit: <?php echo $videographer; ?>
-                            </p>
-                        <?php } ?>
-				    </div>
-			    <?php } ?>
-			
-                <h1 style="line-height:40px"><?php the_title(); ?></h1>
+					if ( $video ) {
+						$pattern = "/height=\"[0-9]*\"/";
+						$video1  = preg_replace( $pattern, "height='400'", $video );
+						$pattern = "/width=\"[0-9]*\"/";
+						$video1  = preg_replace( $pattern, "width='590'", $video1 );
+						?>
+						<div style="margin-bottom:15px;">
+							<?php
+							echo $video1;
+							if ( $videographer ) { ?>
+								<p class="photocredit" style="padding-bottom:0;">
+									Video Credit: <?php echo $videographer; ?>
+								</p>
+							<?php } ?>
+						</div>
+					<?php } ?>
 
-                <div id="permalinkphotobox">
+					<h1 style="line-height:40px"><?php the_title(); ?></h1>
 
-                    <?php
-                    if ($audio) {
-                        $audioplayer = "[audio:" . $audio . "]";
-                        if (function_exists('insert_audio_player')) {
-                            insert_audio_player($audioplayer);
-                        } ?>
-                        <div style="margin-bottom:15px"></div>
-                    <?php }
+					<div id="permalinkphotobox">
 
-                    if ($slideshow) {
-                        $showalbum = "[slideshow id =" . $slideshow . " w=302 h=200]";
-                        echo do_shortcode($showalbum); ?>
-                        <div style="margin-bottom:15px"></div>
-                    <?php }
+						<?php
+						if ( $audio ) {
+							$audioplayer = "[audio:" . $audio . "]";
+							if ( function_exists( 'insert_audio_player' ) ) {
+								insert_audio_player( $audioplayer );
+							} ?>
+							<div style="margin-bottom:15px"></div>
+						<?php }
 
-                    if ($gallery) {
-                        $showalbum = "[nggallery id =" . $gallery . " w=50 h=50]";
-                        echo do_shortcode($showalbum); ?>
-                    <?php }
+						if ( $slideshow ) {
+							$showalbum = "[slideshow id =" . $slideshow . " w=302 h=200]";
+							echo do_shortcode( $showalbum ); ?>
+							<div style="margin-bottom:15px"></div>
+						<?php }
 
-                    if ($slideshowcredit) { ?>
-                        <p class="photocredit">
-                            Credit: <?php echo $slideshowcredit; ?>
-                        </p>
-                    <?php }
+						if ( $gallery ) {
+							$showalbum = "[nggallery id =" . $gallery . " w=50 h=50]";
+							echo do_shortcode( $showalbum ); ?>
+						<?php }
 
-                    if ($featured != "No") {
+						if ( $slideshowcredit ) { ?>
+							<p class="photocredit">
+								Credit: <?php echo $slideshowcredit; ?>
+							</p>
+						<?php }
 
-                        if (has_post_thumbnail()) {
-                            the_post_thumbnail( 'permalink', array('class' => 'permalinkimage'));
-                        }
-                        if ($caption) { ?>
-                            <p class="photocaption">
-                                <?php echo $caption; ?>
-                            </p>
-                        <?php }
-                        if ($photographer) { ?>
-                            <p class="photocredit">
-                                Photo Credit: <?php echo $photographer; ?>
-                            </p>
-                        <?php } ?>
+						if ( $featured != "No" ) {
 
-                    <?php } ?>
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail( 'permalink', array( 'class' => 'permalinkimage' ) );
+							}
+							if ( $caption ) { ?>
+								<p class="photocaption">
+									<?php echo $caption; ?>
+								</p>
+							<?php }
+							if ( $photographer ) { ?>
+								<p class="photocredit">
+									Photo Credit: <?php echo $photographer; ?>
+								</p>
+							<?php } ?>
 
-                </div>
+						<?php } ?>
 
-                <p>
-                    <?php snowriter(); ?> <?php the_time('F j, Y'); ?> <?php edit_post_link('(Edit)', '', ''); ?>
-                    <br />
-                    Filed under <?php the_category(', ') ?>
-                </p>
+					</div>
 
-                <?php the_content(__('Read more'));?>
+					<p>
+						<?php snowriter(); ?> <?php the_time( 'F j, Y' ); ?> <?php edit_post_link( '(Edit)', '', '' ); ?>
+						<br/>
+						Filed under <?php the_category( ', ' ) ?>
+					</p>
 
-                <div style="clear:both;"></div>
+					<?php the_content( __( 'Read more' ) ); ?>
 
-                <div class="postmeta">
+					<div style="clear:both;"></div>
 
-                    <?php
-                    the_tags('<p><span class="tags">Tags: ', ', ', '</span></p>');
-                    ?>
+					<div class="postmeta">
 
-                </div>
+						<?php
+						the_tags( '<p><span class="tags">Tags: ', ', ', '</span></p>' );
+						?>
 
-                <?php endwhile;
+					</div>
 
-            else: ?>
-           
-                <p>
-                    <?php _e('Sorry, no posts matched your criteria.'); ?>
-                </p>
+				<?php endwhile;
 
-            <?php endif; ?>
+				else: ?>
 
-        </div>
+					<p>
+						<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+					</p>
 
-   		<div style="clear:both;"></div>
- 
-        <?php
+				<?php endif; ?>
 
-        if ( get_post_meta($post->ID, 'related', true) != "No" ) { ?>
+			</div>
 
-            <div style="clear:both;margin-bottom:15px;"></div>
+			<div style="clear:both;"></div>
 
-            <div class="widgetwrap">
+			<?php
 
-                <div class="titlewrap610">
+			if ( get_post_meta( $post->ID, 'related', true ) != "No" ) { ?>
 
-                    <h2>Related Content</h2>
+				<div style="clear:both;margin-bottom:15px;"></div>
 
-                </div>
+				<div class="widgetwrap">
 
-                <div id="permalinksidebar">
-                    <?php if (function_exists('ddop_show_posts') ) {
-                        echo ddop_show_posts();
-                    } ?>
+					<div class="titlewrap610">
 
-                    <h3>Other stories that might interest you...</h3>
+						<h2>Related Content</h2>
 
-                    <?php if ( function_exists('similar_posts')) {
-                        similar_posts();
-                    } ?>
+					</div>
 
-                </div>
+					<div id="permalinksidebar">
+						<?php if ( function_exists( 'ddop_show_posts' ) ) {
+							echo ddop_show_posts();
+						} ?>
 
-                <div class="widgetfooter"></div>
+						<h3>Other stories that might interest you...</h3>
 
-            </div>
+						<?php if ( function_exists( 'similar_posts' ) ) {
+							similar_posts();
+						} ?>
 
-        <?php } ?>
-  		
-   		<?php if (get_theme_mod('comments')=="Enable") { ?>
+					</div>
 
-            <div class="widgetwrap">
+					<div class="widgetfooter"></div>
 
-                <div class="titlewrap610">
-                    <h2>Comments</h2>
-                </div>
+				</div>
 
-                <div class="widgetbody">
-                    <?php
-                    if ( $commentspolicy = get_theme_mod('comments-policy') ) {
-                        echo '<p>'.$commentspolicy.'</p>';
-                    }
-                    comments_template();
-                    ?>
-                </div>
+			<?php } ?>
 
-                <div class="widgetfooter"></div>
+			<?php if ( get_theme_mod( 'comments' ) == "Enable" ) { ?>
 
-            </div>
-       
-       <?php } ?>
-       
-    </div>
+				<div class="widgetwrap">
 
-    <?php get_sidebar(); ?>
+					<div class="titlewrap610">
+						<h2>Comments</h2>
+					</div>
 
-</div>
+					<div class="widgetbody">
+						<?php
+						if ( $commentspolicy = get_theme_mod( 'comments-policy' ) ) {
+							echo '<p>' . $commentspolicy . '</p>';
+						}
+						comments_template();
+						?>
+					</div>
+
+					<div class="widgetfooter"></div>
+
+				</div>
+
+			<?php } ?>
+
+		</div>
+
+		<?php get_sidebar(); ?>
+
+	</div>
 
 <?php get_footer(); ?>
