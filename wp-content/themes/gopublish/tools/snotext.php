@@ -52,7 +52,7 @@ class sno_text extends WP_Widget {
 							
 			</div>
 			
-<div <?php if ($customcolors==on) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"<?php } ?>class="widgetfooter<?php if ($instance['widget-style']=="Style 3") { ?>3<?php } else { ?>1<?php } ?>"></div></div>
+<div <?php if ($customcolors=='on') { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"<?php } ?>class="widgetfooter<?php if ($instance['widget-style']=="Style 3") { ?>3<?php } else { ?>1<?php } ?>"></div></div>
 <?php	}
 
 	function update($new_instance, $old_instance) {
@@ -60,7 +60,7 @@ class sno_text extends WP_Widget {
 		$instance['title'] = $new_instance['title'];
 		$instance['text'] = $new_instance['text'];
 		$instance['widget-style'] = $new_instance['widget-style'];
- 		$instance['custom-colors'] = ( isset( $new_instance['custom-colors'] ) ? on : "" );  
+ 		$instance['custom-colors'] = ( isset( $new_instance['custom-colors'] ) ? 'on' : "" );
 		$instance['header-color'] = $new_instance['header-color'];
 		$instance['header-text'] = $new_instance['header-text'];
 		$instance['widget-border'] = $new_instance['widget-border'];
@@ -109,7 +109,7 @@ class sno_text extends WP_Widget {
 		</p>
 
 		<p>
-			<input class="checkbox" type="checkbox" <?php if ($instance['custom-colors'] == on) echo checked; ?> id="<?php echo $this->get_field_id( 'custom-colors' ); ?>" name="<?php echo $this->get_field_name( 'custom-colors' ); ?>" />
+			<input class="checkbox" type="checkbox" <?php if ($instance['custom-colors'] == 'on') echo checked; ?> id="<?php echo $this->get_field_id( 'custom-colors' ); ?>" name="<?php echo $this->get_field_name( 'custom-colors' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'custom-colors' ); ?>">Turn on Custom Widget Colors</label>			
 		</p>
 		<p>Save this widget to make the color selector active.</p>
