@@ -253,7 +253,7 @@
 	</div>
 
 	<div <?php if ($customcolors
-	               == on) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
+	               == 'on') { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
 	     <?php } ?>class="widgetfooter<?php if ( $instance['widget-style']
 	                                             == "Style 3"
 	     ) { ?>3<?php } else { ?>1<?php } ?>"></div>
