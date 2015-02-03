@@ -47,7 +47,7 @@ get_header(); ?>
 				<table style="margin: auto;">
 					<tbody>
 					<tr>
-						<td><a href="https://w1.buysub.com/servlet/ConvertibleGateway?cds_mag_code=RDR&amp;cds_page_id=68650">
+						<td><a href="https://w1.buysub.com/pubs/AC/RDR/RDR_US_Convert.jsp?cds_page_id=68650&cds_mag_code=RDR&id=1422984687040&lsid=50341123115019292&vid=6">
 								<img class="alignnone size-full wp-image-337" title="Subscribe Now" src="/wp-content/uploads/2011/02/Rider-Subscribe-Now.png" alt="Subscribe Now" width="170" height="24" />
 							</a></td>
 						<td><a href="http://www.wheresmymagazine.com/">
