@@ -63,13 +63,13 @@ get_header();
 
                 <div id="homepageleft" style="width:300px;float:left;">
 
-                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(3) ) : else : endif; ?>
+                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Left') ) : else : endif; ?>
 
                 </div>
 
                 <div id="homepageright" style="width:300px;float:right;">
 
-		            <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(4) ) : else : endif; ?>
+		            <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Right') ) : else : endif; ?>
 
 	            </div>
 
@@ -81,13 +81,13 @@ get_header();
 
                 <div id="homepageleft" style="float:right">
 
-                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(3) ) : else : endif; ?>
+                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Left') ) : else : endif; ?>
 
                 </div>
 
                 <div id="homepageright" style="float:left">
 
-                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(4) ) : else : endif; ?>
+                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Right') ) : else : endif; ?>
 
                 </div>
 
@@ -100,13 +100,13 @@ get_header();
 
                 <div id="homepageleft">
 
-                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(3) ) : else : endif; ?>
+                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Left') ) : else : endif; ?>
 
                 </div>
 
                 <div id="homepageright">
 
-                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(4) ) : else : endif; ?>
+                    <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Home Bottom Right') ) : else : endif; ?>
 
                 </div>
 
