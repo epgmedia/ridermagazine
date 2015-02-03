@@ -21,17 +21,32 @@ include( get_template_directory() . "/tools/pagewidget.php" );
 /** New Management of Ad Positions */
 include( get_template_directory() . '/inc/google-ads.php');
 
-add_option( "home_left_column", '280', '', 'yes' );
-add_option( "home_center_column", '280', '', 'yes' );
-add_option( "home_right_column", '300', '', 'yes' );
-add_option( "home_narrow_column", '160', '', 'yes' );
-add_option( "home_wide_column", '400', '', 'yes' );
-add_option( "home_full_width_column", '590', '', 'yes' );
-add_option( "non_home_right_column", '300', '', 'yes' );
-add_option( "bsno", 'bsno837625', 'yes' );
 update_option( "bsno", 'bsno837625b', 'yes' );
-add_option( "bussno", 'bussno379657', 'yes' );
 update_option( "bussno", 'bussno379657b', 'yes' );
+
+
+$epg_options = array(
+	array("home_left_column", '280', '', 'yes'),
+	array("home_center_column", '280', '', 'yes'),
+	array("home_right_column", '300', '', 'yes'),
+	array("home_narrow_column", '160', '', 'yes'),
+	array("home_wide_column", '400', '', 'yes'),
+	array("home_full_width_column", '590', '', 'yes'),
+	array("non_home_right_column", '300', '', 'yes'),
+	array("bsno", 'bsno837625', '', 'yes'),
+	array("bussno", 'bussno379657', '', 'yes')
+);
+
+function epg_add_option( $option, $value, $depre = '', $autoload ) {
+	if ( get_option($option) == FALSE ) {
+		update_option( $option, $value, $autoload );
+	}
+}
+
+foreach ( $epg_options as $option ) {
+	epg_add_option($option[0], $option[1], $option[2], $option[3]);
+}
+
 
 add_theme_support( 'post-thumbnails' );
 
@@ -310,7 +325,7 @@ function the_content_limit(
 	$content = str_replace( ']]>', ']]&gt;', $content );
 	$content = strip_tags( $content );
 
-	if ( strlen( $_GET['p'] ) > 0 ) {
+	if ( isset($_GET['p']) && strlen( $_GET['p'] ) > 0 ) {
 		echo "<p>";
 		echo $content;
 		echo "</p>";

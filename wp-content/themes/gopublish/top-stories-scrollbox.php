@@ -21,12 +21,12 @@
 
             if (have_posts()) : while (have_posts()) : the_post();
 
-                $customlink=get_post_meta($post->ID, customlink, true); ?>
+                $customlink=get_post_meta($post->ID, 'customlink', true); ?>
 
 		        <div class="cycle">
 				    <?php
                     $mmcheck = get_option('msno');
-                    $video=get_post_meta($post->ID, video, true);
+                    $video=get_post_meta($post->ID, 'video', true);
                     if ((get_theme_mod('top-stories-video')=="Yes") && ($video) && ($mmcheck == "msno402841m")) {
 
                         $pattern = "/height=\"[0-9]*\"/";
@@ -41,7 +41,7 @@
                     <?php } else {
 
                         global $post;
-                        $feature_photo = get_post_meta($post->ID, feature_photo, true);
+                        $feature_photo = get_post_meta($post->ID, 'feature_photo', true);
 
                         if (has_post_thumbnail()) {
                             the_post_thumbnail( 'topstories', array('class' => 'sliderimage'));

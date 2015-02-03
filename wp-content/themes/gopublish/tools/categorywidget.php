@@ -23,6 +23,8 @@ class sno_category extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract( $args );
 		$totalstories = $instance['number'] + $instance['number-headlines'];
+		$marginkey    = ( isset($marginkey) ? $marginkey : 0 );
+		$exitkey      = ( isset($exitkey) ? $exitkey : 0 );
 		if ( ( $instance['category'] == - 1 ) || ( $totalstories <= 0 ) ) {
 		} else {
 			echo '<div class="widgetwrap">';
@@ -87,7 +89,7 @@ class sno_category extends WP_Widget {
 			$customcolors = $instance['custom-colors'];
 
 
-			include( TEMPLATEPATH . "/widgetstyles.php" ); ?>
+			include( get_template_directory() . "/widgetstyles.php" ); ?>
 
 			<!--start of category loop and display-->
 			<?php if ( ( ! is_int( $totalstories ) ) || ( $totalstories == 0 ) ) {
@@ -228,7 +230,7 @@ class sno_category extends WP_Widget {
 					           && ( has_post_thumbnail() )
 					) {
 						$catimage = wp_get_attachment_image_src( get_post_thumbnail_id(),
-						                                         'home400' ); ?><a
+							'home400' ); ?><a
 						href="<?php the_permalink(); ?>"><img src="<?php echo $catimage[0]; ?>"
 						                                      style="width:100%"
 						                                      class="catboxphoto"
@@ -236,18 +238,18 @@ class sno_category extends WP_Widget {
 						</a><?php
 					} else if ( has_post_thumbnail() ) {
 						the_post_thumbnail( $thumbnailsize,
-						                    array( 'class' => 'catboxphoto' ) );
+							array( 'class' => 'catboxphoto' ) );
 					}
 
 
-					if ( $instance['show-caption'] == on ) {
-						$photographer = get_post_meta( $post->ID, photographer, TRUE );
+					if ( $instance['show-caption'] == 'on' ) {
+						$photographer = get_post_meta( $post->ID, 'photographer', true );
 						if ( $photographer ) {
 							?><p class="photocredit">Photo
-						                             Credit: <?php echo $photographer; ?></p>
+							Credit: <?php echo $photographer; ?></p>
 						<?php
 						}
-						$caption = get_post_meta( $post->ID, caption, TRUE ); ?><p
+						$caption = get_post_meta( $post->ID, 'caption', true ); ?><p
 							class="photocaption"
 							style="padding-bottom:8px !important"><?php echo $caption; ?></p>
 					<?php
@@ -262,32 +264,32 @@ class sno_category extends WP_Widget {
 					   title="Permanent Link to <?php the_title(); ?>"><h3 class="homeheadline"
 					                                                       style="font-size:<?php echo $headlinesize; ?>px; line-height:<?php echo $headlineheight; ?>px;"><?php the_title(); ?></h3>
 					</a>
-					<?php $writer = get_post_meta( $post->ID, writer, TRUE );
-					if ( ( $writer ) && ( $instance['show-writer'] == on ) ) { ?><p
+					<?php $writer = get_post_meta( $post->ID, 'writer', true );
+					if ( ( $writer ) && ( $instance['show-writer'] == 'on' ) ) { ?><p
 						class="writer"><?php snowriter(); ?></p> <?php
 					}
 					$teaser = $instance['category-teaser'];
 					if ( $teaser ) {
 						the_content_limit( $teaser,
-						                   "<span class='readmore'>read story</span>" );
+							"<span class='readmore'>read story</span>" );
 					}
-					if ( ( $instance['show-date'] == on )
+					if ( ( $instance['show-date'] == 'on' )
 					     || ( ( get_theme_mod( 'comments' ) == "Enable" )
-					          && ( $instance['show-comments'] == on ) )
+					          && ( $instance['show-comments'] == 'on' ) )
 					     || ( is_user_logged_in() )
 					) {
 						?><p class="datetime"><?php
-						if ( $instance['show-date'] == on ) {
+						if ( $instance['show-date'] == 'on' ) {
 							?><?php the_time( 'F j, Y ' );
 						}
-						if ( ( $instance['show-date'] == on )
+						if ( ( $instance['show-date'] == 'on' )
 						     && ( ( get_theme_mod( 'comments' ) == "Enable" )
-						          && ( $instance['show-comments'] == on ) )
+						          && ( $instance['show-comments'] == 'on' ) )
 						) {
 							echo ' &bull; ';
 						}
 						if ( ( get_theme_mod( 'comments' ) == "Enable" )
-						     && ( $instance['show-comments'] == on )
+						     && ( $instance['show-comments'] == 'on' )
 						) {
 							comments_popup_link( ' 0 comments', ' 1 comment', ' % comments' );
 						}
@@ -297,43 +299,43 @@ class sno_category extends WP_Widget {
 
 					<?php if ( ( $count >= 1 ) && ( $count < $totalstories )
 					           && ( $totalstories != 1 )
-					) { ?><?php if ( $instance['dividing-line'] == on ) { ?>
+					) { ?><?php if ( $instance['dividing-line'] == 'on' ) { ?>
 						<div class="storybottom"></div><?php } else { ?>
 						<div class="storybottomnoline"></div><?php } ?><?php } ?>
 
 				<?php } else { ?><!--end of first time through loop-->
 					<?php if ( ( $count == $storydivider )
-					           && ( $instance['headline-header'] == on )
+					           && ( $instance['headline-header'] == 'on' )
 					) { ?>
 						<a href="/<?php echo $categoryslug; ?>"><p class="sectionhead"
 						                                           style="font-size:14px;margin-top:15px;margin-bottom:7px;font-weight:bold;">
 								Recent <?php echo $categoryname; ?> Stories</p></a>
 					<?php } ?>
 
-					<?php if ( $instance['bullet-list'] == on ) { ?>
+					<?php if ( $instance['bullet-list'] == 'on' ) { ?>
 						<?php if ( $exitkey != 5 ) {
 							echo '<ul>';
 							$exitkey = 5;
 						} ?>
 						<li><a class="homeheadline"
 						       href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php if ( $instance['teaser-date']
-						                                                                            == on
+						                                                                            == 'on'
 							) { ?><?php the_time( ' F j, Y' ); ?><?php } ?></li>
 					<?php } else { ?>
 
 
-						<?php if ( $instance['teaser-thumb'] == on ) {
+						<?php if ( $instance['teaser-thumb'] == 'on' ) {
 							$thumbplacement = $instance['teaser-thumb-placement']; ?>
 
 							<?php global $post;
-							$feature_photo = get_post_meta( $post->ID, feature_photo, TRUE );
+							$feature_photo = get_post_meta( $post->ID, 'feature_photo', true );
 							if ( has_post_thumbnail() ) {
 								the_post_thumbnail( 'homethumb', array(
-										'class' => 'catboxthumb',
-										'style' =>
-											'margin-bottom:10px; float:' . $thumbplacement
-											. '; margin-' . $thumbplacement . ':0px;'
-									) );
+									'class' => 'catboxthumb',
+									'style' =>
+										'margin-bottom:10px; float:' . $thumbplacement
+										. '; margin-' . $thumbplacement . ':0px;'
+								) );
 							} else if ( $feature_photo ) {
 								?><a href="<?php the_permalink(); ?>"><img
 									src="<?php echo $feature_photo; ?>" class="catboxthumb"
@@ -354,7 +356,7 @@ class sno_category extends WP_Widget {
 						<?php } ?>
 						<p><a class="homeheadline"
 						      href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</p><?php if ( $instance['teaser-date'] == on ) { ?>
+						</p><?php if ( $instance['teaser-date'] == 'on' ) { ?>
 							<p><?php the_time( ' F j, Y' ); ?></p><?php } ?>
 
 						<?php $teaser = $instance['headline-teaser'];
@@ -373,9 +375,9 @@ class sno_category extends WP_Widget {
 				?></ul><?php $exitkey = 0;
 			}
 
-			if ( $instance['view-all'] == on ) {
+			if ( $instance['view-all'] == 'on' ) {
 				?>
-				<?php if ( $instance['dividing-line'] == on ) { ?>
+				<?php if ( $instance['dividing-line'] == 'on' ) { ?>
 					<div class="storybottom"></div><?php } else { ?>
 					<div class="storybottomnoline"></div><?php } ?>
 				<a href="<?php echo cat_id_to_slug( $instance['category'] ); ?>"><p
@@ -384,11 +386,12 @@ class sno_category extends WP_Widget {
 
 			</div>
 			<!--end of category display-->
-			<div <?php if ($customcolors
-			               == on) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
-			     <?php } ?>class="widgetfooter<?php if ( $instance['widget-style']
-			                                             == "Style 3"
-			     ) { ?>3<?php } else { ?>1<?php } ?>"></div></div>
+			<div <?php if ( $customcolors
+			                == 'on'
+			) { ?>style="background-color:<?php echo $instance['header-color']; ?> !important;"
+			<?php } ?>class="widgetfooter<?php if ( $instance['widget-style']
+			                                        == "Style 3"
+			) { ?>3<?php } else { ?>1<?php } ?>"></div></div>
 
 
 		<?php } ?>
@@ -402,7 +405,7 @@ class sno_category extends WP_Widget {
 		$instance['title']                    = $new_instance['title'];
 		$instance['widget-style']             = $new_instance['widget-style'];
 		$instance['custom-colors']            =
-			( isset( $new_instance['custom-colors'] ) ? on : "" );
+			( isset( $new_instance['custom-colors'] ) ? 'on' : "" );
 		$instance['header-color']             = $new_instance['header-color'];
 		$instance['header-text']              = $new_instance['header-text'];
 		$instance['widget-border']            = $new_instance['widget-border'];
@@ -420,25 +423,25 @@ class sno_category extends WP_Widget {
 		$instance['headline-teaser']          = $new_instance['headline-teaser'];
 		$instance['headline-size']            = $new_instance['headline-size'];
 		$instance['show-writer']              =
-			( isset( $new_instance['show-writer'] ) ? on : "" );
+			( isset( $new_instance['show-writer'] ) ? 'on' : "" );
 		$instance['show-date']                =
-			( isset( $new_instance['show-date'] ) ? on : "" );
+			( isset( $new_instance['show-date'] ) ? 'on' : "" );
 		$instance['show-comments']            =
-			( isset( $new_instance['show-comments'] ) ? on : "" );
+			( isset( $new_instance['show-comments'] ) ? 'on' : "" );
 		$instance['show-caption']             =
-			( isset( $new_instance['show-caption'] ) ? on : "" );
+			( isset( $new_instance['show-caption'] ) ? 'on' : "" );
 		$instance['view-all']                 =
-			( isset( $new_instance['view-all'] ) ? on : "" );
+			( isset( $new_instance['view-all'] ) ? 'on' : "" );
 		$instance['teaser-thumb']             =
-			( isset( $new_instance['teaser-thumb'] ) ? on : "" );
+			( isset( $new_instance['teaser-thumb'] ) ? 'on' : "" );
 		$instance['teaser-date']              =
-			( isset( $new_instance['teaser-date'] ) ? on : "" );
+			( isset( $new_instance['teaser-date'] ) ? 'on' : "" );
 		$instance['dividing-line']            =
-			( isset( $new_instance['dividing-line'] ) ? on : "" );
+			( isset( $new_instance['dividing-line'] ) ? 'on' : "" );
 		$instance['headline-header']          =
-			( isset( $new_instance['headline-header'] ) ? on : "" );
+			( isset( $new_instance['headline-header'] ) ? 'on' : "" );
 		$instance['bullet-list']              =
-			( isset( $new_instance['bullet-list'] ) ? on : "" );
+			( isset( $new_instance['bullet-list'] ) ? 'on' : "" );
 
 		return $instance;
 	}
@@ -466,8 +469,7 @@ class sno_category extends WP_Widget {
 			'header-color'             => get_theme_mod( 'accentcolor-header' ),
 			'header-text'              => '#ffffff',
 			'widget-border'            => '#aaaaaa',
-			'widget-background'        => '#eeeeee',
-			'border-thickness'         => '1px'
+			'widget-background'        => '#eeeeee'
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
@@ -477,14 +479,14 @@ class sno_category extends WP_Widget {
 
 			<p>Select your category.<br/>
 				<?php wp_dropdown_categories( array(
-					                              'selected'         => $instance['category'],
-					                              'name'             => $this->get_field_name( 'category' ),
-					                              'orderby'          => 'Name',
-					                              'hierarchical'     => 1,
-					                              'show_option_none' => __( "None",
-					                                                        'studiopress' ),
-					                              'hide_empty'       => '0'
-				                              ) ); ?>
+					'selected'         => $instance['category'],
+					'name'             => $this->get_field_name( 'category' ),
+					'orderby'          => 'Name',
+					'hierarchical'     => 1,
+					'show_option_none' => __( "None",
+						'studiopress' ),
+					'hide_empty'       => '0'
+				) ); ?>
 			</p>
 			<?php $categorytitle = cat_id_to_name( $instance['category'] ); ?><input
 				type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>"
@@ -516,7 +518,7 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'category-photo-placement' ); ?>">Photo
-				                                                                              Placement</label>
+					Placement</label>
 				<br/>
 				<select id="<?php echo $this->get_field_id( 'category-photo-size' ); ?>"
 				        name="<?php echo $this->get_field_name( 'category-photo-size' ); ?>">
@@ -540,47 +542,47 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'category-photo-size' ); ?>">Photo
-				                                                                         Size</label>
+					Size</label>
 				<br/>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['show-caption']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'show-caption' ); ?>"
 				       name="<?php echo $this->get_field_name( 'show-caption' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'show-caption' ); ?>">Show
-				                                                                  Caption</label>
+					Caption</label>
 				<br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['show-writer']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'show-writer' ); ?>"
 				       name="<?php echo $this->get_field_name( 'show-writer' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'show-writer' ); ?>">Show
-				                                                                 Byline</label>
+					Byline</label>
 				<br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['show-date']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'show-date' ); ?>"
 				       name="<?php echo $this->get_field_name( 'show-date' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'show-date' ); ?>">Show
-				                                                               Date</label>
+					Date</label>
 				<br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['show-comments']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'show-comments' ); ?>"
 				       name="<?php echo $this->get_field_name( 'show-comments' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'show-comments' ); ?>">Show
-				                                                                   Comments
-				                                                                   Link?</label>
+					Comments
+					Link?</label>
 				<br/>
 
 				<select id="<?php echo $this->get_field_id( 'headline-size' ); ?>"
@@ -615,49 +617,49 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'headline-size' ); ?>">Headline
-				                                                                   Size</label>
+					Size</label>
 				<br/>
 				<input id="<?php echo $this->get_field_id( 'category-teaser' ); ?>"
 				       name="<?php echo $this->get_field_name( 'category-teaser' ); ?>"
 				       type="text" maxlength="3" size="3"
 				       value="<?php echo $instance['category-teaser']; ?>"/>
 				<label for="<?php echo $this->get_field_id( 'category-teaser' ); ?>">Teaser
-				                                                                     Length
-				                                                                     (characters)</label>
+					Length
+					(characters)</label>
 				<br/>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['dividing-line']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'dividing-line' ); ?>"
 				       name="<?php echo $this->get_field_name( 'dividing-line' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'dividing-line' ); ?>"> Show
-				                                                                    Dividing
-				                                                                    Lines</label>
+					Dividing
+					Lines</label>
 			</p>
 			<div style="width:210px;border-bottom:1px solid #aaaaaa;margin-bottom:10px;"></div>
 
 			<p>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['headline-header']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'headline-header' ); ?>"
 				       name="<?php echo $this->get_field_name( 'headline-header' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'headline-header' ); ?>"> Show
-				                                                                      Recent
-				                                                                      Headlines
-				                                                                      Header</label><br/>
+					Recent
+					Headlines
+					Header</label><br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['bullet-list']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'bullet-list' ); ?>"
 				       name="<?php echo $this->get_field_name( 'bullet-list' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'bullet-list' ); ?>"> Show as
-				                                                                  Bullet
-				                                                                  List</label><br/>
+					Bullet
+					List</label><br/>
 
 				<input id="<?php echo $this->get_field_id( 'number-headlines' ); ?>"
 				       name="<?php echo $this->get_field_name( 'number-headlines' ); ?>"
@@ -670,17 +672,17 @@ class sno_category extends WP_Widget {
 				       type="text" maxlength="3" size="3"
 				       value="<?php echo $instance['headline-teaser']; ?>"/>
 				<label for="<?php echo $this->get_field_id( 'headline-teaser' ); ?>">Teaser
-				                                                                     Length
-				                                                                     (characters)</label><br/>
+					Length
+					(characters)</label><br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-thumb']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"
 				       name="<?php echo $this->get_field_name( 'teaser-thumb' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'teaser-thumb' ); ?>"> Show
-				                                                                   Thumbnails</label><br/>
+					Thumbnails</label><br/>
 
 				<select id="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>"
 				        name="<?php echo $this->get_field_name( 'teaser-thumb-placement' ); ?>">
@@ -698,25 +700,25 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'teaser-thumb-placement' ); ?>">Thumbnail
-				                                                                            Placement</label><br/>
+					Placement</label><br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['teaser-date']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'teaser-date' ); ?>"
 				       name="<?php echo $this->get_field_name( 'teaser-date' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'teaser-date' ); ?>"> Show
-				                                                                  Date</label><br/>
+					Date</label><br/>
 
 				<input class="checkbox" type="checkbox" <?php if ( $instance['view-all']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'view-all' ); ?>"
 				       name="<?php echo $this->get_field_name( 'view-all' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'view-all' ); ?>"> Show "View All"
-				                                                               Link</label>
+					Link</label>
 			</p>
 
 		</div>
@@ -763,20 +765,20 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'category-photo-size' ); ?>">Widget
-				                                                                         Style</label>
+					Style</label>
 			</p>
 
 			<p>
 				<input class="checkbox" type="checkbox" <?php if ( $instance['custom-colors']
-				                                                   == on
+				                                                   == 'on'
 				) {
-					echo checked;
+					echo 'checked';
 				} ?> id="<?php echo $this->get_field_id( 'custom-colors' ); ?>"
 				       name="<?php echo $this->get_field_name( 'custom-colors' ); ?>"/>
 				<label for="<?php echo $this->get_field_id( 'custom-colors' ); ?>">Turn on
-				                                                                   Custom
-				                                                                   Widget
-				                                                                   Colors</label>
+					Custom
+					Widget
+					Colors</label>
 			</p>
 
 			<p>Save this widget to make the color selector active.</p>
@@ -792,7 +794,7 @@ class sno_category extends WP_Widget {
 				       id="<?php echo $this->get_field_id( 'header-text' ); ?>"
 				       name="<?php echo $this->get_field_name( 'header-text' ); ?>" type="text"
 				       maxlength="7" size="7" value="<?php echo $instance['header-text']; ?>"/>
-				                                                          Header Bar Text<br/>
+				Header Bar Text<br/>
 				<input class="colorwellcat<?php echo $number; ?>"
 				       id="<?php echo $this->get_field_id( 'widget-border' ); ?>"
 				       name="<?php echo $this->get_field_name( 'widget-border' ); ?>"
@@ -805,11 +807,11 @@ class sno_category extends WP_Widget {
 				       value="<?php echo $instance['widget-background']; ?>"/> Background
 			</p>
 			<script>
-				jQuery(document).ready(function () {
-					var f = jQuery.farbtastic('#snocolorpickercat<?php echo $number; ?>');
-					var p = jQuery('#snocolorpickercat<?php echo $number; ?>').css('opacity', 0.25);
+				jQuery(document).ready(function ($) {
+					var f = $.farbtastic('#snocolorpickercat<?php echo $number; ?>');
+					var p = $('#snocolorpickercat<?php echo $number; ?>').css('opacity', 0.25);
 					var selected;
-					jQuery('.colorwellcat<?php echo $number; ?>')
+					$('.colorwellcat<?php echo $number; ?>')
 						.each(function () {
 							f.linkTo(this);
 							jQuery(this).css('opacity', 0.75);
@@ -826,11 +828,11 @@ class sno_category extends WP_Widget {
 				});
 
 
-				jQuery(document).ready(function () {
-					jQuery('#snocolorpickercat<?php echo $number; ?>').hide();
-					jQuery('#snocolorpickercat<?php echo $number; ?>').farbtastic(".colorwellcat<?php echo $number; ?>");
-					jQuery(".colorwellcat<?php echo $number; ?>").click(function () {
-						jQuery('#snocolorpickercat<?php echo $number; ?>').slideDown()
+				jQuery(document).ready(function ($) {
+					$('#snocolorpickercat<?php echo $number; ?>').hide();
+					$('#snocolorpickercat<?php echo $number; ?>').farbtastic(".colorwellcat<?php echo $number; ?>");
+					$(".colorwellcat<?php echo $number; ?>").click(function () {
+						$('#snocolorpickercat<?php echo $number; ?>').slideDown()
 					});
 				});
 			</script>
@@ -884,7 +886,7 @@ class sno_category extends WP_Widget {
 					</option>
 				</select>
 				<label for="<?php echo $this->get_field_id( 'border-thickness' ); ?>"> Border
-				                                                                       Thickness</label>
+					Thickness</label>
 		</div>
 		<div style="clear:both"></div>
 	<?php
