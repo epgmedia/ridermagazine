@@ -25,7 +25,7 @@ get_sidebar();
             <h1>Latest News</h1>
 
             <p>
-                The latest news section of Ridermagazine.com is a firehose of motorcycle
+                The latest news section of Ridermagazine.com is a wealth of motorcycle
                 information. In this section you will find all the latest stories from
                 every section of the Rider site.
             </p>
