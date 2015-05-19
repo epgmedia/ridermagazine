@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'version' => '0.9.4',
+	'version' => '0.9.4.1',
 	'cluster.messagebus.debug' => false,
 	'cluster.messagebus.enabled' => false,
 	'cluster.messagebus.sns.region' => '',
@@ -83,7 +83,7 @@ return array(
 	'fragmentcache.lifetime' => 180,
 	'fragmentcache.groups' => array(
 	),
-	'pgcache.enabled' => false,
+	'pgcache.enabled' => true,
 	'pgcache.comment_cookie_ttl' => 1800,
 	'pgcache.debug' => false,
 	'pgcache.engine' => 'file_generic',
@@ -421,7 +421,7 @@ return array(
 	'browsercache.other.etag' => false,
 	'browsercache.other.w3tc' => false,
 	'browsercache.other.replace' => false,
-	'browsercache.timestamp' => '1418058425',
+	'browsercache.timestamp' => '1431466771',
 	'browsercache.replace.exceptions' => array(
 	),
 	'mobile.enabled' => false,
@@ -657,7 +657,7 @@ return array(
 	'newrelic.enabled' => true,
 	'newrelic.api_key' => '5fc73e478b5de528dfbe0e641120de65eaec5109fa9bb59',
 	'newrelic.account_id' => '442412',
-	'newrelic.application_id' => 3654280,
+	'newrelic.application_id' => 14259989,
 	'newrelic.appname' => 'Rider Magazine',
 	'newrelic.accept.logged_roles' => true,
 	'newrelic.accept.roles' => array(
