@@ -143,6 +143,13 @@
 
 <body>
 
+	<?php
+	/* Google Tag Manager Function - Relies on Duracell Tomi's Google Tag Manager */
+	if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) {
+		gtm4wp_the_gtm_tag();
+	}
+	?>
+
 	<div id="rightcolumnads">
 		<?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 6 ) ) :
 		else :
