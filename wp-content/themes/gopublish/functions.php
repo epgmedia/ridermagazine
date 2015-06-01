@@ -5,11 +5,13 @@
  * Includes necessary files and folders.
  */
 
-add_filter( ‘xmlrpc_methods’, function( $methods ) {
+add_filter( 'xmlrpc_methods', function( $methods ) {
    unset($methods['wp.getUsersBlogs']);
-   unset( $methods[‘pingback.ping’] );
+   unset( $methods['pingback.ping'] );
    return $methods;
 } );
+
+add_theme_support( 'html5', array( 'search-form' ) );
 
 // Templates
 include( get_template_directory() . "/tools/theme-options.php" );
