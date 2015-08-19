@@ -43,8 +43,6 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
             $forms->add_form(NGG_DISPLAY_SETTINGS_SLUG, NGG_BASIC_SLIDESHOW);
         }
 
-	    $notices = C_Admin_Notification_Manager::get_instance();
-	    $notices->add('image_rotator_notice', 'C_Image_Rotator_Notice');
     }
 
     function get_type_list()
@@ -82,8 +80,8 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
         }
 
         // Frontend-only components
-        if (!is_admin()) {
-
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+        {
             // Provides the controllers for the display types
             $this->get_registry()->add_adapter(
                 'I_Display_Type_Controller',
@@ -129,7 +127,8 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
     
     function _register_hooks()
 	{
-        if (!is_admin() && ((!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES)))
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
         {
             C_NextGen_Shortcode_Manager::add('random',    array(&$this, 'render_random_images'));
             C_NextGen_Shortcode_Manager::add('recent',    array(&$this, 'render_recent_images'));
@@ -339,38 +338,6 @@ class C_NextGen_Basic_Gallery_Installer extends C_Gallery_Display_Installer
 				'view_order' => NGG_DISPLAY_PRIORITY_BASE + 10
 			)
 		);
-	}
-}
-
-class C_Image_Rotator_Notice
-{
-	static $_instance = NULL;
-	static function get_instance($name)
-	{
-		if (!self::$_instance) {
-			$klass = get_class();
-			self::$_instance = new $klass($name);
-		}
-		return self::$_instance;
-	}
-
-	function __construct($name)
-	{
-		$this->name = $name;
-	}
-
-	function render()
-	{
-		$link = 'http://www.nextgen-gallery.com/flash-removed';
-		return sprintf(
-            __("Flash slideshow support has been removed from NextGEN Gallery. Please see <a href='%s'>this blog post</a> for more information.", 'nggallery'),
-            $link
-        );
-	}
-
-	function is_dismissable()
-	{
-		return TRUE;
 	}
 }
 

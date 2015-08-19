@@ -9,7 +9,7 @@ return array(
 	'cluster.messagebus.sns.api_secret' => '',
 	'cluster.messagebus.sns.topic_arn' => '',
 	'dbcache.debug' => false,
-	'dbcache.enabled' => true,
+	'dbcache.enabled' => false,
 	'dbcache.engine' => 'memcached',
 	'dbcache.file.gc' => 3600,
 	'dbcache.file.locking' => false,
@@ -421,7 +421,7 @@ return array(
 	'browsercache.other.etag' => false,
 	'browsercache.other.w3tc' => false,
 	'browsercache.other.replace' => false,
-	'browsercache.timestamp' => '1431466771',
+	'browsercache.timestamp' => '1433192085',
 	'browsercache.replace.exceptions' => array(
 	),
 	'mobile.enabled' => false,

@@ -53,8 +53,8 @@ class M_NextGen_Basic_Album extends C_Base_Module
 			'A_NextGen_Basic_Album'
 		);
 
-
-        if (!is_admin()) {
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+        {
             // Add a controller for displaying albums on the front-end
             $this->get_registry()->add_adapter(
                 'I_Display_Type_Controller',
@@ -71,6 +71,8 @@ class M_NextGen_Basic_Album extends C_Base_Module
                 'I_Displayed_Gallery_Renderer',
                 'A_NextGen_Basic_Album_Routes'
             );
+
+            $this->get_registry()->add_adapter('I_MVC_View', 'A_NextGen_Album_Breadcrumbs');
         }
 
 
@@ -104,11 +106,11 @@ class M_NextGen_Basic_Album extends C_Base_Module
 
 	function _register_hooks()
 	{
-        if (!is_admin()) {
-            if (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES) {
-                C_NextGen_Shortcode_Manager::add('album', array(&$this, 'ngglegacy_shortcode'));
-                C_NextGen_Shortcode_Manager::add('nggalbum', array(&$this, 'ngglegacy_shortcode'));
-            }
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
+        {
+            C_NextGen_Shortcode_Manager::add('album', array(&$this, 'ngglegacy_shortcode'));
+            C_NextGen_Shortcode_Manager::add('nggalbum', array(&$this, 'ngglegacy_shortcode'));
         }
 	}
 
@@ -146,6 +148,7 @@ class M_NextGen_Basic_Album extends C_Base_Module
     function get_type_list()
     {
         return array(
+            'A_NextGen_Album_Breadcrumbs' => 'adapter.nextgen_album_breadcrumbs.php',
             'A_Nextgen_Basic_Album' => 'adapter.nextgen_basic_album.php',
             'A_Nextgen_Basic_Album_Controller' => 'adapter.nextgen_basic_album_controller.php',
             'A_Nextgen_Basic_Album_Mapper' => 'adapter.nextgen_basic_album_mapper.php',

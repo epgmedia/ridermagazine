@@ -21,7 +21,7 @@ class A_NextGen_Basic_Gallery_Controller extends Mixin
                 $displayed_gallery->original_settings = $displayed_gallery->display_settings;
                 $displayed_gallery->display_type = $show;
                 $params = (array) $displayed_gallery->get_entity();
-                unset($params['display_settings']);
+                $params['display_settings'] = array();
                 $retval = $renderer->display_images($params, $return);
                 $call_parent = FALSE;
             }
@@ -411,7 +411,6 @@ class A_NextGen_Basic_Thumbnails_Controller extends Mixin
      */
     public function initialize()
     {
-        parent::initialize();
         $this->add_mixin('Mixin_NextGen_Basic_Pagination');
     }
     /**
